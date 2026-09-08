@@ -210,3 +210,16 @@ def test_verification_meta_only_when_tokens_exist(monkeypatch):
     doc = prerender.set_head("<head><title>x</title></head>", title="T", description="D",
                              canonical="https://e.com/", og_image_url="https://e.com/o.png")
     assert 'name="google-site-verification" content="tok123"' in doc
+
+
+def test_workflow_passes_every_setting_config_reads():
+    """A setting the build reads but CI never passes is invisible: it works
+    locally, silently does nothing in production. This caught exactly that."""
+    import re as _re
+    workflow = (ROOT / ".github" / "workflows" / "update.yml").read_text()
+    env_block = workflow[workflow.index("\nenv:"):workflow.index("\njobs:")]
+    passed = set(_re.findall(r"^  ([A-Z_]+):", env_block, _re.M))
+    read = set(_re.findall(r'os\.environ\.get\("([A-Z_]+)"',
+                           (ROOT / "superpower" / "config.py").read_text()))
+    missing = read - passed
+    assert not missing, f"config reads these but the workflow never passes them: {sorted(missing)}"
