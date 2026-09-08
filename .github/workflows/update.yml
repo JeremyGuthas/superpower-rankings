@@ -118,5 +118,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      # Only what the ping needs — no image or scraping dependencies here.
+      - run: pip install requests
       - name: Announce changed URLs
         run: python -m superpower.indexnow
