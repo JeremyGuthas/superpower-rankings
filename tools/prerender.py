@@ -83,6 +83,14 @@ def set_head(doc: str, *, title: str, description: str, canonical: str,
         f'<link rel="alternate" type="application/rss+xml" title="{E(config.SITE_NAME)}" '
         f'href="{E(config.url("feed.xml"))}">',
     ]
+    if config.GOOGLE_SITE_VERIFICATION:
+        tags.append('<meta name="google-site-verification" content="'
+                    f'{E(config.GOOGLE_SITE_VERIFICATION)}">')
+    if config.BING_SITE_VERIFICATION:
+        tags.append(f'<meta name="msvalidate.01" content="{E(config.BING_SITE_VERIFICATION)}">')
+    if config.CF_ANALYTICS_TOKEN:
+        tags.append('<script defer src="https://static.cloudflareinsights.com/beacon.min.js" '
+                    'data-cf-beacon=\'{"token":"' + E(config.CF_ANALYTICS_TOKEN) + '"}\'></script>')
     for block in (jsonld or []):
         tags.append('<script type="application/ld+json">'
                     + json.dumps(block, separators=(",", ":")) + "</script>")
@@ -240,6 +248,43 @@ def lanes_html(week: dict, depth: int) -> dict[str, str]:
     return {"laneOutliers": outliers, "laneDiverge": divergent, "laneMarket": market}
 
 
+def crumbs(season: int, weeks: list[dict], current: int, depth: int) -> str:
+    """Real links between weeks.
+
+    The week picker is a <select>, which a crawler cannot traverse — without
+    this the archive is only reachable through the season hub, and pages sit
+    further from the homepage than they need to.
+    """
+    up = "../" * depth
+    numbers = sorted(w["week"] for w in weeks)
+    i = numbers.index(current)
+    prev_w = numbers[i - 1] if i > 0 else None
+    next_w = numbers[i + 1] if i < len(numbers) - 1 else None
+
+    parts = []
+    if prev_w:
+        parts.append(f'<a class="crumb prev" href="{up}{season}/week-{prev_w}/" rel="prev">'
+                     f'&larr; Week {prev_w}</a>')
+    parts.append(f'<a class="crumb" href="{up}{season}/">{season} archive</a>')
+    if next_w:
+        parts.append(f'<a class="crumb next" href="{up}{season}/week-{next_w}/" rel="next">'
+                     f'Week {next_w} &rarr;</a>')
+    return f'<nav class="crumbs" aria-label="Week navigation">{"".join(parts)}</nav>'
+
+
+def week_strip(season: int, weeks: list[dict], current: int, depth: int) -> str:
+    """Every week of the season as a plain link, so the whole archive is one
+    hop from any board page."""
+    up = "../" * depth
+    links = "".join(
+        f'<a href="{up}{season}/week-{w}/"'
+        + (' aria-current="page"' if w == current else "")
+        + f'>{w}</a>'
+        for w in sorted(x["week"] for x in weeks))
+    return (f'<nav class="weekstrip" aria-label="All weeks">'
+            f'<span class="weekstrip-label">{season} weeks</span>{links}</nav>')
+
+
 def sources_html(week: dict) -> str:
     out = []
     for s in week["sources"]:
@@ -354,6 +399,11 @@ def board_page(season_data: dict, week: dict, rel: str, depth: int,
         doc = fill(doc, key, value)
     doc = fill(doc, "srcList", sources_html(week))
 
+    nav = (crumbs(season, season_data["weeks"], week["week"], depth)
+           + week_strip(season, season_data["weeks"], week["week"], depth))
+    doc = doc.replace('<section class="cards" id="cards">',
+                      nav + '<section class="cards" id="cards">', 1)
+
     # Monetisation slots sit between sections, never inside the board itself.
     doc = doc.replace('<section class="stories"', ad_slot("board_leader") + '<section class="stories"', 1)
     doc = doc.replace('<section class="sources" id="share">',
@@ -452,6 +502,14 @@ def team_page(season_data: dict, week: dict, abbr: str, rel: str, depth: int) ->
                              for i in ids) + "</tr>")
     doc = fill(doc, "wbw", "".join(wbw))
 
+    up = "../" * depth
+    back = (f'<nav class="crumbs" aria-label="Breadcrumb">'
+            f'<a class="crumb" href="{up}">Rankings</a>'
+            f'<a class="crumb" href="{up}{season}/">{season} archive</a>'
+            f'<a class="crumb" href="{up}{season}/week-{week["week"]}/">{E(week["label"])}</a>'
+            f'</nav>')
+    doc = doc.replace('<section class="cards" id="context">',
+                      back + '<section class="cards" id="context">', 1)
     doc = doc.replace('<div class="grid2">',
                       ad_slot("team_side") + newsletter(compact=True) + '<div class="grid2">', 1)
 
@@ -705,33 +763,98 @@ def write_sitemap(urls: list[tuple[str, str, str]]) -> None:
         f"Sitemap: {config.url('sitemap.xml')}\n", encoding="utf-8")
 
 
+def write_extras(urls: list[tuple[str, str, str]]) -> None:
+    """Files that are not pages: the IndexNow key, ads.txt, and a 404."""
+    from superpower import indexnow
+
+    if config.INDEXNOW_KEY:
+        (OUT / f"{config.INDEXNOW_KEY}.txt").write_text(
+            indexnow.key_file_body(), encoding="utf-8")
+
+    ads = config.ads_txt()
+    if ads:
+        (OUT / "ads.txt").write_text(ads, encoding="utf-8")
+
+    # GitHub Pages serves 404.html for anything it cannot find.
+    body = ('<div class="prose"><h1>Page not found</h1>'
+            '<p class="lede">That URL does not exist here. The rankings update every '
+            'Tuesday and old weeks keep their own address, so a stale link usually '
+            'means a week that was never published.</p>'
+            '<p><a class="crumb" href="/">Current rankings</a> '
+            '<a class="crumb" href="/2026/">2026 archive</a> '
+            '<a class="crumb" href="/accuracy/">Outlet accuracy</a></p></div>'
+            + LEGAL_STYLE)
+    doc = shell_page(title="Page not found — Superpower Rankings",
+                     description="That page does not exist.",
+                     rel="404", depth=0, body=body, noindex=True)
+    (OUT / "404.html").write_text(doc, encoding="utf-8")
+
+
 def write_feed(season_data: dict) -> None:
+    """A full-content feed.
+
+    Buttondown, beehiiv, Mailchimp and Kit can all run an RSS-to-email
+    campaign: point one at this feed and the weekly newsletter sends itself
+    every Tuesday with no further code. That only works if the feed carries
+    the actual content, so each item ships the top ten and the week's
+    storylines in <content:encoded>, not just a one-line summary.
+    """
     season = season_data["season"]
     weeks = sorted(season_data["weeks"], key=lambda w: -w["week"])[:20]
+    names = {x["id"]: x["name"] for x in season_data["sources"]}
     items = []
+
     for w in weeks:
         ranked = sorted(w["teams"].items(), key=lambda kv: kv[1]["rank"])
-        top = ", ".join(f"{i}. {info(a)['name']}" for i, (a, _) in enumerate(ranked[:5], 1))
         link = config.url(f"{season}/week-{w['week']}/")
         title = f"{season} {w['label']} NFL Power Rankings"
+        top = ", ".join(f"{i}. {info(a)['name']}" for i, (a, _) in enumerate(ranked[:5], 1))
         summary = f"Consensus of {len(w['sources'])} outlets. {top}."
+
+        rows = "".join(
+            f"<tr><td><b>{t['rank']}</b></td><td>{E(info(a)['name'])}</td>"
+            f"<td>{t['avg']:.2f}</td><td>{'' if not t.get('delta') else ('&#9650;' if t['delta'] > 0 else '&#9660;') + str(abs(t['delta']))}</td></tr>"
+            for a, t in ranked[:10])
+        story = (w.get("storylines") or {})
+        bullets = []
+        for o in story.get("outliers", [])[:2]:
+            side = "higher" if o["gap"] > 0 else "lower"
+            bullets.append(f"<li><b>{E(info(o['team'])['name'])}</b> — "
+                           f"{E(names.get(o['source'], o['source']))} has them at #{o['rank']}, "
+                           f"{abs(o['gap'])} spots {side} than the consensus.</li>")
+        for m in story.get("market", [])[:2]:
+            who = "the market" if m["gap"] > 0 else "the media"
+            bullets.append(f"<li><b>{E(info(m['team'])['name'])}</b> — #{m['rank']} in the "
+                           f"consensus, #{m['market_rank']} at the book ({E(m['odds'])}); "
+                           f"{who} is the believer.</li>")
+
+        content = (f"<p>Every major NFL power ranking, averaged. "
+                   f"{len(w['sources'])} outlets this week.</p>"
+                   f"<table><thead><tr><th>#</th><th>Team</th><th>Score</th><th></th></tr>"
+                   f"</thead><tbody>{rows}</tbody></table>"
+                   + (f"<h3>What to argue about</h3><ul>{''.join(bullets)}</ul>" if bullets else "")
+                   + f'<p><a href="{E(link)}">See all 32 teams and every outlet&#8217;s rank</a></p>')
+
         try:
             when = datetime.fromisoformat(w["generated"].replace("Z", "+00:00"))
         except Exception:
             when = datetime.now(timezone.utc)
-        stamp = when.strftime("%a, %d %b %Y %H:%M:%S +0000")
+
         items.append(
             f"<item><title>{E(title)}</title>"
             f"<link>{E(link)}</link>"
             f'<guid isPermaLink="true">{E(link)}</guid>'
-            f"<pubDate>{stamp}</pubDate>"
-            f"<description>{E(summary)}</description></item>")
+            f"<pubDate>{when.strftime('%a, %d %b %Y %H:%M:%S +0000')}</pubDate>"
+            f"<description>{E(summary)}</description>"
+            f"<content:encoded><![CDATA[{content}]]></content:encoded></item>")
 
     (OUT / "feed.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>'
-        '<rss version="2.0"><channel>'
+        '<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" '
+        'xmlns:atom="http://www.w3.org/2005/Atom"><channel>'
         f"<title>{E(config.SITE_NAME)}</title>"
         f"<link>{E(config.SITE_URL)}</link>"
+        f'<atom:link href="{E(config.url("feed.xml"))}" rel="self" type="application/rss+xml"/>'
         f"<description>{E(config.TAGLINE)}</description>"
         "<language>en-us</language>"
         + "".join(items) + "</channel></rss>\n", encoding="utf-8")
@@ -827,6 +950,7 @@ def main() -> None:
         pages += 1
 
     write_sitemap(urls)
+    write_extras(urls)
 
     print(f"prerendered {pages} pages, {len(urls)} sitemap entries")
     print(f"  og cards: {sum(1 for _ in og_dir.glob('*.png'))}")

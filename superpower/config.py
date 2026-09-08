@@ -59,6 +59,28 @@ RESPONSIBLE_GAMBLING = (
 
 CONTACT_EMAIL = os.environ.get("CONTACT_EMAIL", "")
 
+#: IndexNow key. Bing, Yandex, Seznam and Naver accept a push the moment a
+#: page changes, and the only proof of ownership is a file at /<key>.txt
+#: containing the key — no account, no console, no waiting. Google does not
+#: participate; it has to be told through Search Console instead.
+INDEXNOW_KEY = "45a995356c0b45b8bff3859f739f8a7e"
+
+#: Search-console ownership tokens. Each renders a verification <meta> when set.
+GOOGLE_SITE_VERIFICATION = os.environ.get("GOOGLE_SITE_VERIFICATION", "")
+BING_SITE_VERIFICATION = os.environ.get("BING_SITE_VERIFICATION", "")
+
+#: Cloudflare Web Analytics token — cookie-free, so it needs no consent banner.
+CF_ANALYTICS_TOKEN = os.environ.get("CF_ANALYTICS_TOKEN", "")
+
+#: Publisher ids for ads.txt. AdSense will not serve without this file once
+#: your account exists; sellers.json/ads.txt is how a buyer confirms the
+#: inventory is really yours.
+def ads_txt() -> str:
+    if not AD_CLIENT:
+        return ""
+    pub = AD_CLIENT.replace("ca-pub-", "")
+    return f"google.com, pub-{pub}, DIRECT, f08c47fec0942fa0\n"
+
 
 def ads_enabled() -> bool:
     return bool(AD_CLIENT)

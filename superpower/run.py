@@ -10,6 +10,7 @@ from . import accuracy as accuracy_mod
 from . import analysis as analysis_mod
 from . import digest as digest_mod
 from . import graphic as graphic_mod
+from . import sharekit as sharekit_mod
 from . import games as games_mod
 from . import odds as odds_mod
 from . import season as season_mod
@@ -220,6 +221,8 @@ def main(argv: list[str] | None = None) -> int:
             print(f"graphic -> {path.relative_to(store.ROOT)}")
         for path in digest_mod.write(site, latest, SHARE_DIR, args.base_url):
             print(f"digest  -> {path.relative_to(store.ROOT)}")
+        for path in sharekit_mod.write(site, latest, SHARE_DIR):
+            print(f"kit     -> {path.relative_to(store.ROOT)}")
 
         if args.send_digest:
             doc = digest_mod.build(site, latest, args.base_url)

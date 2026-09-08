@@ -178,6 +178,28 @@ the same content it finds, so nothing on screen changes.
 Asset URLs carry a content hash, including the imports between ES modules,
 so a repeat visitor never runs the previous deploy's code.
 
+## Getting found without an account
+
+Google only accepts submissions through Search Console, which needs a login.
+Everything else can be automated, and is:
+
+* **IndexNow** — Bing, Yandex, Seznam and Naver accept a push the moment pages
+  change. Ownership is proved by a file at `/<key>.txt`; there is no account.
+  The `notify` job announces every URL in the published sitemap after each
+  deploy, and reads the *live* sitemap so it doubles as a check that the deploy
+  landed. It is `continue-on-error` — a notification must never fail a deploy.
+* **Crawlable navigation** — the week picker is a `<select>`, which no crawler
+  can traverse. Every board page carries prev/next links, a strip of every week
+  in the season, and team pages carry breadcrumbs, so nothing sits more than two
+  hops from the homepage.
+* **A full-content RSS feed** — each item ships the top ten and the week's
+  storylines in `content:encoded`, not a one-line summary. Point any provider's
+  RSS-to-email campaign at it and the newsletter sends itself every Tuesday
+  with no further code.
+* **Weekly share kit** — `site/share/latest-kit.md` is generated with the run:
+  Reddit title and body, an X post, and the image to attach, written from the
+  week's actual storylines. Paste it; nothing needs rewriting.
+
 ## Monetisation
 
 Every surface is off until configured, and renders **nothing** when off — no
@@ -189,6 +211,9 @@ repository variables (Settings → Secrets and variables → Actions → Variabl
 | `NEWSLETTER_ACTION` | the inline signup form (any provider's form endpoint) |
 | `AD_CLIENT` + `AD_SLOT_*` | AdSense units between sections |
 | `CONTACT_EMAIL` | the contact address in the privacy and terms pages |
+| `GOOGLE_SITE_VERIFICATION` | the Search Console ownership meta tag |
+| `BING_SITE_VERIFICATION` | the Bing Webmaster ownership meta tag |
+| `CF_ANALYTICS_TOKEN` | Cloudflare Web Analytics (cookie-free, no consent banner) |
 
 Sportsbook affiliates live in `AFFILIATE_BOOKS` in `superpower/config.py` and
 are deliberately **not** environment-driven: populating them turns on betting

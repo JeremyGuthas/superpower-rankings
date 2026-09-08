@@ -105,3 +105,18 @@ jobs:
     steps:
       - id: deploy
         uses: actions/deploy-pages@v4
+
+  # Bing, Yandex, Seznam and Naver accept a push the moment pages change.
+  # Google does not participate — it only takes submissions through Search
+  # Console. Failing here must never fail the deploy.
+  notify:
+    needs: deploy
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Announce changed URLs
+        run: python -m superpower.indexnow

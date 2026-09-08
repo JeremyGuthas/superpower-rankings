@@ -147,3 +147,66 @@ def test_no_hotlinked_logos_anywhere_in_rendered_markup(week):
     _, rows = prerender.board_rows(w, 0)
     blob = rows + prerender.tiles_html(w, 0) + "".join(prerender.lanes_html(w, 0).values())
     assert "espncdn" not in blob and "<img" not in blob
+
+
+# ------------------------------------------------------------- indexnow
+
+def test_indexnow_key_file_is_just_the_key():
+    from superpower import indexnow
+    assert indexnow.key_file_body().strip() == config.INDEXNOW_KEY
+    assert len(config.INDEXNOW_KEY) >= 8
+
+
+def test_indexnow_refuses_an_empty_batch():
+    from superpower import indexnow
+    ok, msg = indexnow.submit([])
+    assert ok is False and "nothing" in msg
+
+
+def test_indexnow_never_raises_on_a_dead_endpoint(monkeypatch):
+    from superpower import indexnow
+
+    def boom(*a, **k):
+        raise ConnectionError("down")
+
+    monkeypatch.setattr(indexnow.requests, "post", boom)
+    ok, msg = indexnow.submit(["https://example.com/"])
+    assert ok is False and "ConnectionError" in msg
+
+
+def test_sitemap_urls_are_parsed():
+    from superpower import indexnow
+    text = "<urlset><url><loc>https://a/</loc></url><url><loc>https://b/</loc></url></urlset>"
+    assert indexnow.urls_from_sitemap_text(text) == ["https://a/", "https://b/"]
+
+
+# ------------------------------------------------------------ share kit
+
+def test_share_kit_carries_the_links_and_the_angle(week):
+    from superpower import sharekit
+    data, w = week
+    text = sharekit.build(data, w)
+    assert config.url(f"{data['season']}/week-{w['week']}/") in text
+    assert config.url(f"share/og/{data['season']}-week-{w['week']:02d}.png") in text
+    assert "Reddit" in text and "Top 10:" in text
+    # Ten ranked teams, each on its own line.
+    assert len(re.findall(r"^\d+\. ", text, re.M)) >= 10
+
+
+def test_ads_txt_only_exists_once_there_is_a_publisher_id(monkeypatch):
+    monkeypatch.setattr(config, "AD_CLIENT", "")
+    assert config.ads_txt() == ""
+    monkeypatch.setattr(config, "AD_CLIENT", "ca-pub-1234567890123456")
+    line = config.ads_txt()
+    assert line.startswith("google.com, pub-1234567890123456, DIRECT")
+
+
+def test_verification_meta_only_when_tokens_exist(monkeypatch):
+    monkeypatch.setattr(config, "GOOGLE_SITE_VERIFICATION", "")
+    doc = prerender.set_head("<head><title>x</title></head>", title="T", description="D",
+                             canonical="https://e.com/", og_image_url="https://e.com/o.png")
+    assert "google-site-verification" not in doc
+    monkeypatch.setattr(config, "GOOGLE_SITE_VERIFICATION", "tok123")
+    doc = prerender.set_head("<head><title>x</title></head>", title="T", description="D",
+                             canonical="https://e.com/", og_image_url="https://e.com/o.png")
+    assert 'name="google-site-verification" content="tok123"' in doc
