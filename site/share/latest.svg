@@ -8,167 +8,167 @@
 <rect x="86.0" y="177" width="32" height="32" rx="7" fill="#003594" stroke="#FFA300" stroke-width="1.5"/>
 <text x="102.0" y="198" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">LAR</text>
 <text x="130.0" y="202" font-size="24" font-weight="600" fill="#0e1620">Rams</text>
-<text x="445.0" y="202" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">1.17</text>
+<text x="445.0" y="202" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">1.67</text>
 <text x="515.0" y="202" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="48.0" x2="517.0" y1="230" y2="230" stroke="#e6eaef" stroke-width="1"/>
 <text x="74.0" y="260" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">2</text>
 <rect x="86.0" y="235" width="32" height="32" rx="7" fill="#002244" stroke="#69BE28" stroke-width="1.5"/>
 <text x="102.0" y="256" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">SEA</text>
 <text x="130.0" y="260" font-size="24" font-weight="600" fill="#0e1620">Seahawks</text>
-<text x="445.0" y="260" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">2.17</text>
+<text x="445.0" y="260" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">2.00</text>
 <text x="515.0" y="260" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="48.0" x2="517.0" y1="288" y2="288" stroke="#e6eaef" stroke-width="1"/>
 <text x="74.0" y="318" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">3</text>
 <rect x="86.0" y="293" width="32" height="32" rx="7" fill="#00338D" stroke="#C60C30" stroke-width="1.5"/>
 <text x="102.0" y="314" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">BUF</text>
 <text x="130.0" y="318" font-size="24" font-weight="600" fill="#0e1620">Bills</text>
-<text x="445.0" y="318" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">3.50</text>
+<text x="445.0" y="318" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">4.67</text>
 <text x="515.0" y="318" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="48.0" x2="517.0" y1="346" y2="346" stroke="#e6eaef" stroke-width="1"/>
 <text x="74.0" y="376" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">4</text>
-<rect x="86.0" y="351" width="32" height="32" rx="7" fill="#FB4F14" stroke="#002244" stroke-width="1.5"/>
-<text x="102.0" y="372" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">DEN</text>
-<text x="130.0" y="376" font-size="24" font-weight="600" fill="#0e1620">Broncos</text>
-<text x="445.0" y="376" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">3.83</text>
+<rect x="86.0" y="351" width="32" height="32" rx="7" fill="#002244" stroke="#C60C30" stroke-width="1.5"/>
+<text x="102.0" y="372" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">NE</text>
+<text x="130.0" y="376" font-size="24" font-weight="600" fill="#0e1620">Patriots</text>
+<text x="445.0" y="376" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">7.50</text>
 <text x="515.0" y="376" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="48.0" x2="517.0" y1="404" y2="404" stroke="#e6eaef" stroke-width="1"/>
 <text x="74.0" y="434" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">5</text>
-<rect x="86.0" y="409" width="32" height="32" rx="7" fill="#004C54" stroke="#A5ACAF" stroke-width="1.5"/>
-<text x="102.0" y="430" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">PHI</text>
-<text x="130.0" y="434" font-size="24" font-weight="600" fill="#0e1620">Eagles</text>
+<rect x="86.0" y="409" width="32" height="32" rx="7" fill="#03202F" stroke="#A71930" stroke-width="1.5"/>
+<text x="102.0" y="430" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">HOU</text>
+<text x="130.0" y="434" font-size="24" font-weight="600" fill="#0e1620">Texans</text>
 <text x="445.0" y="434" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">8.00</text>
 <text x="515.0" y="434" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="48.0" x2="517.0" y1="462" y2="462" stroke="#e6eaef" stroke-width="1"/>
 <text x="74.0" y="492" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">6</text>
-<rect x="86.0" y="467" width="32" height="32" rx="7" fill="#002244" stroke="#C60C30" stroke-width="1.5"/>
-<text x="102.0" y="488" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">NE</text>
-<text x="130.0" y="492" font-size="24" font-weight="600" fill="#0e1620">Patriots</text>
-<text x="445.0" y="492" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">8.33</text>
+<rect x="86.0" y="467" width="32" height="32" rx="7" fill="#FB4F14" stroke="#002244" stroke-width="1.5"/>
+<text x="102.0" y="488" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">DEN</text>
+<text x="130.0" y="492" font-size="24" font-weight="600" fill="#0e1620">Broncos</text>
+<text x="445.0" y="492" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">9.17</text>
 <text x="515.0" y="492" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="48.0" x2="517.0" y1="520" y2="520" stroke="#e6eaef" stroke-width="1"/>
 <text x="74.0" y="550" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">7</text>
-<rect x="86.0" y="525" width="32" height="32" rx="7" fill="#241773" stroke="#9E7C0C" stroke-width="1.5"/>
-<text x="102.0" y="546" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">BAL</text>
-<text x="130.0" y="550" font-size="24" font-weight="600" fill="#0e1620">Ravens</text>
-<text x="445.0" y="550" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">8.83</text>
+<rect x="86.0" y="525" width="32" height="32" rx="7" fill="#AA0000" stroke="#B3995D" stroke-width="1.5"/>
+<text x="102.0" y="546" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">SF</text>
+<text x="130.0" y="550" font-size="24" font-weight="600" fill="#0e1620">49ers</text>
+<text x="445.0" y="550" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">9.50</text>
 <text x="515.0" y="550" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="48.0" x2="517.0" y1="578" y2="578" stroke="#e6eaef" stroke-width="1"/>
 <text x="74.0" y="608" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">8</text>
-<rect x="86.0" y="583" width="32" height="32" rx="7" fill="#03202F" stroke="#A71930" stroke-width="1.5"/>
-<text x="102.0" y="604" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">HOU</text>
-<text x="130.0" y="608" font-size="24" font-weight="600" fill="#0e1620">Texans</text>
-<text x="445.0" y="608" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">9.17</text>
+<rect x="86.0" y="583" width="32" height="32" rx="7" fill="#241773" stroke="#9E7C0C" stroke-width="1.5"/>
+<text x="102.0" y="604" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">BAL</text>
+<text x="130.0" y="608" font-size="24" font-weight="600" fill="#0e1620">Ravens</text>
+<text x="445.0" y="608" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">9.67</text>
 <text x="515.0" y="608" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="48.0" x2="517.0" y1="636" y2="636" stroke="#e6eaef" stroke-width="1"/>
 <text x="74.0" y="666" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">9</text>
-<rect x="86.0" y="641" width="32" height="32" rx="7" fill="#203731" stroke="#FFB612" stroke-width="1.5"/>
-<text x="102.0" y="662" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">GB</text>
-<text x="130.0" y="666" font-size="24" font-weight="600" fill="#0e1620">Packers</text>
-<text x="445.0" y="666" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">10.67</text>
+<rect x="86.0" y="641" width="32" height="32" rx="7" fill="#004C54" stroke="#A5ACAF" stroke-width="1.5"/>
+<text x="102.0" y="662" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">PHI</text>
+<text x="130.0" y="666" font-size="24" font-weight="600" fill="#0e1620">Eagles</text>
+<text x="445.0" y="666" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">11.83</text>
 <text x="515.0" y="666" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="48.0" x2="517.0" y1="694" y2="694" stroke="#e6eaef" stroke-width="1"/>
 <text x="74.0" y="724" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">10</text>
-<rect x="86.0" y="699" width="32" height="32" rx="7" fill="#006778" stroke="#D7A22A" stroke-width="1.5"/>
-<text x="102.0" y="720" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">JAX</text>
-<text x="130.0" y="724" font-size="24" font-weight="600" fill="#0e1620">Jaguars</text>
-<text x="445.0" y="724" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">11.00</text>
+<rect x="86.0" y="699" width="32" height="32" rx="7" fill="#203731" stroke="#FFB612" stroke-width="1.5"/>
+<text x="102.0" y="720" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">GB</text>
+<text x="130.0" y="724" font-size="24" font-weight="600" fill="#0e1620">Packers</text>
+<text x="445.0" y="724" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">11.83</text>
 <text x="515.0" y="724" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="48.0" x2="517.0" y1="752" y2="752" stroke="#e6eaef" stroke-width="1"/>
 <text x="74.0" y="782" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">11</text>
-<rect x="86.0" y="757" width="32" height="32" rx="7" fill="#003594" stroke="#869397" stroke-width="1.5"/>
-<text x="102.0" y="778" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">DAL</text>
-<text x="130.0" y="782" font-size="24" font-weight="600" fill="#0e1620">Cowboys</text>
-<text x="445.0" y="782" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">11.17</text>
+<rect x="86.0" y="757" width="32" height="32" rx="7" fill="#FB4F14" stroke="#000000" stroke-width="1.5"/>
+<text x="102.0" y="778" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">CIN</text>
+<text x="130.0" y="782" font-size="24" font-weight="600" fill="#0e1620">Bengals</text>
+<text x="445.0" y="782" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">12.33</text>
 <text x="515.0" y="782" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="48.0" x2="517.0" y1="810" y2="810" stroke="#e6eaef" stroke-width="1"/>
 <text x="74.0" y="840" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">12</text>
-<rect x="86.0" y="815" width="32" height="32" rx="7" fill="#AA0000" stroke="#B3995D" stroke-width="1.5"/>
-<text x="102.0" y="836" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">SF</text>
-<text x="130.0" y="840" font-size="24" font-weight="600" fill="#0e1620">49ers</text>
-<text x="445.0" y="840" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">11.33</text>
+<rect x="86.0" y="815" width="32" height="32" rx="7" fill="#0080C6" stroke="#FFC20E" stroke-width="1.5"/>
+<text x="102.0" y="836" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">LAC</text>
+<text x="130.0" y="840" font-size="24" font-weight="600" fill="#0e1620">Chargers</text>
+<text x="445.0" y="840" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">12.67</text>
 <text x="515.0" y="840" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="48.0" x2="517.0" y1="868" y2="868" stroke="#e6eaef" stroke-width="1"/>
 <text x="74.0" y="898" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">13</text>
-<rect x="86.0" y="873" width="32" height="32" rx="7" fill="#0080C6" stroke="#FFC20E" stroke-width="1.5"/>
-<text x="102.0" y="894" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">LAC</text>
-<text x="130.0" y="898" font-size="24" font-weight="600" fill="#0e1620">Chargers</text>
-<text x="445.0" y="898" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">11.33</text>
+<rect x="86.0" y="873" width="32" height="32" rx="7" fill="#006778" stroke="#D7A22A" stroke-width="1.5"/>
+<text x="102.0" y="894" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">JAX</text>
+<text x="130.0" y="898" font-size="24" font-weight="600" fill="#0e1620">Jaguars</text>
+<text x="445.0" y="898" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">12.67</text>
 <text x="515.0" y="898" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="48.0" x2="517.0" y1="926" y2="926" stroke="#e6eaef" stroke-width="1"/>
 <text x="74.0" y="956" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">14</text>
 <rect x="86.0" y="931" width="32" height="32" rx="7" fill="#0B162A" stroke="#C83803" stroke-width="1.5"/>
 <text x="102.0" y="952" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">CHI</text>
 <text x="130.0" y="956" font-size="24" font-weight="600" fill="#0e1620">Bears</text>
-<text x="445.0" y="956" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">12.17</text>
+<text x="445.0" y="956" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">12.83</text>
 <text x="515.0" y="956" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="48.0" x2="517.0" y1="984" y2="984" stroke="#e6eaef" stroke-width="1"/>
 <text x="74.0" y="1014" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">15</text>
 <rect x="86.0" y="989" width="32" height="32" rx="7" fill="#0076B6" stroke="#B0B7BC" stroke-width="1.5"/>
 <text x="102.0" y="1010" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">DET</text>
 <text x="130.0" y="1014" font-size="24" font-weight="600" fill="#0e1620">Lions</text>
-<text x="445.0" y="1014" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">13.17</text>
+<text x="445.0" y="1014" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">13.00</text>
 <text x="515.0" y="1014" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="48.0" x2="517.0" y1="1042" y2="1042" stroke="#e6eaef" stroke-width="1"/>
 <text x="74.0" y="1072" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">16</text>
-<rect x="86.0" y="1047" width="32" height="32" rx="7" fill="#FB4F14" stroke="#000000" stroke-width="1.5"/>
-<text x="102.0" y="1068" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">CIN</text>
-<text x="130.0" y="1072" font-size="24" font-weight="600" fill="#0e1620">Bengals</text>
-<text x="445.0" y="1072" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">13.67</text>
+<rect x="86.0" y="1047" width="32" height="32" rx="7" fill="#003594" stroke="#869397" stroke-width="1.5"/>
+<text x="102.0" y="1068" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">DAL</text>
+<text x="130.0" y="1072" font-size="24" font-weight="600" fill="#0e1620">Cowboys</text>
+<text x="445.0" y="1072" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">14.67</text>
 <text x="515.0" y="1072" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <text x="579.0" y="202" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">17</text>
-<rect x="591.0" y="177" width="32" height="32" rx="7" fill="#E31837" stroke="#FFB81C" stroke-width="1.5"/>
-<text x="607.0" y="198" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">KC</text>
-<text x="635.0" y="202" font-size="24" font-weight="600" fill="#0e1620">Chiefs</text>
-<text x="950.0" y="202" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">13.83</text>
+<rect x="591.0" y="177" width="32" height="32" rx="7" fill="#D50A0A" stroke="#FF7900" stroke-width="1.5"/>
+<text x="607.0" y="198" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">TB</text>
+<text x="635.0" y="202" font-size="24" font-weight="600" fill="#0e1620">Buccaneers</text>
+<text x="950.0" y="202" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">15.83</text>
 <text x="1020.0" y="202" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="553.0" x2="1022.0" y1="230" y2="230" stroke="#e6eaef" stroke-width="1"/>
 <text x="579.0" y="260" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">18</text>
-<rect x="591.0" y="235" width="32" height="32" rx="7" fill="#D50A0A" stroke="#FF7900" stroke-width="1.5"/>
-<text x="607.0" y="256" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">TB</text>
-<text x="635.0" y="260" font-size="24" font-weight="600" fill="#0e1620">Buccaneers</text>
-<text x="950.0" y="260" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">18.83</text>
+<rect x="591.0" y="235" width="32" height="32" rx="7" fill="#E31837" stroke="#FFB81C" stroke-width="1.5"/>
+<text x="607.0" y="256" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">KC</text>
+<text x="635.0" y="260" font-size="24" font-weight="600" fill="#0e1620">Chiefs</text>
+<text x="950.0" y="260" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">16.33</text>
 <text x="1020.0" y="260" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="553.0" x2="1022.0" y1="288" y2="288" stroke="#e6eaef" stroke-width="1"/>
 <text x="579.0" y="318" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">19</text>
-<rect x="591.0" y="293" width="32" height="32" rx="7" fill="#4F2683" stroke="#FFC62F" stroke-width="1.5"/>
-<text x="607.0" y="314" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">MIN</text>
-<text x="635.0" y="318" font-size="24" font-weight="600" fill="#0e1620">Vikings</text>
-<text x="950.0" y="318" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">19.50</text>
+<rect x="591.0" y="293" width="32" height="32" rx="7" fill="#002C5F" stroke="#A2AAAD" stroke-width="1.5"/>
+<text x="607.0" y="314" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">IND</text>
+<text x="635.0" y="318" font-size="24" font-weight="600" fill="#0e1620">Colts</text>
+<text x="950.0" y="318" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">19.33</text>
 <text x="1020.0" y="318" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="553.0" x2="1022.0" y1="346" y2="346" stroke="#e6eaef" stroke-width="1"/>
 <text x="579.0" y="376" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">20</text>
-<rect x="591.0" y="351" width="32" height="32" rx="7" fill="#002C5F" stroke="#A2AAAD" stroke-width="1.5"/>
-<text x="607.0" y="372" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">IND</text>
-<text x="635.0" y="376" font-size="24" font-weight="600" fill="#0e1620">Colts</text>
-<text x="950.0" y="376" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">20.17</text>
+<rect x="591.0" y="351" width="32" height="32" rx="7" fill="#FFB612" stroke="#101820" stroke-width="1.5"/>
+<text x="607.0" y="372" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">PIT</text>
+<text x="635.0" y="376" font-size="24" font-weight="600" fill="#0e1620">Steelers</text>
+<text x="950.0" y="376" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">19.83</text>
 <text x="1020.0" y="376" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="553.0" x2="1022.0" y1="404" y2="404" stroke="#e6eaef" stroke-width="1"/>
 <text x="579.0" y="434" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">21</text>
-<rect x="591.0" y="409" width="32" height="32" rx="7" fill="#FFB612" stroke="#101820" stroke-width="1.5"/>
-<text x="607.0" y="430" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">PIT</text>
-<text x="635.0" y="434" font-size="24" font-weight="600" fill="#0e1620">Steelers</text>
+<rect x="591.0" y="409" width="32" height="32" rx="7" fill="#0085CA" stroke="#101820" stroke-width="1.5"/>
+<text x="607.0" y="430" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">CAR</text>
+<text x="635.0" y="434" font-size="24" font-weight="600" fill="#0e1620">Panthers</text>
 <text x="950.0" y="434" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">20.17</text>
 <text x="1020.0" y="434" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="553.0" x2="1022.0" y1="462" y2="462" stroke="#e6eaef" stroke-width="1"/>
 <text x="579.0" y="492" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">22</text>
-<rect x="591.0" y="467" width="32" height="32" rx="7" fill="#0085CA" stroke="#101820" stroke-width="1.5"/>
-<text x="607.0" y="488" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">CAR</text>
-<text x="635.0" y="492" font-size="24" font-weight="600" fill="#0e1620">Panthers</text>
-<text x="950.0" y="492" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">22.83</text>
+<rect x="591.0" y="467" width="32" height="32" rx="7" fill="#4F2683" stroke="#FFC62F" stroke-width="1.5"/>
+<text x="607.0" y="488" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">MIN</text>
+<text x="635.0" y="492" font-size="24" font-weight="600" fill="#0e1620">Vikings</text>
+<text x="950.0" y="492" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">20.83</text>
 <text x="1020.0" y="492" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="553.0" x2="1022.0" y1="520" y2="520" stroke="#e6eaef" stroke-width="1"/>
 <text x="579.0" y="550" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">23</text>
 <rect x="591.0" y="525" width="32" height="32" rx="7" fill="#101820" stroke="#D3BC8D" stroke-width="1.5"/>
 <text x="607.0" y="546" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">NO</text>
 <text x="635.0" y="550" font-size="24" font-weight="600" fill="#0e1620">Saints</text>
-<text x="950.0" y="550" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">23.17</text>
+<text x="950.0" y="550" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">21.33</text>
 <text x="1020.0" y="550" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="553.0" x2="1022.0" y1="578" y2="578" stroke="#e6eaef" stroke-width="1"/>
 <text x="579.0" y="608" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">24</text>
 <rect x="591.0" y="583" width="32" height="32" rx="7" fill="#5A1414" stroke="#FFB612" stroke-width="1.5"/>
 <text x="607.0" y="604" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">WSH</text>
 <text x="635.0" y="608" font-size="24" font-weight="600" fill="#0e1620">Commanders</text>
-<text x="950.0" y="608" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">24.17</text>
+<text x="950.0" y="608" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">23.83</text>
 <text x="1020.0" y="608" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="553.0" x2="1022.0" y1="636" y2="636" stroke="#e6eaef" stroke-width="1"/>
 <text x="579.0" y="666" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">25</text>
@@ -182,51 +182,51 @@
 <rect x="591.0" y="699" width="32" height="32" rx="7" fill="#A71930" stroke="#000000" stroke-width="1.5"/>
 <text x="607.0" y="720" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">ATL</text>
 <text x="635.0" y="724" font-size="24" font-weight="600" fill="#0e1620">Falcons</text>
-<text x="950.0" y="724" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">26.50</text>
+<text x="950.0" y="724" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">25.00</text>
 <text x="1020.0" y="724" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="553.0" x2="1022.0" y1="752" y2="752" stroke="#e6eaef" stroke-width="1"/>
 <text x="579.0" y="782" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">27</text>
-<rect x="591.0" y="757" width="32" height="32" rx="7" fill="#0C2340" stroke="#4B92DB" stroke-width="1.5"/>
-<text x="607.0" y="778" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">TEN</text>
-<text x="635.0" y="782" font-size="24" font-weight="600" fill="#0e1620">Titans</text>
-<text x="950.0" y="782" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">27.00</text>
+<rect x="591.0" y="757" width="32" height="32" rx="7" fill="#125740" stroke="#000000" stroke-width="1.5"/>
+<text x="607.0" y="778" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">NYJ</text>
+<text x="635.0" y="782" font-size="24" font-weight="600" fill="#0e1620">Jets</text>
+<text x="950.0" y="782" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">26.00</text>
 <text x="1020.0" y="782" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="553.0" x2="1022.0" y1="810" y2="810" stroke="#e6eaef" stroke-width="1"/>
 <text x="579.0" y="840" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">28</text>
-<rect x="591.0" y="815" width="32" height="32" rx="7" fill="#000000" stroke="#A5ACAF" stroke-width="1.5"/>
-<text x="607.0" y="836" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">LV</text>
-<text x="635.0" y="840" font-size="24" font-weight="600" fill="#0e1620">Raiders</text>
-<text x="950.0" y="840" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">27.83</text>
+<rect x="591.0" y="815" width="32" height="32" rx="7" fill="#0C2340" stroke="#4B92DB" stroke-width="1.5"/>
+<text x="607.0" y="836" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">TEN</text>
+<text x="635.0" y="840" font-size="24" font-weight="600" fill="#0e1620">Titans</text>
+<text x="950.0" y="840" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">26.67</text>
 <text x="1020.0" y="840" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="553.0" x2="1022.0" y1="868" y2="868" stroke="#e6eaef" stroke-width="1"/>
 <text x="579.0" y="898" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">29</text>
-<rect x="591.0" y="873" width="32" height="32" rx="7" fill="#125740" stroke="#000000" stroke-width="1.5"/>
-<text x="607.0" y="894" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">NYJ</text>
-<text x="635.0" y="898" font-size="24" font-weight="600" fill="#0e1620">Jets</text>
-<text x="950.0" y="898" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">28.17</text>
+<rect x="591.0" y="873" width="32" height="32" rx="7" fill="#000000" stroke="#A5ACAF" stroke-width="1.5"/>
+<text x="607.0" y="894" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">LV</text>
+<text x="635.0" y="898" font-size="24" font-weight="600" fill="#0e1620">Raiders</text>
+<text x="950.0" y="898" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">27.33</text>
 <text x="1020.0" y="898" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="553.0" x2="1022.0" y1="926" y2="926" stroke="#e6eaef" stroke-width="1"/>
 <text x="579.0" y="956" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">30</text>
-<rect x="591.0" y="931" width="32" height="32" rx="7" fill="#311D00" stroke="#FF3C00" stroke-width="1.5"/>
-<text x="607.0" y="952" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">CLE</text>
-<text x="635.0" y="956" font-size="24" font-weight="600" fill="#0e1620">Browns</text>
-<text x="950.0" y="956" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">30.00</text>
+<rect x="591.0" y="931" width="32" height="32" rx="7" fill="#97233F" stroke="#FFB612" stroke-width="1.5"/>
+<text x="607.0" y="952" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">ARI</text>
+<text x="635.0" y="956" font-size="24" font-weight="600" fill="#0e1620">Cardinals</text>
+<text x="950.0" y="956" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">28.33</text>
 <text x="1020.0" y="956" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="553.0" x2="1022.0" y1="984" y2="984" stroke="#e6eaef" stroke-width="1"/>
 <text x="579.0" y="1014" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">31</text>
-<rect x="591.0" y="989" width="32" height="32" rx="7" fill="#97233F" stroke="#FFB612" stroke-width="1.5"/>
-<text x="607.0" y="1010" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">ARI</text>
-<text x="635.0" y="1014" font-size="24" font-weight="600" fill="#0e1620">Cardinals</text>
-<text x="950.0" y="1014" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">30.00</text>
+<rect x="591.0" y="989" width="32" height="32" rx="7" fill="#311D00" stroke="#FF3C00" stroke-width="1.5"/>
+<text x="607.0" y="1010" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">CLE</text>
+<text x="635.0" y="1014" font-size="24" font-weight="600" fill="#0e1620">Browns</text>
+<text x="950.0" y="1014" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">28.33</text>
 <text x="1020.0" y="1014" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="553.0" x2="1022.0" y1="1042" y2="1042" stroke="#e6eaef" stroke-width="1"/>
 <text x="579.0" y="1072" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="25" font-weight="600" fill="#0e1620" text-anchor="end">32</text>
 <rect x="591.0" y="1047" width="32" height="32" rx="7" fill="#008E97" stroke="#FC4C02" stroke-width="1.5"/>
 <text x="607.0" y="1068" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">MIA</text>
 <text x="635.0" y="1072" font-size="24" font-weight="600" fill="#0e1620">Dolphins</text>
-<text x="950.0" y="1072" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">31.83</text>
+<text x="950.0" y="1072" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="21" font-weight="600" fill="#0e1620" text-anchor="end">30.33</text>
 <text x="1020.0" y="1072" font-family="'IBM Plex Mono','SF Mono',Menlo,monospace" font-size="18" font-weight="600" fill="#6a7887" text-anchor="end">NEW</text>
 <line x1="48" x2="1032" y1="1264" y2="1264" stroke="#e6eaef" stroke-width="1"/>
-<text x="48" y="1294" font-size="19" fill="#6a7887">Biggest disagreement: Eagles — 8 spots lower on one outlet than the consensus.</text>
+<text x="48" y="1294" font-size="19" fill="#6a7887">Biggest disagreement: Broncos — 25 spots lower on one outlet than the consensus.</text>
 <text x="48" y="1322" font-family="'Barlow Condensed','Arial Narrow',Impact,sans-serif" font-size="19" fill="#6a7887" letter-spacing="2.5">SCORE = AVERAGE RANK ACROSS EVERY OUTLET · LOWER IS BETTER</text>
 </svg>
