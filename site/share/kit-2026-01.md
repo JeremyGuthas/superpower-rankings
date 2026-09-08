@@ -16,28 +16,28 @@ Page to link:    https://superpowerrankings.com/2026/week-1/
 **Body**
 
 I average every major NFL power ranking into one consensus board —
-ESPN, NFL.com, CBS Sports, Sharp Football Analysis, Yahoo Sports, Bleacher Report this week. Full table with each outlet's rank for all 32:
+ESPN, NFL.com, CBS Sports, Sharp Football Analysis, Bleacher Report this week. Full table with each outlet's rank for all 32:
 https://superpowerrankings.com/2026/week-1/
 
 Top 10:
 
-1. Los Angeles Rams — 1.67
+1. Los Angeles Rams — 1.80
 2. Seattle Seahawks — 2.00
-3. Buffalo Bills — 4.67
-4. New England Patriots — 7.50
-5. Houston Texans — 8.00
-6. Denver Broncos — 9.17
-7. San Francisco 49ers — 9.50
-8. Baltimore Ravens — 9.67
-9. Philadelphia Eagles — 11.83
-10. Green Bay Packers — 11.83
+3. Buffalo Bills — 5.00
+4. New England Patriots — 7.80
+5. San Francisco 49ers — 8.60
+6. Houston Texans — 8.80
+7. Baltimore Ravens — 9.80
+8. Denver Broncos — 10.00
+9. Cincinnati Bengals — 11.60
+10. Green Bay Packers — 11.80
 
 What stood out:
 
-- **Denver Broncos** — NFL.com has them at #31, 25 spots lower than the consensus #6.
-- **Philadelphia Eagles** — NFL.com has them at #28, 19 spots lower than the consensus #9.
+- **Denver Broncos** — NFL.com has them at #31, 23 spots lower than the consensus #8.
+- **Green Bay Packers** — NFL.com has them at #25, 15 spots lower than the consensus #10.
 - **Kansas City Chiefs** — #18 in the consensus but #5 at the book (+1600); the market is the believer.
-- **Denver Broncos** — #6 in the consensus but #14 at the book (+2000); the media is the believer.
+- **Los Angeles Chargers** — #15 in the consensus but #7 at the book (+1700); the market is the believer.
 
 The whole archive is free JSON if anyone wants to play with it: https://superpowerrankings.com/api/
 
@@ -45,9 +45,9 @@ The whole archive is free JSON if anyone wants to play with it: https://superpow
 
 ## X / Bluesky
 
-2026 Week 1 NFL power rankings — 6 outlets averaged into one board.
+2026 Week 1 NFL power rankings — 5 outlets averaged into one board.
 
-Denver Broncos — NFL.com has them at #31, 25 spots lower than the consensus #6.
+Denver Broncos — NFL.com has them at #31, 23 spots lower than the consensus #8.
 
 Full 32: https://superpowerrankings.com/2026/week-1/
 
@@ -55,7 +55,7 @@ Full 32: https://superpowerrankings.com/2026/week-1/
 
 ## One-line version, for a group chat
 
-2026 Week 1 consensus rankings, 6 outlets averaged: https://superpowerrankings.com/2026/week-1/
+2026 Week 1 consensus rankings, 5 outlets averaged: https://superpowerrankings.com/2026/week-1/
 
 ---
 
