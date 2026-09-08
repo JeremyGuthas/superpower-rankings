@@ -124,7 +124,7 @@ main.wrap { padding: 28px 20px 64px; }
   display: flex; align-items: center; gap: 12px; padding: 15px 17px;
   border-bottom: 1px solid var(--line); flex-wrap: wrap;
 }
-.tablehead h2 { margin: 0; font-family: var(--display); font-size: 20px; font-weight: 700;
+.tablehead h1, .tablehead h2 { margin: 0; font-family: var(--display); font-size: 20px; font-weight: 700;
   text-transform: uppercase; letter-spacing: .01em; }
 .tablehead .spacer { margin-left: auto; }
 .scroller { overflow-x: auto; }
@@ -325,3 +325,79 @@ tr.consensus td { font-weight: 700; }
   max-width: 62ch; margin: 0 auto 10px; color: var(--muted);
   font-size: 11.5px; line-height: 1.55;
 }
+
+/* ---------- newsletter ---------- */
+/* Inline, once, in the reading flow. No overlay, no timed popup — the thing
+   that makes a content site feel cheap. */
+.signup {
+  display: grid; grid-template-columns: 1fr auto; gap: 6px 22px; align-items: center;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px 20px; margin: 0 0 28px; box-shadow: var(--shadow);
+}
+.signup h3 {
+  margin: 0 0 3px; font-family: var(--display); font-size: 20px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .01em;
+}
+.signup p { margin: 0; color: var(--muted); font-size: 13.5px; }
+.signup-form { display: flex; gap: 8px; }
+.signup-form input {
+  font: inherit; font-size: 14px; color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 7px; padding: 9px 12px; min-width: 230px;
+}
+.signup-form input::placeholder { color: var(--muted); }
+.signup-form button {
+  font-family: var(--display); font-size: 15px; font-weight: 600; letter-spacing: .06em;
+  text-transform: uppercase; color: #fff; background: var(--brand-2);
+  border: 0; border-radius: 7px; padding: 9px 18px; cursor: pointer;
+}
+.signup-form button:hover { background: var(--brand); }
+.signup-note { grid-column: 1 / -1; color: var(--muted); font-size: 11.5px; margin: 0; }
+.signup.compact { grid-template-columns: 1fr; margin-bottom: 16px; }
+.signup.compact .signup-form { margin-top: 4px; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- ads ---------- */
+/* Labelled, boxed off, and never inside the ranking table. An ad that is
+   clearly an ad costs less trust than one that pretends to be content. */
+.adslot {
+  display: block; margin: 0 0 28px; padding: 10px 12px 12px;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  text-align: center; overflow: hidden;
+}
+.adlabel {
+  display: block; font-family: var(--display); font-size: 10.5px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+}
+
+/* ---------- sportsbook partners ---------- */
+.books {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px 18px; margin: 0 0 28px;
+}
+.books h3 {
+  margin: 0 0 10px; font-family: var(--display); font-size: 17px; font-weight: 700;
+  text-transform: uppercase; color: var(--muted); letter-spacing: .08em;
+}
+.booklist { display: flex; flex-wrap: wrap; gap: 8px; }
+.book {
+  font-weight: 600; font-size: 14px; border: 1px solid var(--line);
+  border-radius: 8px; padding: 8px 14px; background: var(--bg);
+}
+.book:hover { border-color: var(--brand-2); }
+.rg { margin: 12px 0 0; color: var(--muted); font-size: 11.5px; line-height: 1.55; }
+
+@media (max-width: 720px) {
+  .signup { grid-template-columns: 1fr; }
+  .signup-form { flex-direction: column; }
+  .signup-form input { min-width: 0; width: 100%; }
+}
+
+.footnav {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 18px;
+  padding-bottom: 14px; margin-bottom: 4px; border-bottom: 1px solid var(--line-soft);
+}
+.footnav a { font-size: 12.5px; font-weight: 600; color: var(--ink-2); }
+.footnav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }

@@ -1,34 +1,36 @@
 import {
   loadIndex, loadSeason, latestWeek, movement, fmtDate, initTheme, rankChart,
   OUTLET_COLORS, shortName, renderNav, gapChip, signed, chip, heroBackground,
+  pageState, paths,
 } from './app.js';
 
 const $ = id => document.getElementById(id);
 initTheme($('theme'));
 
-const state = { data: null, abbr: null, week: null, show: new Set() };
+const state = { data: null, abbr: null, week: null, show: new Set(), defaultSeason: null };
 
 boot().catch(err => { $('heroName').textContent = err.message; });
 
 async function boot() {
-  const url = new URL(location.href);
+  const want = pageState();
   const idx = await loadIndex();
   const seasons = idx.seasons.map(s => s.season);
-  const asked = Number(url.searchParams.get('season'));
-  const season = seasons.includes(asked) ? asked : idx.default_season;
+  const season = seasons.includes(want.season) ? want.season : idx.default_season;
+  state.defaultSeason = idx.default_season;
   $('season').innerHTML = seasons.map(y => `<option value="${y}">${y}</option>`).join('');
   $('season').value = season;
   $('season').onchange = e => {
-    location.href = `team.html?season=${e.target.value}&t=${state.abbr}`;
+    const slug = state.data ? state.data.teamsBy[state.abbr].slug : '';
+    location.href = paths.team(e.target.value, slug,
+      Number(e.target.value) === state.defaultSeason);
   };
 
-  renderNav($('nav'), '', season);
+  renderNav($('nav'), 'team');
   const data = await loadSeason(season);
   state.data = data;
-  state.abbr = (url.searchParams.get('t') || 'LAR').toUpperCase();
+  state.abbr = want.team || 'LAR';
   if (!data.teamsBy[state.abbr]) state.abbr = data.teams[0].abbr;
-  const askedWeek = Number(url.searchParams.get('week'));
-  state.week = data.weeksBy[askedWeek] ? askedWeek : latestWeek(data);
+  state.week = data.weeksBy[want.week] ? want.week : latestWeek(data);
 
   $('week').innerHTML = data.weeks.slice().sort((a, b) => b.week - a.week)
     .map(w => `<option value="${w.week}">${w.label}</option>`).join('');
@@ -61,7 +63,9 @@ function render() {
   const weeks = d.weeks.map(w => w.week).sort((a, b) => a - b);
   $('prev').disabled = state.week === weeks[0];
   $('next').disabled = state.week === weeks[weeks.length - 1];
-  history.replaceState(null, '', `?season=${d.season}&t=${abbr}&week=${state.week}`);
+  const isDefault = d.season === state.defaultSeason;
+  history.replaceState(null, '', paths.team(d.season, team.slug, isDefault)
+    + (state.week === latestWeek(d) ? '' : `?week=${state.week}`));
   document.title = `${team.name} — Superpower Rankings`;
   $('teamPick').value = abbr;
 
@@ -94,7 +98,7 @@ function render() {
     state.legendReady = true;
   }
 
-  $('compareLink').href = `compare.html?season=${d.season}&week=${state.week}&a=${abbr}`;
+  $('compareLink').href = `${paths.compare()}?season=${d.season}&week=${state.week}&a=${abbr}`;
   renderContext(wk, t, d, team);
   renderOutlets(wk, t, d);
   renderGames(d, abbr);
@@ -187,7 +191,8 @@ function renderGames(d, abbr) {
     const after = rankAfter(g);
     tr.innerHTML = `
       <td class="l">${g.label}</td>
-      <td class="l"><a class="team" href="team.html?season=${d.season}&t=${g.opponent}">
+      <td class="l"><a class="team" href="${paths.team(d.season, opp.slug,
+        d.season === state.defaultSeason)}">
         <span class="chip" style="background:${opp.primary};width:20px;height:20px;flex-basis:20px;font-size:8px">${opp.abbr}</span>
         <span>${g.home ? '' : '@ '}${opp.nickname}</span></a></td>
       <td>${g.result ? `<span class="res ${g.result}">${g.result}</span>` : '<span style="color:var(--muted)">–</span>'}</td>
@@ -278,7 +283,8 @@ function renderContext(wk, t, d, team) {
       `<span style="color:var(--muted);font-weight:600">${ng.home ? 'vs' : '@'}</span>`);
     row.appendChild(chip(opp, 22));
     row.insertAdjacentHTML('beforeend',
-      `<a href="team.html?season=${d.season}&t=${ng.opponent}">${opp.nickname}</a>`);
+      `<a href="${paths.team(d.season, opp.slug, d.season === state.defaultSeason)}">${
+        opp.nickname}</a>`);
     cards.push(card('Next up', row,
       `${ng.label}${ng.opponent_rank ? ` &middot; opponent ranked #${ng.opponent_rank}` : ''}`));
   } else {

@@ -1,6 +1,6 @@
 /* Shared data access, formatting and chart helpers. */
 
-const DATA = '../data';
+const DATA = '/data';
 
 export async function loadIndex() {
   const res = await fetch(`${DATA}/index.json`, { cache: 'no-store' });
@@ -21,6 +21,35 @@ export async function loadSeason(season) {
 }
 
 export const latestWeek = d => Math.max(...d.weeks.map(w => w.week));
+
+/** Where a page starts.
+ *
+ * Pre-rendered pages have clean URLs (/2026/week-5/, /teams/…/) and hand the
+ * scripts their state in `window.__PAGE__`. Query strings still work, so the
+ * in-page selectors and any old link keep functioning. */
+export function pageState() {
+  const url = new URL(location.href);
+  const q = k => { const v = url.searchParams.get(k); return v === null ? null : v; };
+  const p = window.__PAGE__ || {};
+  const num = v => (v === null || v === undefined || v === '' ? null : Number(v));
+  return {
+    view: q('view') || p.view || 'board',
+    season: num(q('season')) ?? num(p.season),
+    week: num(q('week')) ?? num(p.week),
+    team: (q('t') || p.team || '').toUpperCase() || null,
+  };
+}
+
+/** Clean-URL builders, so links in the app match the pre-rendered structure. */
+export const paths = {
+  root: () => new URL('/', location.origin).pathname,
+  week: (season, week) => `/${season}/week-${week}/`,
+  season: season => `/${season}/`,
+  team: (season, slug, isDefault) =>
+    isDefault ? `/teams/${slug}/` : `/${season}/teams/${slug}/`,
+  compare: () => '/compare/',
+  accuracy: () => '/accuracy/',
+};
 
 /* ---------- formatting ---------- */
 
@@ -47,10 +76,11 @@ export function chip(team, size) {
   return el;
 }
 
-export function teamCell(team, { division = true, link = true } = {}) {
+export function teamCell(team, { division = true, link = true, season = null,
+                                 isDefault = true } = {}) {
   const wrap = document.createElement(link ? 'a' : 'span');
   wrap.className = 'team';
-  if (link) wrap.href = `team.html?t=${team.abbr}`;
+  if (link) wrap.href = paths.team(season, team.slug, isDefault);
   wrap.appendChild(chip(team));
   const txt = document.createElement('span');
   txt.innerHTML = `<span class="nm">${team.name}</span>` +
@@ -253,15 +283,14 @@ export const onColor = hex => (luminance(hex) > 0.42 ? '#101820' : '#ffffff');
 
 /** The one place the nav is defined, so every page carries the same one. */
 export const NAV = [
-  ['index.html', 'Rankings'],
-  ['compare.html', 'Compare'],
-  ['accuracy.html', 'Outlet accuracy'],
+  ['/', 'Rankings', 'board'],
+  ['/compare/', 'Compare', 'compare'],
+  ['/accuracy/', 'Outlet accuracy', 'accuracy'],
 ];
 
-export function renderNav(host, current, season) {
-  const q = season ? `?season=${season}` : '';
-  host.insertAdjacentHTML('afterbegin', NAV.map(([href, label]) =>
-    `<a href="${href}${q}"${href === current ? ' aria-current="page"' : ''}>${label}</a>`).join(''));
+export function renderNav(host, current) {
+  host.insertAdjacentHTML('afterbegin', NAV.map(([href, label, key]) =>
+    `<a href="${href}"${key === current ? ' aria-current="page"' : ''}>${label}</a>`).join(''));
 }
 
 /** Signed value with an explicit sign, for gap columns. */

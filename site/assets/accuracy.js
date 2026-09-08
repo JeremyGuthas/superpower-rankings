@@ -1,5 +1,6 @@
 import {
   loadIndex, loadSeason, fmtDate, initTheme, renderNav, rankChart, OUTLET_COLORS,
+, pageState, paths
 } from './app.js';
 
 const $ = id => document.getElementById(id);
@@ -11,14 +12,14 @@ boot().catch(err => { $('verdict').textContent = err.message; });
 
 async function boot() {
   const url = new URL(location.href);
+  const want = pageState();
   const idx = await loadIndex();
   const seasons = idx.seasons.map(s => s.season);
-  const asked = Number(url.searchParams.get('season'));
-  const season = seasons.includes(asked) ? asked : idx.default_season;
+  const season = seasons.includes(want.season) ? want.season : idx.default_season;
   $('season').innerHTML = seasons.map(y => `<option value="${y}">${y} season</option>`).join('');
   $('season').value = season;
-  $('season').onchange = e => { location.href = `accuracy.html?season=${e.target.value}`; };
-  renderNav($('nav'), 'accuracy.html', season);
+  $('season').onchange = e => { location.href = `${paths.accuracy()}?season=${e.target.value}`; };
+  renderNav($('nav'), 'accuracy');
 
   st.data = await loadSeason(season);
   addEventListener('resize', drawChart);

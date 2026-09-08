@@ -1,6 +1,7 @@
 import {
   loadIndex, loadSeason, latestWeek, chip, movement, fmtDate, initTheme,
   renderNav, rankChart, shortName, signed, readable,
+, pageState, paths
 } from './app.js';
 
 const $ = id => document.getElementById(id);
@@ -12,14 +13,14 @@ boot().catch(err => { $('cmp').innerHTML = `<tr><td class="empty">${err.message}
 
 async function boot() {
   const url = new URL(location.href);
+  const want = pageState();
   const idx = await loadIndex();
   const seasons = idx.seasons.map(s => s.season);
-  const asked = Number(url.searchParams.get('season'));
-  const season = seasons.includes(asked) ? asked : idx.default_season;
+  const season = seasons.includes(want.season) ? want.season : idx.default_season;
   $('season').innerHTML = seasons.map(y => `<option value="${y}">${y} season</option>`).join('');
   $('season').value = season;
-  $('season').onchange = e => { location.href = `compare.html?season=${e.target.value}`; };
-  renderNav($('nav'), 'compare.html', season);
+  $('season').onchange = e => { location.href = `${paths.compare()}?season=${e.target.value}`; };
+  renderNav($('nav'), 'compare');
 
   const d = await loadSeason(season);
   st.data = d;

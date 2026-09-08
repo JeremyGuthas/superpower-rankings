@@ -20,14 +20,16 @@ import shutil
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(HERE))
 from superpower.config import DOMAIN  # noqa: E402
 
 OUT = ROOT / "_site"
 
 
-ASSET_REF = re.compile(r'(?P<attr>src|href)="(?P<path>(?:\./)?assets/[^"?#]+)"')
+ASSET_REF = re.compile(r'(?P<attr>src|href)="(?P<path>(?:\.\./|\./)*assets/[^"?#]+)"')
 IMPORT_REF = re.compile(r"""(?P<kw>from|import)\s+['"](?P<path>\./[^'"?#]+\.js)['"]""")
 
 
@@ -65,11 +67,11 @@ def version_assets(out: Path) -> None:
             digests[f.relative_to(out).as_posix()] = hashlib.sha256(
                 f.read_bytes()).hexdigest()[:8]
 
-    for html in out.glob("*.html"):
+    for html in out.rglob("*.html"):
         text = html.read_text(encoding="utf-8")
 
         def sub_ref(m: re.Match) -> str:
-            path = m.group("path").lstrip("./")
+            path = re.sub(r"^(?:\.\./)+|^\./", "", m.group("path"))
             d = digests.get(path)
             return m.group(0) if not d else f'{m.group("attr")}="{m.group("path")}?v={d}"'
 
@@ -87,6 +89,17 @@ def main() -> None:
     # data/ sits alongside, which is where assets/app.js looks for it
     # (it fetches "../data" from /assets/, i.e. /data).
     shutil.copytree(ROOT / "data", OUT / "data", dirs_exist_ok=True)
+
+    # Turn the app into real pages before hashing assets, so the pre-rendered
+    # HTML picks up the versioned URLs too.
+    import prerender  # noqa: E402  (same directory)
+    prerender.main()
+
+    # The flat templates were copied in as the source for pre-rendering; the
+    # clean URLs supersede them, and leaving them served would be duplicate
+    # content competing with the pages we actually want indexed.
+    for stale in ("team.html", "compare.html", "accuracy.html"):
+        (OUT / stale).unlink(missing_ok=True)
 
     version_assets(OUT)
 

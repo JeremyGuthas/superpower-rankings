@@ -1,31 +1,29 @@
 import {
   loadIndex, loadSeason, latestWeek, teamCell, movement, chip, fmtDate, initTheme,
-  shortName, renderNav, gapChip, signed,
+  shortName, renderNav, gapChip, signed, pageState, paths,
 } from './app.js';
 
 const $ = id => document.getElementById(id);
 initTheme($('theme'));
 
-const state = { data: null, week: null, group: 'outlets', filter: '' };
+const state = { data: null, week: null, group: 'outlets', filter: '', defaultSeason: null };
 
 boot().catch(err => {
   $('rows').innerHTML = `<tr><td class="empty" colspan="9">${err.message}</td></tr>`;
 });
 
 async function boot() {
-  const url = new URL(location.href);
+  const want = pageState();
   const idx = await loadIndex();
   const seasons = idx.seasons.map(s => s.season);
-  const asked = Number(url.searchParams.get('season'));
-  const season = seasons.includes(asked) ? asked : idx.default_season;
+  const season = seasons.includes(want.season) ? want.season : idx.default_season;
+  state.defaultSeason = idx.default_season;
   $('season').innerHTML = seasons
     .map(y => `<option value="${y}">${y} season</option>`).join('');
   $('season').value = season;
-  $('season').onchange = e => {
-    location.href = `index.html?season=${e.target.value}`;
-  };
+  $('season').onchange = e => { location.href = paths.season(e.target.value); };
 
-  renderNav($('nav'), 'index.html', season);
+  renderNav($('nav'), 'board');
   const data = await loadSeason(season);
   state.data = data;
   $('divs').innerHTML = [...new Set(data.teams.map(t => t.division))].sort()
@@ -35,8 +33,7 @@ async function boot() {
       No rankings stored yet. Run <code>python -m superpower.run</code> to build a week.</td></tr>`;
     return;
   }
-  const askedWeek = Number(url.searchParams.get('week'));
-  state.week = data.weeksBy[askedWeek] ? askedWeek : latestWeek(data);
+  state.week = data.weeksBy[want.week] ? want.week : latestWeek(data);
 
   $('week').innerHTML = data.weeks
     .slice().sort((a, b) => b.week - a.week)
@@ -65,7 +62,9 @@ function render() {
   const weeks = d.weeks.map(w => w.week).sort((a, b) => a - b);
   $('prev').disabled = state.week === weeks[0];
   $('next').disabled = state.week === weeks[weeks.length - 1];
-  history.replaceState(null, '', `?season=${d.season}&week=${state.week}`);
+  // Keep the address bar on the clean URL for whatever the reader selected.
+  history.replaceState(null, '', state.week === latestWeek(d) && d.season === state.defaultSeason
+    ? '/' : paths.week(d.season, state.week));
 
   const used = wk.sources.map(s => s.id);
   $('boardTitle').textContent = `${d.season} ${wk.label} Superpower Rankings`;
@@ -97,7 +96,8 @@ function renderCards(wk, d) {
     big.className = 'big';
     big.appendChild(chip(t, 22));
     big.appendChild(Object.assign(document.createElement('a'),
-      { href: `team.html?season=${d.season}&t=${abbr}`, textContent: t.name }));
+      { href: paths.team(d.season, t.slug, d.season === state.defaultSeason),
+        textContent: t.name }));
     el.appendChild(big);
     el.insertAdjacentHTML('beforeend', `<div class="sub">${sub}</div>`);
     return el.outerHTML;
@@ -184,7 +184,8 @@ function renderTable(wk, d, used) {
 
     const tc = document.createElement('td');
     tc.className = 'l';
-    tc.appendChild(teamCell(team));
+    tc.appendChild(teamCell(team, { season: d.season,
+      isDefault: d.season === state.defaultSeason }));
     tr.appendChild(tc);
 
     tr.appendChild(cell(t.record, ''));
@@ -214,8 +215,9 @@ function renderTable(wk, d, used) {
       nx.className = 'l';
       if (ng) {
         const opp = d.teamsBy[ng.opponent];
-        nx.innerHTML = `${ng.home ? 'vs' : '@'} <a href="team.html?season=${d.season}&t=${
-          ng.opponent}"><b>${opp.abbr}</b></a>` +
+        nx.innerHTML = `${ng.home ? 'vs' : '@'} <a href="${
+          paths.team(d.season, opp.slug, d.season === state.defaultSeason)
+        }"><b>${opp.abbr}</b></a>` +
           (ng.opponent_rank ? ` <span class="flag">#${ng.opponent_rank}</span>` : '');
       } else {
         nx.innerHTML = '<span style="color:var(--muted)">season over</span>';
@@ -274,7 +276,8 @@ function renderSources(wk) {
 function renderStories(wk, d) {
   const s = wk.storylines || {};
   const name = a => d.teamsBy[a].name;
-  const link = a => `<a href="team.html?season=${d.season}&t=${a}"><b>${name(a)}</b></a>`;
+  const link = a => `<a href="${paths.team(d.season, d.teamsBy[a].slug,
+    d.season === state.defaultSeason)}"><b>${name(a)}</b></a>`;
 
   fillLane('laneOutliers', s.outliers, o => {
     const outlet = d.sourcesBy[o.source]?.name || o.source;

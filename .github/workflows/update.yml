@@ -32,6 +32,15 @@ env:
   # Used for links inside the weekly email digest. Override by setting a
   # repository variable named SITE_URL (e.g. for a custom domain).
   SITE_URL: ${{ vars.SITE_URL || 'https://superpowerrankings.com/' }}
+  # Monetisation is off until these repository variables exist. Set them under
+  # Settings -> Secrets and variables -> Actions -> Variables. Each surface
+  # renders nothing at all while its variable is unset.
+  AD_CLIENT: ${{ vars.AD_CLIENT }}
+  AD_SLOT_BOARD: ${{ vars.AD_SLOT_BOARD }}
+  AD_SLOT_CONTENT: ${{ vars.AD_SLOT_CONTENT }}
+  AD_SLOT_TEAM: ${{ vars.AD_SLOT_TEAM }}
+  NEWSLETTER_ACTION: ${{ vars.NEWSLETTER_ACTION }}
+  CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
 
 jobs:
   update:

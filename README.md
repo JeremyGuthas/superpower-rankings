@@ -17,8 +17,11 @@ superpower-rankings/
 │   ├── digest.py        the weekly email digest
 │   ├── games.py         schedule, scores and records
 │   └── season.py        the ranking-week calendar
-├── site/                the static website (no build step)
+├── site/                page templates for the app
 │   └── share/           generated weekly graphic + email digest
+├── tools/
+│   ├── prerender.py     turns the app into ~90 crawlable pages
+│   └── build_site.py    assembles _site/ and hashes asset URLs
 ├── data/                generated JSON — the site reads this
 ├── snapshot/            bundles the whole site into one shareable HTML file
 ├── tests/               73 tests over the parts that break silently
@@ -149,6 +152,55 @@ python -m superpower.run --send-digest you@example.com
 Nothing is ever emailed without `--send-digest`, and the command fails loudly
 rather than silently if the SMTP settings are missing.
 
+## Findability
+
+The pages are interactive and build themselves from JSON, which is fine for a
+reader and useless for a crawler. `tools/prerender.py` walks the archive and
+writes a real page for every week and every team, with the rankings already in
+the markup:
+
+```
+/                            current week
+/2026/                       season archive index
+/2026/week-5/                that week's board
+/teams/kansas-city-chiefs/   current-season team page
+/2025/teams/…/               archived team page
+/compare/  /accuracy/  /api/  /privacy/  /terms/
+/sitemap.xml  /robots.txt  /feed.xml
+```
+
+Each page gets a unique title and description, a canonical URL, Open Graph and
+Twitter cards backed by a real 1200x630 PNG (social platforms will not render
+an SVG), and JSON-LD — `ItemList` for a board, `SportsTeam` plus breadcrumbs for
+a team. The JavaScript still runs and takes over for interaction; it re-renders
+the same content it finds, so nothing on screen changes.
+
+Asset URLs carry a content hash, including the imports between ES modules,
+so a repeat visitor never runs the previous deploy's code.
+
+## Monetisation
+
+Every surface is off until configured, and renders **nothing** when off — no
+empty boxes, no placeholder text, no third-party scripts. Set these as
+repository variables (Settings → Secrets and variables → Actions → Variables):
+
+| Variable | Turns on |
+|---|---|
+| `NEWSLETTER_ACTION` | the inline signup form (any provider's form endpoint) |
+| `AD_CLIENT` + `AD_SLOT_*` | AdSense units between sections |
+| `CONTACT_EMAIL` | the contact address in the privacy and terms pages |
+
+Sportsbook affiliates live in `AFFILIATE_BOOKS` in `superpower/config.py` and
+are deliberately **not** environment-driven: populating them turns on betting
+CTAs, the responsible-gambling notice and paid-link disclosure across the site,
+and you should not do that until you are registered in the states you promote
+in. Affiliate links render `rel="sponsored nofollow noopener"` and carry the
+1-800-GAMBLER notice; there are tests asserting both.
+
+Placement rules the design follows: ads sit *between* sections and are labelled
+as advertising, never inside the ranking table. The newsletter appears inline
+once per page — no overlay, no timed popup. Nothing shifts layout after load.
+
 ## Automatic updates
 
 `.github/workflows/update.yml` runs every **Tuesday at 16:00 and 20:00 UTC**
@@ -202,6 +254,12 @@ They cover team-name matching (every alias every outlet uses), each extraction
 strategy, the rejection of incomplete or duplicated rankings, the Tuesday
 calendar rollover, the averaging and tie-breaks, movement deltas, and the guard
 that keeps rolling-URL sources out of backfilled history.
+
+They also cover the published site: that no monetisation markup appears while
+unconfigured, that ad units are labelled and affiliate links disclosed, that
+outbound source links are `nofollow`, that every head carries its canonical,
+Open Graph and structured data, and that all 32 teams render as real crawlable
+links in rank order.
 
 They also cover the derived views: American-odds conversion and de-vigging, the
 outlier threshold and its three-outlet minimum, strength-of-schedule splitting
