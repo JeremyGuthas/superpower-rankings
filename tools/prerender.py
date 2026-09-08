@@ -89,8 +89,12 @@ def set_head(doc: str, *, title: str, description: str, canonical: str,
     if config.BING_SITE_VERIFICATION:
         tags.append(f'<meta name="msvalidate.01" content="{E(config.BING_SITE_VERIFICATION)}">')
     if config.CF_ANALYTICS_TOKEN:
-        tags.append('<script defer src="https://static.cloudflareinsights.com/beacon.min.js" '
-                    'data-cf-beacon=\'{"token":"' + E(config.CF_ANALYTICS_TOKEN) + '"}\'></script>')
+        # Cloudflare's own snippet, verbatim apart from the token. Modules are
+        # deferred by default, so this costs nothing on first paint.
+        tags.append('<script type="module" '
+                    'src="https://static.cloudflareinsights.com/beacon.min.js" '
+                    'data-cf-beacon=\'{"token": "' + E(config.CF_ANALYTICS_TOKEN)
+                    + '"}\'></script>')
     for block in (jsonld or []):
         tags.append('<script type="application/ld+json">'
                     + json.dumps(block, separators=(",", ":")) + "</script>")
