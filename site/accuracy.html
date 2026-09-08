@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outlet accuracy — Superpower Rankings</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">
+      <span><span class="bolt">⚡</span> SUPERPOWER</span>
+      <small>NFL consensus rankings</small>
+    </a>
+    <nav id="nav"><button id="theme" type="button" title="Toggle dark mode">◐</button></nav>
+  </div>
+</header>
+
+<div class="weekbar">
+  <div class="wrap">
+    <select id="season" aria-label="Season"></select>
+    <span class="pill" id="basis"></span>
+    <div class="meta" id="meta"></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="callout" id="verdict"></div>
+
+  <section class="tablecard">
+    <div class="tablehead">
+      <h2>Who was actually right</h2>
+      <span class="spacer"></span>
+      <span class="pill">Lower error is better</span>
+    </div>
+    <div class="scroller">
+      <table>
+        <thead><tr>
+          <th class="l" style="width:34px">#</th>
+          <th class="l">Outlet</th>
+          <th>Weeks</th>
+          <th class="l" title="Mean absolute error: average distance, in places, from where teams finished">Avg error</th>
+          <th title="Rank correlation with the final order: 1.00 is perfect">Correlation</th>
+          <th title="Average error over the first six weeks — how early they saw it">Early call</th>
+          <th title="The week they were closest">Best</th>
+          <th title="The week they were furthest off">Worst</th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="chartcard" style="margin-top:16px">
+    <h2>Error by week</h2>
+    <p class="note">Average places away from where teams finished. Lines fall as the season
+      clarifies and the guesswork turns into evidence.</p>
+    <div class="legend" id="legend"></div>
+    <div id="chart"></div>
+  </section>
+
+  <section class="how" style="margin-top:22px">
+    <div class="tablehead" style="padding-left:0;border:0"><h2>How this is scored</h2></div>
+    <div class="card">
+      <p style="margin:0 0 8px">Every week each outlet commits to an order for all 32 teams.
+        Once games have been played that order can be checked against what actually happened.
+        The yardstick is the season's final order by win percentage, then point differential —
+        not an official playoff tiebreak, just <b>who won games</b>.</p>
+      <p style="margin:0 0 8px"><b>Avg error</b> is the mean absolute error: how many places off
+        the typical team was. <b>Correlation</b> is Spearman's rank correlation with that final
+        order, where 1.00 is a perfect call and 0 is noise.</p>
+      <p style="margin:0;color:var(--muted);font-size:13px">The Superpower consensus is scored on
+        exactly the same footing as the outlets that feed it, because the interesting question is
+        whether averaging beats its own ingredients.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap"><p id="stamp"></p></footer>
+<script type="module" src="assets/accuracy.js"></script>
+</body>
+</html>

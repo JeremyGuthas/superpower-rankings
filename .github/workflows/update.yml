@@ -26,6 +26,13 @@ concurrency:
   group: update-rankings
   cancel-in-progress: false
 
+env:
+  # Used for links inside the weekly email digest. Override by setting a
+  # repository variable named SITE_URL (e.g. for a custom domain).
+  SITE_URL: >-
+    ${{ vars.SITE_URL || format('https://{0}.github.io/{1}/',
+        github.repository_owner, github.event.repository.name) }}
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -42,6 +49,7 @@ jobs:
       - name: Fetch and aggregate
         run: |
           python -m superpower.run --verbose \
+            --base-url "$SITE_URL" \
             ${{ inputs.season && format('--season {0}', inputs.season) || '' }} \
             ${{ inputs.week && format('--week {0}', inputs.week) || '' }} \
             ${{ inputs.backfill && '--backfill' || '' }}
@@ -50,7 +58,7 @@ jobs:
         run: |
           git config user.name  "superpower-bot"
           git config user.email "actions@github.com"
-          git add data
+          git add data site/share
           if git diff --cached --quiet; then
             echo "No ranking changes this run."
             exit 0

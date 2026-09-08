@@ -6,13 +6,20 @@ import logging
 import sys
 from datetime import datetime, timezone
 
+from . import accuracy as accuracy_mod
+from . import analysis as analysis_mod
+from . import digest as digest_mod
+from . import graphic as graphic_mod
 from . import games as games_mod
+from . import odds as odds_mod
 from . import season as season_mod
 from . import store
 from .aggregate import build_week, consensus_notes
 from .extract import RankParseError, extract
 from .sources import SourceResult, enabled_sources
 from .teams import all_teams
+
+SHARE_DIR = store.ROOT / "site" / "share"
 
 log = logging.getLogger("superpower")
 
@@ -85,12 +92,42 @@ def build(season: int, week: int, sources, game_log: dict, live: bool = True) ->
     }
 
 
-def compile_site(season: int, game_log: dict) -> dict:
+def annotate_weeks(weeks: list[dict], game_log: dict, market: dict | None,
+                   live_season: bool) -> None:
+    """Attach the derived views to every stored week.
+
+    Done at compile time rather than fetch time so that changing a threshold
+    re-colours the whole archive without re-scraping anything.
+    """
+    if not weeks:
+        return
+    latest = max(w["week"] for w in weeks)
+    for w in weeks:
+        played = w.get("games_through", 0)
+        recs = games_mod.records(game_log, through_week=played)
+        # Betting odds are a snapshot of *now*. Pinning today's prices to an
+        # old week would invent history, so only the live week gets them.
+        odds = market if (live_season and w["week"] == latest) else None
+        analysis_mod.annotate(w, game_log, recs, games_mod.standings(recs), odds)
+
+
+def compile_site(season: int, game_log: dict, market: dict | None = None,
+                 live_season: bool = True) -> dict:
     weeks = store.all_weeks(season)
     src_meta: dict[str, dict] = {}
     for w in weeks:
         for s in w["sources"]:
             src_meta.setdefault(s["id"], {"id": s["id"], "name": s["name"]})
+
+    annotate_weeks(weeks, game_log, market, live_season)
+
+    final_recs = games_mod.records(game_log)
+    played = any(g["completed"] for log in game_log.values() for g in log)
+    scores = accuracy_mod.score_season(
+        weeks, games_mod.standings(final_recs), played,
+        {sid: meta["name"] for sid, meta in src_meta.items()},
+    )
+
     return {
         "season": season,
         "generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -98,6 +135,9 @@ def compile_site(season: int, game_log: dict) -> dict:
         "sources": list(src_meta.values()),
         "weeks": weeks,
         "games": game_log,
+        "records": final_recs,
+        "market": market or None,
+        "accuracy": scores,
     }
 
 
@@ -111,6 +151,13 @@ def main(argv: list[str] | None = None) -> int:
                    help="also rebuild every earlier week that has no data yet")
     p.add_argument("--compile-only", action="store_true",
                    help="skip fetching; just rebuild the site payload from stored weeks")
+    p.add_argument("--base-url", default="",
+                   help="public site URL, used for links in the email digest")
+    p.add_argument("--send-digest", nargs="+", metavar="EMAIL",
+                   help="email the digest to these addresses (needs SMTP_* env vars). "
+                        "Nothing is sent without this flag.")
+    p.add_argument("--no-share", action="store_true",
+                   help="skip writing the weekly graphic and digest")
     p.add_argument("-v", "--verbose", action="store_true")
     args = p.parse_args(argv)
 
@@ -124,6 +171,10 @@ def main(argv: list[str] | None = None) -> int:
     sources = enabled_sources(args.only, args.exclude)
 
     game_log = games_mod.team_games(games_mod.fetch_season(season, through_week=week))
+    live_season = season == season_mod.current_season()
+    market = odds_mod.fetch_super_bowl_odds(season, games_mod.TEAM_IDS) if live_season else {}
+    if live_season and not market:
+        log.warning("betting market unavailable — the market comparison will be hidden")
 
     if not args.compile_only:
         wanted = range(1, week + 1) if args.backfill else [week]
@@ -141,7 +192,7 @@ def main(argv: list[str] | None = None) -> int:
             print(f"week {wk:>2}: {len(payload['sources'])} sources, "
                   f"#1 {top}  ->  {path.name}")
 
-    site = compile_site(season, game_log)
+    site = compile_site(season, game_log, market, live_season)
     store.save_site_payload(site)
     print(f"compiled {len(site['weeks'])} week(s) -> data/season-{season}.json")
 
@@ -162,6 +213,20 @@ def main(argv: list[str] | None = None) -> int:
         "default_season": season,
         "seasons": seasons,
     })
+
+    if site["weeks"] and not args.no_share:
+        latest = max(site["weeks"], key=lambda w: w["week"])
+        for path in graphic_mod.write(latest, season, len(latest["sources"]), SHARE_DIR):
+            print(f"graphic -> {path.relative_to(store.ROOT)}")
+        for path in digest_mod.write(site, latest, SHARE_DIR, args.base_url):
+            print(f"digest  -> {path.relative_to(store.ROOT)}")
+
+        if args.send_digest:
+            doc = digest_mod.build(site, latest, args.base_url)
+            digest_mod.send(doc, f"Superpower Rankings — {season} {latest['label']}",
+                            args.send_digest)
+            print(f"digest emailed to {len(args.send_digest)} recipient(s)")
+
     return 0
 
 

@@ -1,12 +1,12 @@
 import {
   loadIndex, loadSeason, latestWeek, teamCell, movement, chip, fmtDate, initTheme,
-  shortName,
+  shortName, renderNav, gapChip, signed,
 } from './app.js';
 
 const $ = id => document.getElementById(id);
 initTheme($('theme'));
 
-const state = { data: null, week: null, cols: true, filter: '' };
+const state = { data: null, week: null, group: 'outlets', filter: '' };
 
 boot().catch(err => {
   $('rows').innerHTML = `<tr><td class="empty" colspan="9">${err.message}</td></tr>`;
@@ -25,8 +25,11 @@ async function boot() {
     location.href = `index.html?season=${e.target.value}`;
   };
 
+  renderNav($('nav'), 'index.html', season);
   const data = await loadSeason(season);
   state.data = data;
+  $('divs').innerHTML = [...new Set(data.teams.map(t => t.division))].sort()
+    .map(d => `<option value="div:${d}">${d}</option>`).join('');
   if (!data.weeks.length) {
     $('rows').innerHTML = `<tr><td class="empty" colspan="9">
       No rankings stored yet. Run <code>python -m superpower.run</code> to build a week.</td></tr>`;
@@ -43,7 +46,9 @@ async function boot() {
   $('week').onchange = e => { state.week = Number(e.target.value); render(); };
   $('prev').onclick = () => step(-1);
   $('next').onclick = () => step(+1);
-  $('cols').onchange = e => { state.cols = e.target.checked; render(); };
+  for (const [id, name] of [['gOutlets', 'outlets'], ['gContext', 'context']]) {
+    $(id).onclick = () => { state.group = state.group === name ? 'none' : name; render(); };
+  }
   $('filter').onchange = e => { state.filter = e.target.value; render(); };
   render();
 }
@@ -69,7 +74,12 @@ function render() {
     (wk.games_through ? ` &middot; through Week ${wk.games_through}` : ' &middot; preseason');
   $('stamp').textContent = `Data compiled ${fmtDate(d.generated)}.`;
 
+  const pad = String(state.week).padStart(2, '0');
+  $('shareSvg').href = `share/week-${d.season}-${pad}.svg`;
+  $('shareDigest').href = `share/digest-${d.season}-${pad}.html`;
+
   renderCards(wk, d);
+  renderStories(wk, d);
   renderTable(wk, d, used);
   renderSources(wk);
 }
@@ -128,7 +138,12 @@ function renderCards(wk, d) {
 
 function renderTable(wk, d, used) {
   const head = $('head');
-  const cols = state.cols ? used : [];
+  const outlets = state.group === 'outlets' ? used : [];
+  const context = state.group === 'context';
+  $('gOutlets').setAttribute('aria-pressed', String(state.group === 'outlets'));
+  $('gContext').setAttribute('aria-pressed', String(context));
+  const hasMarket = Object.values(wk.teams).some(t => t.market_rank);
+
   head.innerHTML = `
     <th class="l" style="width:34px">#</th>
     <th style="width:52px">Move</th>
@@ -137,11 +152,19 @@ function renderTable(wk, d, used) {
     <th title="Average of every outlet's rank — lower is better">Score</th>
     <th title="Best and worst rank any single outlet gave">High/Low</th>
     <th class="l" title="Gap between the highest and lowest rank">Spread</th>
-    ${cols.map(id => `<th class="src" title="${d.sourcesBy[id]?.name || id}">${shortName(d.sourcesBy[id]?.name || id)}</th>`).join('')}`;
+    ${outlets.map(id => `<th class="src" title="${d.sourcesBy[id]?.name || id}">${shortName(d.sourcesBy[id]?.name || id)}</th>`).join('')}
+    ${context ? `
+      <th class="l" title="The next opponent, with their Superpower rank">Next up</th>
+      <th title="Average Superpower rank of the remaining opponents — lower is tougher">Rest SOS</th>
+      <th title="Where results alone would rank this team">By record</th>
+      <th title="Ranking minus record rank — positive means the media rates them above their results">Gap</th>
+      ${hasMarket ? `<th title="Rank implied by Super Bowl odds">Market</th>
+      <th title="Superpower rank minus market rank — positive means the market is higher on them">Edge</th>` : ''}
+    ` : ''}`;
 
   const rows = Object.entries(wk.teams)
     .sort((a, b) => a[1].rank - b[1].rank)
-    .filter(([abbr]) => !state.filter || d.teamsBy[abbr].conference === state.filter);
+    .filter(([abbr]) => matchesFilter(d.teamsBy[abbr]));
 
   const maxSpread = Math.max(1, ...Object.values(wk.teams).map(t => t.spread));
   const frag = document.createDocumentFragment();
@@ -174,7 +197,7 @@ function renderTable(wk, d, used) {
       Math.round(t.spread / maxSpread * 100)}%"></i></span><span>${t.spread}</span></span>`;
     tr.appendChild(sp);
 
-    for (const id of cols) {
+    for (const id of outlets) {
       const td = document.createElement('td');
       td.className = 'src';
       const r = t.ranks[id];
@@ -184,10 +207,46 @@ function renderTable(wk, d, used) {
           dlt > 0 ? '▲' : '▼'}${Math.abs(dlt)}</span>` : ''}`;
       tr.appendChild(td);
     }
+
+    if (context) {
+      const ng = t.next_game;
+      const nx = document.createElement('td');
+      nx.className = 'l';
+      if (ng) {
+        const opp = d.teamsBy[ng.opponent];
+        nx.innerHTML = `${ng.home ? 'vs' : '@'} <a href="team.html?season=${d.season}&t=${
+          ng.opponent}"><b>${opp.abbr}</b></a>` +
+          (ng.opponent_rank ? ` <span class="flag">#${ng.opponent_rank}</span>` : '');
+      } else {
+        nx.innerHTML = '<span style="color:var(--muted)">season over</span>';
+      }
+      tr.appendChild(nx);
+
+      tr.appendChild(cell(t.sos_remaining != null ? t.sos_remaining.toFixed(1) : '–', 'num'));
+      tr.appendChild(cell(t.record_rank ?? '–', 'num'));
+
+      const dv = document.createElement('td');
+      dv.appendChild(gapChip(t.divergence ?? null));
+      tr.appendChild(dv);
+
+      if (hasMarket) {
+        tr.appendChild(cell(t.market_rank ?? '–', 'num'));
+        const mk = document.createElement('td');
+        mk.appendChild(gapChip(t.market_gap ?? null));
+        if (t.market_odds) mk.title = `Super Bowl odds ${t.market_odds}`;
+        tr.appendChild(mk);
+      }
+    }
     frag.appendChild(tr);
   }
   $('rows').textContent = '';
   $('rows').appendChild(frag);
+}
+
+function matchesFilter(team) {
+  if (!state.filter) return true;
+  if (state.filter.startsWith('div:')) return team.division === state.filter.slice(4);
+  return team.conference === state.filter;
 }
 
 const cell = (text, cls) => {
@@ -207,4 +266,48 @@ function renderSources(wk) {
       <b>${f.name}</b><span> not included this week</span><br>
       <span style="font-size:11.5px">${f.error}</span></li>`);
   $('srcList').innerHTML = items.join('') + misses.join('');
+}
+
+
+/* ---- storylines: the things only an aggregate can say ---- */
+
+function renderStories(wk, d) {
+  const s = wk.storylines || {};
+  const name = a => d.teamsBy[a].name;
+  const link = a => `<a href="team.html?season=${d.season}&t=${a}"><b>${name(a)}</b></a>`;
+
+  fillLane('laneOutliers', s.outliers, o => {
+    const outlet = d.sourcesBy[o.source]?.name || o.source;
+    const side = o.gap > 0 ? 'higher' : 'lower';
+    return `${link(o.team)} at <b>#${o.rank}</b> on ${outlet}
+      <span class="why">${Math.abs(o.gap)} spots ${side} than the consensus #${o.consensus}</span>`;
+  }, wk.sources.length < 3
+      ? 'At least three outlets are needed before one can be called an outlier.'
+      : 'Every outlet is within a few spots of the consensus this week.');
+
+  fillLane('laneDiverge', s.divergent, v => {
+    const side = v.gap > 0 ? 'ahead of' : 'behind';
+    return `${link(v.team)} <span class="flag ${v.gap > 0 ? 'hot' : 'cold'}">${signed(v.gap)}</span>
+      <span class="why">#${v.rank} in the rankings, #${v.record_rank} on results (${v.record})
+      — rated ${Math.abs(v.gap)} spots ${side} what they have earned</span>`;
+  }, wk.games_through
+      ? 'No team is far from where its record puts it.'
+      : 'No games played yet — this comparison starts once Week 1 is in the books.');
+
+  const meta = s.market_meta;
+  $('marketHead').textContent = meta?.provider
+    ? `Media vs. the market (${meta.provider})` : 'Media vs. the market';
+  fillLane('laneMarket', s.market, m => {
+    const believer = m.gap > 0 ? 'the market' : 'the media';
+    return `${link(m.team)} <span class="od">${m.odds}</span>
+      <span class="why">#${m.rank} in the consensus, #${m.market_rank} at the book
+      — ${believer} is the believer by ${Math.abs(m.gap)} spots</span>`;
+  }, meta ? 'The board and the betting market broadly agree.'
+          : 'Betting odds are not available for this week.');
+}
+
+function fillLane(id, items, render, empty) {
+  const host = $(id);
+  if (!items || !items.length) { host.innerHTML = `<li class="none">${empty}</li>`; return; }
+  host.innerHTML = items.slice(0, 4).map(i => `<li>${render(i)}</li>`).join('');
 }

@@ -10,12 +10,18 @@ superpower-rankings/
 │   ├── sources/         one adapter per outlet
 │   ├── extract.py       turns an article into a validated 1-32 ranking
 │   ├── aggregate.py     the Superpower Score
+│   ├── analysis.py      outliers, divergence, strength of schedule, market gap
+│   ├── accuracy.py      season-long scoring of the outlets against results
+│   ├── odds.py          betting futures, de-vigged and ranked
+│   ├── graphic.py       the weekly board as one shareable SVG
+│   ├── digest.py        the weekly email digest
 │   ├── games.py         schedule, scores and records
 │   └── season.py        the ranking-week calendar
 ├── site/                the static website (no build step)
+│   └── share/           generated weekly graphic + email digest
 ├── data/                generated JSON — the site reads this
 ├── snapshot/            bundles the whole site into one shareable HTML file
-├── tests/               43 tests over the parts that break silently
+├── tests/               73 tests over the parts that break silently
 └── .github/workflows/   the Tuesday cron
 ```
 
@@ -45,6 +51,31 @@ python -m http.server 8777       # then open http://localhost:8777/site/
 Alongside the score the site records each team's high/low, the spread between
 outlets (how divisive the team is), the standard deviation, and movement versus
 last week — both overall and *within each individual outlet*.
+
+## What the aggregate can say that no single outlet can
+
+Five derived views, all built from data already on the page:
+
+* **Outlet outliers** — when one outlet is six or more spots off the consensus
+  on a team, it is named. No single outlet can tell you it is the one out on a
+  limb; only the aggregate can.
+* **Ranking vs. results** — every team is also ranked by results alone (win
+  percentage, then point differential). Where that and the media ranking
+  disagree is where the week's real arguments are.
+* **Strength of schedule** — remaining opponents scored by the consensus
+  itself, so the board looks forward rather than only back. The board's
+  "Context" columns also show each team's next opponent and their rank.
+* **Media vs. the market** — DraftKings' Super Bowl futures, converted to
+  implied probability, de-vigged so the field sums to 1, and ranked 1-32. Where
+  the money and the media part ways is usually the most interesting gap.
+* **Outlet accuracy** — at any point in a season with completed games, every
+  outlet is scored against how teams actually finished, by mean absolute error
+  and Spearman correlation. The consensus is scored on the same footing,
+  because the question worth asking is whether averaging beats its ingredients.
+
+Two more views sit alongside the board: **Compare** puts any two teams side by
+side across every metric and both rank histories, and **Outlet accuracy** is the
+season-long scorecard.
 
 ### A note on the week numbers
 
@@ -98,6 +129,26 @@ Then check it: `python -m superpower.run --only usatoday --verbose`.
 If the shared extractor can't read the page, write a small adapter subclassing
 `Source` — see `sources/espn.py` for the pattern.
 
+## Weekly share output
+
+Every run writes two artefacts into `site/share/`, so they get a public URL when
+the site deploys:
+
+* `week-<season>-<NN>.svg` (plus `latest.svg`) — the full 32-team board as one
+  self-contained image, sized for social crops.
+* `digest-<season>-<NN>.html` (plus `latest-digest.html`) — an HTML email with
+  the top ten, this week's arguments, and links back to every source.
+
+`--no-share` skips both. To actually send the digest:
+
+```bash
+export SMTP_HOST=... SMTP_USER=... SMTP_PASS=... MAIL_FROM=...
+python -m superpower.run --send-digest you@example.com
+```
+
+Nothing is ever emailed without `--send-digest`, and the command fails loudly
+rather than silently if the SMTP settings are missing.
+
 ## Automatic updates
 
 `.github/workflows/update.yml` runs every **Tuesday at 16:00 and 20:00 UTC**
@@ -120,7 +171,14 @@ python -m superpower.run --season 2025 --week 18 --backfill
 python -m superpower.run --only espn cbs      # test one or two sources
 python -m superpower.run --exclude yahoo
 python -m superpower.run --compile-only       # rebuild site data, no fetching
+python -m superpower.run --no-share           # skip the graphic and digest
+python -m superpower.run --base-url https://example.com/  # links for the digest
 ```
+
+Because the derived views are computed at **compile** time rather than fetch
+time, `--compile-only` re-runs every analysis over the whole stored archive.
+Changing a threshold in `analysis.py` re-colours the entire history without
+re-scraping a single article.
 
 ## One-file snapshot
 
@@ -142,5 +200,12 @@ python -m pytest tests/ -q
 
 They cover team-name matching (every alias every outlet uses), each extraction
 strategy, the rejection of incomplete or duplicated rankings, the Tuesday
-calendar rollover, the averaging and tie-breaks, movement deltas, and the
-guard that keeps rolling-URL sources out of backfilled history.
+calendar rollover, the averaging and tie-breaks, movement deltas, and the guard
+that keeps rolling-URL sources out of backfilled history.
+
+They also cover the derived views: American-odds conversion and de-vigging, the
+outlier threshold and its three-outlet minimum, strength-of-schedule splitting
+played from remaining, the sign of every gap (so "the market is higher on them"
+never silently flips), the preseason guards that keep meaningless numbers off
+the page, and — the one that matters most — that a consensus of two outlets
+wrong in opposite directions scores better than either of them.

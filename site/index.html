@@ -17,9 +17,8 @@
       <span><span class="bolt">⚡</span> SUPERPOWER</span>
       <small>NFL consensus rankings</small>
     </a>
-    <nav>
+    <nav id="nav">
       <a href="#how">How it works</a>
-      <a href="#sources">Sources</a>
       <button id="theme" type="button" title="Toggle dark mode">◐</button>
     </nav>
   </div>
@@ -32,15 +31,18 @@
       <select id="week" aria-label="Select week"></select>
       <button id="next" type="button" title="Next week">›</button>
     </div>
-    <label class="pill" style="cursor:pointer">
-      <input type="checkbox" id="cols" checked style="margin:0">
-      Outlet columns
-    </label>
+    <div class="groups" role="group" aria-label="Extra columns">
+      <button type="button" id="gOutlets" aria-pressed="true">Outlets</button>
+      <button type="button" id="gContext" aria-pressed="false">Context</button>
+    </div>
     <select id="season" aria-label="Select season"></select>
     <select id="filter" aria-label="Filter by conference or division">
       <option value="">All 32 teams</option>
-      <option value="AFC">AFC</option>
-      <option value="NFC">NFC</option>
+      <optgroup label="Conference">
+        <option value="AFC">AFC</option>
+        <option value="NFC">NFC</option>
+      </optgroup>
+      <optgroup label="Division" id="divs"></optgroup>
     </select>
     <div class="meta" id="meta"></div>
   </div>
@@ -48,6 +50,15 @@
 
 <main class="wrap">
   <section class="cards" id="cards"></section>
+
+  <section class="stories" id="stories">
+    <h2>What to argue about this week</h2>
+    <div class="lanes">
+      <div class="lane"><h3>Outlet outliers</h3><ul id="laneOutliers"></ul></div>
+      <div class="lane"><h3>Ranking vs. results</h3><ul id="laneDiverge"></ul></div>
+      <div class="lane"><h3 id="marketHead">Media vs. the market</h3><ul id="laneMarket"></ul></div>
+    </div>
+  </section>
 
   <section class="tablecard">
     <div class="tablehead">
@@ -69,6 +80,16 @@
       <h2>This week's rankings came from</h2>
     </div>
     <ul id="srcList"></ul>
+  </section>
+
+  <section class="sources" id="share">
+    <div class="tablehead" style="padding-left:0;border:0"><h2>Share this week</h2></div>
+    <ul>
+      <li><b>Weekly graphic</b><span> — the full board as one image</span><br>
+        <a id="shareSvg" href="share/latest.svg" target="_blank" rel="noopener">Open the graphic ↗</a></li>
+      <li><b>Email digest</b><span> — top 10 plus this week's arguments</span><br>
+        <a id="shareDigest" href="share/latest-digest.html" target="_blank" rel="noopener">Preview the digest ↗</a></li>
+    </ul>
   </section>
 
   <section class="sources" id="how">

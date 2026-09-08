@@ -3,7 +3,7 @@
   "week": 1,
   "label": "Week 1",
   "games_through": 0,
-  "generated": "2026-09-08T04:20:15+00:00",
+  "generated": "2026-09-08T04:45:06+00:00",
   "sources": [
     {
       "id": "espn",
@@ -13,7 +13,7 @@
       "author": "NFL Nation",
       "published": "2026-08-31T12:58:27Z",
       "strategy": "headings",
-      "fetched": "2026-09-08T04:20:01Z"
+      "fetched": "2026-09-08T04:44:55Z"
     },
     {
       "id": "nfl",
@@ -23,7 +23,7 @@
       "author": "Nick Shook",
       "published": "2026-08-11T16:37:08.248Z",
       "strategy": "rank-label",
-      "fetched": "2026-09-08T04:20:05Z"
+      "fetched": "2026-09-08T04:44:58Z"
     },
     {
       "id": "cbs",
@@ -33,7 +33,7 @@
       "author": "Pete Prisco",
       "published": "2026-04-28T16:49:00+00:00",
       "strategy": "split-lines",
-      "fetched": "2026-09-08T04:20:07Z"
+      "fetched": "2026-09-08T04:44:58Z"
     },
     {
       "id": "sharpfootball",
@@ -43,7 +43,7 @@
       "author": "Raymond Summerlin",
       "published": "2026-09-02T07:00:01-04:00",
       "strategy": "headings",
-      "fetched": "2026-09-08T04:20:07Z"
+      "fetched": "2026-09-08T04:44:59Z"
     },
     {
       "id": "yahoo",
@@ -53,7 +53,7 @@
       "author": "Frank Schwab",
       "published": "2026-09-07T07:13:27Z",
       "strategy": "headings",
-      "fetched": "2026-09-08T04:20:11Z"
+      "fetched": "2026-09-08T04:45:02Z"
     },
     {
       "id": "bleacherreport",
@@ -63,7 +63,7 @@
       "author": "Gary Davenport",
       "published": "2026-09-07T11:00:00.000Z",
       "strategy": "headings",
-      "fetched": "2026-09-08T04:20:15Z"
+      "fetched": "2026-09-08T04:45:06Z"
     }
   ],
   "failed_sources": [

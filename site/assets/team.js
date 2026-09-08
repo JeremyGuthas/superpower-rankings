@@ -1,6 +1,6 @@
 import {
   loadIndex, loadSeason, latestWeek, movement, fmtDate, initTheme, rankChart,
-  OUTLET_COLORS, shortName,
+  OUTLET_COLORS, shortName, renderNav, gapChip, signed, chip,
 } from './app.js';
 
 const $ = id => document.getElementById(id);
@@ -22,6 +22,7 @@ async function boot() {
     location.href = `team.html?season=${e.target.value}&t=${state.abbr}`;
   };
 
+  renderNav($('nav'), '', season);
   const data = await loadSeason(season);
   state.data = data;
   state.abbr = (url.searchParams.get('t') || 'LAR').toUpperCase();
@@ -94,6 +95,8 @@ function render() {
     state.legendReady = true;
   }
 
+  $('compareLink').href = `compare.html?season=${d.season}&week=${state.week}&a=${abbr}`;
+  renderContext(wk, t, d, team);
   renderOutlets(wk, t, d);
   renderGames(d, abbr);
   renderWeekByWeek(d, abbr, outletIds);
@@ -248,3 +251,89 @@ function renderWeekByWeek(d, abbr, outletIds) {
   $('wbw').textContent = '';
   $('wbw').appendChild(frag);
 }
+
+
+/* ---- season context: forward-looking, and where the team is contested ---- */
+
+function renderContext(wk, t, d, team) {
+  const card = (title, main, sub) => {
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.innerHTML = `<h3>${title}</h3>`;
+    const big = document.createElement('div');
+    big.className = 'big';
+    if (typeof main === 'string') big.innerHTML = main; else big.appendChild(main);
+    el.appendChild(big);
+    el.insertAdjacentHTML('beforeend', `<div class="sub">${sub}</div>`);
+    return el;
+  };
+
+  const cards = [];
+
+  const ng = t.next_game;
+  if (ng) {
+    const opp = d.teamsBy[ng.opponent];
+    const row = document.createElement('span');
+    row.style.cssText = 'display:inline-flex;align-items:center;gap:8px';
+    row.insertAdjacentHTML('beforeend',
+      `<span style="color:var(--muted);font-weight:600">${ng.home ? 'vs' : '@'}</span>`);
+    row.appendChild(chip(opp, 22));
+    row.insertAdjacentHTML('beforeend',
+      `<a href="team.html?season=${d.season}&t=${ng.opponent}">${opp.nickname}</a>`);
+    cards.push(card('Next up', row,
+      `${ng.label}${ng.opponent_rank ? ` &middot; opponent ranked #${ng.opponent_rank}` : ''}`));
+  } else {
+    cards.push(card('Next up', '<span style="color:var(--muted)">Season complete</span>',
+      'No fixtures remaining'));
+  }
+
+  cards.push(card('Remaining schedule',
+    t.sos_remaining != null
+      ? `<span class="score">${t.sos_remaining.toFixed(1)}</span>`
+      : '<span style="color:var(--muted)">–</span>',
+    t.sos_rank
+      ? `${ordinalish(t.sos_rank)} toughest of 32 &middot; ${t.opponents_remaining} to play`
+      : 'Average Superpower rank of remaining opponents'));
+
+  const rec = document.createElement('span');
+  rec.style.cssText = 'display:inline-flex;align-items:center;gap:8px';
+  rec.innerHTML = t.record_rank
+    ? `<span class="score">#${t.record_rank}</span>` : '<span style="color:var(--muted)">–</span>';
+  if (t.divergence != null) rec.appendChild(gapChip(t.divergence));
+  cards.push(card('By record alone', rec,
+    t.divergence == null ? 'Available once games are played'
+      : t.divergence > 0
+        ? `Ranked ${Math.abs(t.divergence)} spots better than results justify`
+        : t.divergence < 0
+          ? `Ranked ${Math.abs(t.divergence)} spots below what results justify`
+          : 'Ranking and results agree exactly'));
+
+  if (t.market_rank) {
+    const mk = document.createElement('span');
+    mk.style.cssText = 'display:inline-flex;align-items:center;gap:8px';
+    mk.innerHTML = `<span class="score">${t.market_odds}</span>`;
+    if (t.market_gap != null) mk.appendChild(gapChip(t.market_gap));
+    const pct = t.market_probability != null
+      ? ` &middot; ${(t.market_probability * 100).toFixed(1)}% to win it all` : '';
+    cards.push(card('Super Bowl market', mk, `Market rank #${t.market_rank}${pct}`));
+  }
+
+  $('context').textContent = '';
+  cards.slice(0, 4).forEach(c => $('context').appendChild(c));
+
+  const o = t.outlier;
+  const note = $('outlierNote');
+  if (o) {
+    const outlet = d.sourcesBy[o.source]?.name || o.source;
+    const side = o.gap > 0 ? 'higher' : 'lower';
+    note.style.display = '';
+    note.innerHTML = `<b>${outlet} is the outlier on ${team.name}.</b> They have them at
+      <b>#${o.rank}</b> — ${Math.abs(o.gap)} spots ${side} than the consensus at #${t.rank},
+      the widest gap any single outlet has on this team.`;
+  } else {
+    note.style.display = 'none';
+  }
+}
+
+const ordinalish = n => n + (['th', 'st', 'nd', 'rd'][(n % 100 - 20) % 10]
+  || ['th', 'st', 'nd', 'rd'][n % 100] || 'th');

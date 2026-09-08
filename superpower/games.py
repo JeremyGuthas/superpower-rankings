@@ -20,6 +20,11 @@ REGULAR_SEASON_WEEKS = 18
 POSTSEASON_WEEKS = {1: "Wild Card", 2: "Divisional", 3: "Conference", 5: "Super Bowl"}
 
 
+#: ESPN numeric team id -> canonical abbreviation, filled in as scoreboards
+#: are parsed so the odds feed can be joined without extra requests.
+TEAM_IDS: dict[str, str] = {}
+
+
 def _fetch_week(season: int, week: int, stype: int, cache_hours: float) -> list[dict]:
     url = SCOREBOARD.format(season=season, stype=stype, week=week)
     try:
@@ -34,10 +39,12 @@ def _fetch_week(season: int, week: int, stype: int, cache_hours: float) -> list[
         status = comp.get("status", {}).get("type", {})
         sides = {}
         for c in comp.get("competitors", []):
-            abbr = resolve(c.get("team", {}).get("abbreviation", "")) or \
-                   resolve(c.get("team", {}).get("displayName", ""))
+            team = c.get("team", {})
+            abbr = resolve(team.get("abbreviation", "")) or resolve(team.get("displayName", ""))
             if not abbr:
                 continue
+            if team.get("id"):
+                TEAM_IDS[str(team["id"])] = abbr
             score = c.get("score")
             sides[c.get("homeAway", "home")] = {
                 "team": abbr,
@@ -64,14 +71,19 @@ def _fetch_week(season: int, week: int, stype: int, cache_hours: float) -> list[
 
 def fetch_season(season: int, through_week: int | None = None,
                  include_postseason: bool = True) -> list[dict]:
-    """All games for a season. Recent weeks get a short cache, old ones a long one."""
-    last = through_week or REGULAR_SEASON_WEEKS
+    """Every fixture in the season, played or not.
+
+    `through_week` only tunes caching — the full schedule is always returned,
+    because strength of schedule and "next opponent" need future fixtures.
+    """
+    live = through_week or REGULAR_SEASON_WEEKS
     out: list[dict] = []
-    for week in range(1, min(last, REGULAR_SEASON_WEEKS) + 1):
-        # Weeks that are done never change; only the newest two are volatile.
-        cache = 1 if week >= last - 1 else 24 * 14
+    for week in range(1, REGULAR_SEASON_WEEKS + 1):
+        # Finished weeks never change; the current one and anything ahead of
+        # it can still move, so they get a short cache.
+        cache = 24 * 14 if week < live - 1 else 1
         out.extend(_fetch_week(season, week, 2, cache))
-    if include_postseason and last >= REGULAR_SEASON_WEEKS:
+    if include_postseason and live >= REGULAR_SEASON_WEEKS:
         for week in POSTSEASON_WEEKS:
             out.extend(_fetch_week(season, week, 3, 24))
     return out
@@ -105,6 +117,16 @@ def team_games(games: list[dict]) -> dict[str, list[dict]]:
     for log_ in by_team.values():
         log_.sort(key=lambda x: (x["season_type"] == "post", x["week"]))
     return by_team
+
+
+def standings(recs: dict[str, dict]) -> dict[str, int]:
+    """Rank all 32 teams by result alone: win pct, then point differential.
+
+    This is the yardstick the site scores outlets against — not an official
+    playoff-seeding tiebreak, just "who actually won games".
+    """
+    order = sorted(recs, key=lambda a: (-recs[a]["win_pct"], -recs[a]["differential"], a))
+    return {abbr: i for i, abbr in enumerate(order, start=1)}
 
 
 def records(by_team: dict[str, list[dict]], through_week: int | None = None) -> dict[str, dict]:

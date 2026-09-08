@@ -17,6 +17,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 DATA = ROOT / "data"
+SITE_CSS = ROOT / "site" / "assets" / "style.css"
 
 
 def build() -> str:
@@ -33,8 +34,13 @@ def build() -> str:
         separators=(",", ":"),
     ).replace("</", "<\\/")   # never let team text close the script tag early
 
+    # The site's stylesheet is inlined verbatim rather than copied, so the
+    # snapshot cannot drift away from the hosted design.
+    head = (HERE / "head.html").read_text(encoding="utf-8").replace(
+        "__SITE_CSS__", SITE_CSS.read_text(encoding="utf-8"))
+
     return "\n".join([
-        (HERE / "head.html").read_text(encoding="utf-8"),
+        head,
         (HERE / "body.html").read_text(encoding="utf-8"),
         f'<script id="spr-data" type="application/json">{blob}</script>',
         "<script>window.__SPR__ = "

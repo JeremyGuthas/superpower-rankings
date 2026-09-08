@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compare teams — Superpower Rankings</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">
+      <span><span class="bolt">⚡</span> SUPERPOWER</span>
+      <small>NFL consensus rankings</small>
+    </a>
+    <nav id="nav"><button id="theme" type="button" title="Toggle dark mode">◐</button></nav>
+  </div>
+</header>
+
+<div class="weekbar">
+  <div class="wrap">
+    <div class="weekpick">
+      <button id="prev" type="button" title="Previous week">‹</button>
+      <select id="week" aria-label="Week"></select>
+      <button id="next" type="button" title="Next week">›</button>
+    </div>
+    <select id="season" aria-label="Season"></select>
+    <select id="teamA" aria-label="First team"></select>
+    <select id="teamB" aria-label="Second team"></select>
+    <button class="btn" id="swap" type="button" title="Swap sides">⇄</button>
+    <div class="meta" id="meta"></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="compare-head">
+    <div class="cside" id="sideA"></div>
+    <div class="cvs">VS</div>
+    <div class="cside" id="sideB"></div>
+  </section>
+
+  <section class="tablecard">
+    <div class="tablehead"><h2 id="cmpTitle">Head to head</h2></div>
+    <div class="scroller">
+      <table class="cmp"><tbody id="cmp"></tbody></table>
+    </div>
+  </section>
+
+  <section class="chartcard" style="margin-top:16px">
+    <h2>Rank by week</h2>
+    <p class="note">Both teams' Superpower rank across the season. Rank 1 sits at the top.</p>
+    <div id="chart"></div>
+  </section>
+
+  <section class="tablecard" style="margin-top:16px">
+    <div class="tablehead"><h2>Meetings this season</h2></div>
+    <div class="scroller">
+      <table><thead><tr>
+        <th class="l">Week</th><th class="l">Matchup</th><th>Result</th><th>Score</th>
+      </tr></thead><tbody id="h2h"></tbody></table>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap"><p id="stamp"></p></footer>
+<script type="module" src="assets/compare.js"></script>
+</body>
+</html>

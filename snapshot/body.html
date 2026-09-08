@@ -1,12 +1,14 @@
 <header class="masthead">
   <div class="wrap">
-    <a class="wordmark" id="home" href="#" aria-label="Superpower Rankings home">
-      <b>⚡ Superpower</b><span>NFL consensus rankings</span>
+    <a class="wordmark" href="#" id="home">
+      <span><span class="bolt">⚡</span> SUPERPOWER</span>
+      <small>NFL consensus rankings</small>
     </a>
     <nav>
-      <button type="button" id="navBoard">Rankings</button>
-      <button type="button" id="navHow">How it works</button>
-      <button type="button" id="theme" title="Toggle dark mode">◐</button>
+      <button class="navlink" type="button" data-view="board">Rankings</button>
+      <button class="navlink" type="button" data-view="compare">Compare</button>
+      <button class="navlink" type="button" data-view="accuracy">Outlet accuracy</button>
+      <button id="theme" type="button" title="Toggle dark mode">◐</button>
     </nav>
   </div>
 </header>
@@ -18,76 +20,102 @@
       <h1 id="heroName"></h1>
       <div class="sub" id="heroSub"></div>
     </div>
-    <div class="stats" id="heroStats"></div>
+    <div class="statline" id="heroStats"></div>
   </div>
 </section>
 
-<div class="bar">
+<div class="weekbar">
   <div class="wrap">
-    <div class="stepper">
-      <button type="button" id="prev" title="Previous week">‹</button>
+    <div class="weekpick" id="weekPick">
+      <button id="prev" type="button" title="Previous week">‹</button>
       <select id="week" aria-label="Week"></select>
-      <button type="button" id="next" title="Next week">›</button>
+      <button id="next" type="button" title="Next week">›</button>
     </div>
     <select id="season" aria-label="Season"></select>
+    <div class="groups hidden" id="groups" role="group" aria-label="Extra columns">
+      <button type="button" id="gOutlets" aria-pressed="true">Outlets</button>
+      <button type="button" id="gContext" aria-pressed="false">Context</button>
+    </div>
+    <select id="filter" class="hidden" aria-label="Filter">
+      <option value="">All 32 teams</option>
+      <optgroup label="Conference">
+        <option value="AFC">AFC</option><option value="NFC">NFC</option>
+      </optgroup>
+      <optgroup label="Division" id="divs"></optgroup>
+    </select>
     <select id="teamPick" class="hidden" aria-label="Team"></select>
-    <label class="toggle" id="colsWrap"><input type="checkbox" id="cols" checked> Outlet columns</label>
-    <select id="filter" aria-label="Conference"><option value="">All 32</option>
-      <option value="AFC">AFC</option><option value="NFC">NFC</option></select>
-    <div class="stamp" id="stamp"></div>
+    <select id="teamB" class="hidden" aria-label="Second team"></select>
+    <button class="btn hidden" id="swap" type="button" title="Swap sides">⇄</button>
+    <div class="meta" id="meta"></div>
   </div>
 </div>
 
 <main class="wrap">
-  <!-- board view -->
+  <div class="snapnote" id="snapnote"></div>
+
+  <!-- ---------- board ---------- -->
   <div id="viewBoard">
-    <section class="tiles" id="tiles"></section>
-    <section class="board">
-      <div class="boardhead">
-        <h2 id="boardTitle"></h2>
-        <span class="tag" id="srcCount"></span>
-        <span class="spacer"></span>
-        <span class="tag">Score = average rank</span>
+    <section class="cards" id="cards"></section>
+
+    <section class="stories">
+      <h2>What to argue about this week</h2>
+      <div class="lanes">
+        <div class="lane"><h3>Outlet outliers</h3><ul id="laneOutliers"></ul></div>
+        <div class="lane"><h3>Ranking vs. results</h3><ul id="laneDiverge"></ul></div>
+        <div class="lane"><h3 id="marketHead">Media vs. the market</h3><ul id="laneMarket"></ul></div>
       </div>
-      <div class="scroll">
+    </section>
+
+    <section class="tablecard">
+      <div class="tablehead">
+        <h2 id="boardTitle"></h2>
+        <span class="pill" id="srcCount"></span>
+        <span class="spacer"></span>
+        <span class="pill">Score = average rank</span>
+      </div>
+      <div class="scroller">
         <table><thead><tr id="head"></tr></thead><tbody id="rows"></tbody></table>
       </div>
     </section>
 
     <section class="sources">
-      <h2>Where this week's ranks came from</h2>
+      <div class="tablehead" style="padding-left:0;border:0">
+        <h2>Where this week's ranks came from</h2>
+      </div>
       <ul id="srcList"></ul>
     </section>
 
-    <section class="how" id="how">
-      <h2>How it works</h2>
-      <div class="body">
-        <p>Every Tuesday, once the week's power rankings have been published, the aggregator
-          finds each outlet's new article, reads all 32 teams out of it, and averages the ranks.
-          A team's <b>Superpower Score</b> is that average — lower is better. Ties break on median
-          rank, then on the team's single best ranking.</p>
-        <p>A source only counts when a complete, duplicate-free 1&ndash;32 ranking can be read out
-          of its article. Anything short of that is left out of the average for the week and listed
-          above as a miss, so the score is never built on a half-parsed list.</p>
+    <section class="sources" id="how">
+      <div class="tablehead" style="padding-left:0;border:0"><h2>How it works</h2></div>
+      <div class="card" style="max-width:66ch">
+        <p style="margin:0 0 8px">Every Tuesday, once the week's power rankings have been
+          published, the aggregator finds each outlet's new article, reads all 32 teams out of
+          it, and averages the ranks. A team's <b>Superpower Score</b> is that average — lower
+          is better. Ties break on median rank, then on the team's single best ranking.</p>
+        <p style="margin:0;color:var(--muted);font-size:13px">A source only counts when a
+          complete, duplicate-free 1&ndash;32 ranking can be read out of its article. Anything
+          short of that is left out of the average for the week and listed above as a miss, so
+          the score is never built on a half-parsed list.</p>
       </div>
     </section>
   </div>
 
-  <!-- team view -->
+  <!-- ---------- team ---------- -->
   <div id="viewTeam" class="hidden">
-    <div class="split">
-      <section class="panel">
-        <div class="ph"><h2>Rank by week</h2></div>
-        <div class="pb">
-          <p class="note">Rank 1 sits at the top. Toggle an outlet to see how its ranking
-            compares with the consensus.</p>
-          <div class="legend" id="legend"></div>
-          <div id="chart"></div>
-        </div>
+    <section class="cards" id="context"></section>
+    <div class="callout hidden" id="outlierNote"></div>
+
+    <div class="grid2">
+      <section class="chartcard">
+        <h2>Superpower rank by week</h2>
+        <p class="note">Rank 1 sits at the top. Toggle an outlet to see how its ranking
+          compares with the consensus.</p>
+        <div class="legend" id="legend"></div>
+        <div id="chart"></div>
       </section>
-      <section class="panel">
-        <div class="ph"><h2 id="outletTitle">Outlet by outlet</h2></div>
-        <div class="scroll">
+      <section class="tablecard">
+        <div class="tablehead"><h2 id="outletTitle">Outlet by outlet</h2></div>
+        <div class="scroller">
           <table><thead><tr>
             <th class="l">Outlet</th><th>Rank</th><th>Move</th><th class="l">Article</th>
           </tr></thead><tbody id="outlets"></tbody></table>
@@ -95,10 +123,10 @@
       </section>
     </div>
 
-    <section class="panel" style="margin-top:15px">
-      <div class="ph"><h2>Game log</h2><span class="spacer"></span>
-        <span class="tag" id="recordPill"></span></div>
-      <div class="scroll">
+    <section class="tablecard" style="margin-top:16px">
+      <div class="tablehead"><h2>Game log</h2><span class="spacer"></span>
+        <span class="pill" id="recordPill"></span></div>
+      <div class="scroller">
         <table><thead><tr>
           <th class="l">Week</th><th class="l">Opponent</th><th>Result</th><th>Score</th>
           <th>Margin</th><th class="l">Rank after</th>
@@ -106,10 +134,87 @@
       </div>
     </section>
 
-    <section class="panel" style="margin-top:15px">
-      <div class="ph"><h2>Week by week</h2></div>
-      <div class="scroll">
+    <section class="tablecard" style="margin-top:16px">
+      <div class="tablehead"><h2>Week by week</h2></div>
+      <div class="scroller">
         <table><thead><tr id="wbwHead"></tr></thead><tbody id="wbw"></tbody></table>
+      </div>
+    </section>
+  </div>
+
+  <!-- ---------- compare ---------- -->
+  <div id="viewCompare" class="hidden">
+    <section class="compare-head">
+      <div class="cside" id="sideA"></div>
+      <div class="cvs">VS</div>
+      <div class="cside" id="sideB"></div>
+    </section>
+
+    <section class="tablecard">
+      <div class="tablehead"><h2 id="cmpTitle">Head to head</h2></div>
+      <div class="scroller"><table class="cmp"><tbody id="cmp"></tbody></table></div>
+    </section>
+
+    <section class="chartcard" style="margin-top:16px">
+      <h2>Rank by week</h2>
+      <p class="note">Both teams' Superpower rank across the season. Rank 1 sits at the top.</p>
+      <div id="cmpChart"></div>
+    </section>
+
+    <section class="tablecard" style="margin-top:16px">
+      <div class="tablehead"><h2>Meetings this season</h2></div>
+      <div class="scroller">
+        <table><thead><tr>
+          <th class="l">Week</th><th class="l">Matchup</th><th>Result</th><th>Score</th>
+        </tr></thead><tbody id="h2h"></tbody></table>
+      </div>
+    </section>
+  </div>
+
+  <!-- ---------- accuracy ---------- -->
+  <div id="viewAccuracy" class="hidden">
+    <div class="callout" id="verdict"></div>
+
+    <section class="tablecard">
+      <div class="tablehead">
+        <h2>Who was actually right</h2>
+        <span class="spacer"></span>
+        <span class="pill">Lower error is better</span>
+      </div>
+      <div class="scroller">
+        <table>
+          <thead><tr>
+            <th class="l" style="width:34px">#</th>
+            <th class="l">Outlet</th>
+            <th>Weeks</th>
+            <th class="l" title="Average distance, in places, from where teams finished">Avg error</th>
+            <th title="Rank correlation with the final order">Correlation</th>
+            <th title="Average error over the first six weeks">Early call</th>
+            <th>Best</th><th>Worst</th>
+          </tr></thead>
+          <tbody id="accRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="chartcard" style="margin-top:16px">
+      <h2>Error by week</h2>
+      <p class="note">Average places away from where teams finished. Lines fall as the season
+        clarifies and the guesswork turns into evidence.</p>
+      <div class="legend" id="accLegend"></div>
+      <div id="accChart"></div>
+    </section>
+
+    <section class="sources" style="margin-top:22px">
+      <div class="tablehead" style="padding-left:0;border:0"><h2>How this is scored</h2></div>
+      <div class="card" style="max-width:66ch">
+        <p style="margin:0 0 8px">The yardstick is the season's final order by win percentage,
+          then point differential — not an official playoff tiebreak, just <b>who won games</b>.
+          <b>Avg error</b> is how many places off the typical team was; <b>correlation</b> is
+          Spearman's rank correlation with that final order.</p>
+        <p style="margin:0;color:var(--muted);font-size:13px">The consensus is scored on exactly
+          the same footing as the outlets that feed it, because the interesting question is
+          whether averaging beats its own ingredients.</p>
       </div>
     </section>
   </div>
@@ -118,5 +223,5 @@
 <footer class="wrap">
   <p>Superpower Rankings aggregates publicly published rankings and links back to every source
      article. All rankings belong to their respective outlets.</p>
-  <p id="snapshot"></p>
+  <p id="snapshotStamp"></p>
 </footer>

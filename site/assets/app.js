@@ -28,6 +28,7 @@ export function chip(team, size) {
   const el = document.createElement('span');
   el.className = 'chip';
   el.style.background = team.primary;
+  el.style.color = onColor(team.primary);
   el.style.boxShadow = `inset 0 0 0 1.5px ${team.secondary}`;
   el.textContent = team.abbr;
   if (size) { el.style.width = el.style.height = el.style.flexBasis = size + 'px'; }
@@ -68,6 +69,16 @@ export function movement(delta, { newLabel = 'NEW' } = {}) {
     el.className = 'mv flat';
     el.textContent = '–';
   }
+  return el;
+}
+
+/** A coloured gap chip: positive is good-news green by default. */
+export function gapChip(value, { positive = 'up', suffix = '' } = {}) {
+  const el = document.createElement('span');
+  if (value === null || value === undefined) { el.className = 'mv flat'; el.textContent = '–'; return el; }
+  const good = value > 0 ? positive === 'up' : positive === 'down';
+  el.className = value === 0 ? 'mv flat' : `mv ${good ? 'up' : 'down'}`;
+  el.textContent = value === 0 ? '–' : signed(value) + suffix;
   return el;
 }
 
@@ -114,7 +125,10 @@ const mk = (tag, attrs = {}) => {
  *
  * series: [{ id, label, color, width, points: [{x, y}], dots }]
  */
-export function rankChart(host, series, { xs, yMax = 32, height = 300 } = {}) {
+export function rankChart(host, series, {
+  xs, yMin = 1, yMax = 32, height = 300, invert = true,
+  ticks = null, yLabel = null,
+} = {}) {
   host.textContent = '';
   const W = Math.max(host.clientWidth || 640, 320);
   const H = height;
@@ -123,14 +137,20 @@ export function rankChart(host, series, { xs, yMax = 32, height = 300 } = {}) {
   const xsAll = xs && xs.length ? xs : [1];
   const xMin = Math.min(...xsAll), xMax = Math.max(...xsAll);
   const X = v => m.l + (xMax === xMin ? iw / 2 : (v - xMin) / (xMax - xMin) * iw);
-  const Y = v => m.t + (v - 1) / (yMax - 1) * ih;
+  const span = (yMax - yMin) || 1;
+  // invert:true puts the best value (rank 1) at the top, which is the only
+  // way a rankings line reads correctly; error charts want 0 at the bottom.
+  const Y = v => invert
+    ? m.t + (v - yMin) / span * ih
+    : m.t + ih - (v - yMin) / span * ih;
 
   const svg = mk('svg', {
     viewBox: `0 0 ${W} ${H}`, width: '100%', height: H,
-    role: 'img', 'aria-label': 'Ranking by week',
+    role: 'img', 'aria-label': yLabel || 'Ranking by week',
   });
 
-  for (const r of [1, 8, 16, 24, 32].filter(r => r <= yMax)) {
+  const rows = ticks || [1, 8, 16, 24, 32].filter(r => r >= yMin && r <= yMax);
+  for (const r of rows) {
     svg.appendChild(mk('line', { class: 'grid', x1: m.l, x2: W - m.r, y1: Y(r), y2: Y(r) }));
     const t = mk('text', { class: 'axis', x: m.l - 7, y: Y(r) + 3.5, 'text-anchor': 'end' });
     t.textContent = r;
@@ -157,7 +177,7 @@ export function rankChart(host, series, { xs, yMax = 32, height = 300 } = {}) {
         const c = mk('circle', { cx: X(p.x), cy: Y(p.y), r: 3.5, fill: s.color,
           stroke: 'var(--card)', 'stroke-width': 1.5 });
         const title = mk('title');
-        title.textContent = `${s.label} — Week ${p.x}: #${p.y}`;
+        title.textContent = `${s.label} — Week ${p.x}: ${invert ? '#' : ''}${p.y}`;
         c.appendChild(title);
         svg.appendChild(c);
       }
@@ -165,6 +185,68 @@ export function rankChart(host, series, { xs, yMax = 32, height = 300 } = {}) {
   }
   host.appendChild(svg);
 }
+
+/* ---------- colour contrast ----------
+ * Team colours are brand values, not UI tokens: Rams navy on a dark ground and
+ * Steelers gold under white text both fail. These pick a readable variant
+ * without changing which colour the team is.
+ */
+
+const _rgb = hex => {
+  const h = hex.replace('#', '');
+  const n = h.length === 3 ? h.split('').map(c => c + c).join('') : h;
+  return [0, 2, 4].map(i => parseInt(n.slice(i, i + 2), 16));
+};
+
+const _lin = c => {
+  const v = c / 255;
+  return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4;
+};
+
+/** WCAG relative luminance, 0 (black) to 1 (white). */
+export const luminance = hex => {
+  const [r, g, b] = _rgb(hex);
+  return 0.2126 * _lin(r) + 0.7152 * _lin(g) + 0.0722 * _lin(b);
+};
+
+const _mix = (hex, towards, amount) => {
+  const a = _rgb(hex), b = _rgb(towards);
+  const out = a.map((v, i) => Math.round(v + (b[i] - v) * amount));
+  return '#' + out.map(v => v.toString(16).padStart(2, '0')).join('');
+};
+
+export const isDarkTheme = () => {
+  const set = document.documentElement.dataset.theme;
+  if (set) return set === 'dark';
+  return matchMedia('(prefers-color-scheme: dark)').matches;
+};
+
+/** Nudge a team colour until it reads against the current page background. */
+export function readable(hex) {
+  if (!hex) return 'currentColor';
+  const l = luminance(hex);
+  if (isDarkTheme()) return l < 0.22 ? _mix(hex, '#ffffff', 0.52) : hex;
+  return l > 0.55 ? _mix(hex, '#000000', 0.38) : hex;
+}
+
+/** Black or white, whichever is legible on top of `hex`. */
+export const onColor = hex => (luminance(hex) > 0.42 ? '#101820' : '#ffffff');
+
+/** The one place the nav is defined, so every page carries the same one. */
+export const NAV = [
+  ['index.html', 'Rankings'],
+  ['compare.html', 'Compare'],
+  ['accuracy.html', 'Outlet accuracy'],
+];
+
+export function renderNav(host, current, season) {
+  const q = season ? `?season=${season}` : '';
+  host.insertAdjacentHTML('afterbegin', NAV.map(([href, label]) =>
+    `<a href="${href}${q}"${href === current ? ' aria-current="page"' : ''}>${label}</a>`).join(''));
+}
+
+/** Signed value with an explicit sign, for gap columns. */
+export const signed = n => (n > 0 ? `+${n}` : String(n));
 
 /** Column-width-friendly outlet labels. */
 export const shortName = n => n
