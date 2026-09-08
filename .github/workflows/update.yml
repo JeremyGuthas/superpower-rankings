@@ -1,6 +1,8 @@
 name: Update rankings
 
 on:
+  push:
+    branches: [main]
   schedule:
     # Tuesdays 16:00 UTC (noon ET / 9am PT) — after the outlets have published,
     # and again at 20:00 UTC to pick up any that ran late.
@@ -29,9 +31,7 @@ concurrency:
 env:
   # Used for links inside the weekly email digest. Override by setting a
   # repository variable named SITE_URL (e.g. for a custom domain).
-  SITE_URL: >-
-    ${{ vars.SITE_URL || format('https://{0}.github.io/{1}/',
-        github.repository_owner, github.event.repository.name) }}
+  SITE_URL: ${{ vars.SITE_URL || 'https://superpowerrankings.com/' }}
 
 jobs:
   update:
@@ -46,7 +46,10 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      # A code push should redeploy the site, not re-scrape six outlets.
+      # Only the Tuesday cron and a manual run actually fetch.
       - name: Fetch and aggregate
+        if: github.event_name != 'push'
         run: |
           python -m superpower.run --verbose \
             --base-url "$SITE_URL" \
@@ -54,7 +57,14 @@ jobs:
             ${{ inputs.week && format('--week {0}', inputs.week) || '' }} \
             ${{ inputs.backfill && '--backfill' || '' }}
 
+      - name: Rebuild site data from the stored archive
+        if: github.event_name == 'push'
+        run: python -m superpower.run --compile-only --base-url "$SITE_URL"
+
+      # Pushes made with GITHUB_TOKEN do not retrigger workflows, so this
+      # cannot loop back into another run.
       - name: Commit any changes
+        if: github.event_name != 'push'
         run: |
           git config user.name  "superpower-bot"
           git config user.email "actions@github.com"
@@ -66,10 +76,13 @@ jobs:
           git commit -m "data: rankings update $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
 
+      - name: Assemble the deployable site
+        run: python tools/build_site.py
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
   deploy:
     needs: update
