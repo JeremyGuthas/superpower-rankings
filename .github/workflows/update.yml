@@ -1,0 +1,77 @@
+name: Update rankings
+
+on:
+  schedule:
+    # Tuesdays 16:00 UTC (noon ET / 9am PT) — after the outlets have published,
+    # and again at 20:00 UTC to pick up any that ran late.
+    - cron: "0 16 * * 2"
+    - cron: "0 20 * * 2"
+  workflow_dispatch:
+    inputs:
+      season:
+        description: "Season (blank = current)"
+        required: false
+      week:
+        description: "Ranking week (blank = current)"
+        required: false
+      backfill:
+        description: "Also rebuild earlier weeks with no data"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-rankings
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Fetch and aggregate
+        run: |
+          python -m superpower.run --verbose \
+            ${{ inputs.season && format('--season {0}', inputs.season) || '' }} \
+            ${{ inputs.week && format('--week {0}', inputs.week) || '' }} \
+            ${{ inputs.backfill && '--backfill' || '' }}
+
+      - name: Commit any changes
+        run: |
+          git config user.name  "superpower-bot"
+          git config user.email "actions@github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "No ranking changes this run."
+            exit 0
+          fi
+          git commit -m "data: rankings update $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

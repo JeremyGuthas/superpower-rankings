@@ -1,0 +1,113 @@
+{
+  "generated": "2026-09-08T04:20:15+00:00",
+  "default_season": 2026,
+  "seasons": [
+    {
+      "season": 2026,
+      "latest_week": 1,
+      "weeks": [
+        {
+          "week": 1,
+          "label": "Week 1",
+          "sources": 6
+        }
+      ]
+    },
+    {
+      "season": 2025,
+      "latest_week": 18,
+      "weeks": [
+        {
+          "week": 1,
+          "label": "Week 1",
+          "sources": 1
+        },
+        {
+          "week": 2,
+          "label": "Week 2",
+          "sources": 1
+        },
+        {
+          "week": 3,
+          "label": "Week 3",
+          "sources": 1
+        },
+        {
+          "week": 4,
+          "label": "Week 4",
+          "sources": 1
+        },
+        {
+          "week": 5,
+          "label": "Week 5",
+          "sources": 1
+        },
+        {
+          "week": 6,
+          "label": "Week 6",
+          "sources": 1
+        },
+        {
+          "week": 7,
+          "label": "Week 7",
+          "sources": 1
+        },
+        {
+          "week": 8,
+          "label": "Week 8",
+          "sources": 1
+        },
+        {
+          "week": 9,
+          "label": "Week 9",
+          "sources": 1
+        },
+        {
+          "week": 10,
+          "label": "Week 10",
+          "sources": 1
+        },
+        {
+          "week": 11,
+          "label": "Week 11",
+          "sources": 1
+        },
+        {
+          "week": 12,
+          "label": "Week 12",
+          "sources": 1
+        },
+        {
+          "week": 13,
+          "label": "Week 13",
+          "sources": 1
+        },
+        {
+          "week": 14,
+          "label": "Week 14",
+          "sources": 1
+        },
+        {
+          "week": 15,
+          "label": "Week 15",
+          "sources": 1
+        },
+        {
+          "week": 16,
+          "label": "Week 16",
+          "sources": 1
+        },
+        {
+          "week": 17,
+          "label": "Week 17",
+          "sources": 1
+        },
+        {
+          "week": 18,
+          "label": "Week 18",
+          "sources": 1
+        }
+      ]
+    }
+  ]
+}

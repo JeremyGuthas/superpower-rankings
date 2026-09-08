@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Superpower Rankings — NFL consensus power rankings</title>
+<meta name="description" content="Every major NFL power ranking, averaged into one consensus board. Updated every Tuesday.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">
+      <span><span class="bolt">⚡</span> SUPERPOWER</span>
+      <small>NFL consensus rankings</small>
+    </a>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#sources">Sources</a>
+      <button id="theme" type="button" title="Toggle dark mode">◐</button>
+    </nav>
+  </div>
+</header>
+
+<div class="weekbar">
+  <div class="wrap">
+    <div class="weekpick">
+      <button id="prev" type="button" title="Previous week">‹</button>
+      <select id="week" aria-label="Select week"></select>
+      <button id="next" type="button" title="Next week">›</button>
+    </div>
+    <label class="pill" style="cursor:pointer">
+      <input type="checkbox" id="cols" checked style="margin:0">
+      Outlet columns
+    </label>
+    <select id="season" aria-label="Select season"></select>
+    <select id="filter" aria-label="Filter by conference or division">
+      <option value="">All 32 teams</option>
+      <option value="AFC">AFC</option>
+      <option value="NFC">NFC</option>
+    </select>
+    <div class="meta" id="meta"></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="cards" id="cards"></section>
+
+  <section class="tablecard">
+    <div class="tablehead">
+      <h2 id="boardTitle">Superpower Rankings</h2>
+      <span class="pill" id="srcCount"></span>
+      <span class="spacer"></span>
+      <span class="pill" title="Lower is better — the average of every outlet's rank">Score = average rank</span>
+    </div>
+    <div class="scroller">
+      <table id="board">
+        <thead><tr id="head"></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sources" id="sources">
+    <div class="tablehead" style="padding-left:0;border:0">
+      <h2>This week's rankings came from</h2>
+    </div>
+    <ul id="srcList"></ul>
+  </section>
+
+  <section class="sources" id="how">
+    <div class="tablehead" style="padding-left:0;border:0"><h2>How it works</h2></div>
+    <div class="card">
+      <p style="margin:0 0 8px">
+        Every Tuesday, once the week's power rankings have been published, the
+        aggregator finds each outlet's new article, reads all 32 teams out of it, and
+        averages the ranks. A team's <b>Superpower Score</b> is that average — lower is
+        better. Ties break on median rank, then on a team's single best ranking.
+      </p>
+      <p style="margin:0;color:var(--muted);font-size:13px">
+        A source is only counted when a complete, duplicate-free 1&ndash;32 ranking can be read
+        out of its article. Anything short of that is left out of the average for the week
+        and listed below, so the score is never built on a half-parsed list.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>Superpower Rankings aggregates publicly published rankings and links back to every
+  source article. All rankings belong to their respective outlets.</p>
+  <p id="stamp"></p>
+</footer>
+
+<script type="module" src="assets/index.js"></script>
+</body>
+</html>

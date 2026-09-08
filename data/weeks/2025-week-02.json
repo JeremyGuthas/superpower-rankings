@@ -1,0 +1,1120 @@
+{
+  "season": 2025,
+  "week": 2,
+  "label": "Week 2",
+  "games_through": 1,
+  "generated": "2026-09-08T04:06:05+00:00",
+  "sources": [
+    {
+      "id": "espn",
+      "name": "ESPN",
+      "url": "https://www.espn.com/nfl/story/_/id/46139936/nfl-week-2-power-rankings-poll-32-teams-2025-best-newcomer",
+      "title": "NFL Week 2 Power Rankings 2025: How all 32 teams stack up",
+      "author": "NFL Nation reporters",
+      "published": "2025-09-09T18:30:33Z",
+      "strategy": "headings",
+      "fetched": "2026-09-08T04:06:05Z"
+    }
+  ],
+  "failed_sources": [
+    {
+      "id": "nfl",
+      "name": "NFL.com",
+      "error": "no archive for past weeks \u2014 this outlet publishes to a single rolling URL"
+    },
+    {
+      "id": "cbs",
+      "name": "CBS Sports",
+      "error": "no archive for past weeks \u2014 this outlet publishes to a single rolling URL"
+    },
+    {
+      "id": "sharpfootball",
+      "name": "Sharp Football Analysis",
+      "error": "no archive for past weeks \u2014 this outlet publishes to a single rolling URL"
+    },
+    {
+      "id": "yahoo",
+      "name": "Yahoo Sports",
+      "error": "no archive for past weeks \u2014 this outlet publishes to a single rolling URL"
+    },
+    {
+      "id": "sportingnews",
+      "name": "Sporting News",
+      "error": "no archive for past weeks \u2014 this outlet publishes to a single rolling URL"
+    },
+    {
+      "id": "foxsports",
+      "name": "FOX Sports",
+      "error": "no archive for past weeks \u2014 this outlet publishes to a single rolling URL"
+    },
+    {
+      "id": "bleacherreport",
+      "name": "Bleacher Report",
+      "error": "no archive for past weeks \u2014 this outlet publishes to a single rolling URL"
+    }
+  ],
+  "notes": {
+    "biggest_riser": "LAC",
+    "biggest_faller": "MIA",
+    "most_divisive": "BUF",
+    "most_agreed": "BUF"
+  },
+  "teams": {
+    "BUF": {
+      "rank": 1,
+      "avg": 1.0,
+      "median": 1,
+      "high": 1,
+      "low": 1,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 1
+      },
+      "prev": 3,
+      "delta": 2,
+      "source_delta": {
+        "espn": 2
+      },
+      "record": "1-0",
+      "differential": 1,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-08T00:20Z",
+        "opponent": "BAL",
+        "home": true,
+        "points_for": 41,
+        "points_against": 40,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "PHI": {
+      "rank": 2,
+      "avg": 2.0,
+      "median": 2,
+      "high": 2,
+      "low": 2,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 2
+      },
+      "prev": 1,
+      "delta": -1,
+      "source_delta": {
+        "espn": -1
+      },
+      "record": "1-0",
+      "differential": 4,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-05T00:20Z",
+        "opponent": "DAL",
+        "home": true,
+        "points_for": 24,
+        "points_against": 20,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "BAL": {
+      "rank": 3,
+      "avg": 3.0,
+      "median": 3,
+      "high": 3,
+      "low": 3,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 3
+      },
+      "prev": 4,
+      "delta": 1,
+      "source_delta": {
+        "espn": 1
+      },
+      "record": "0-1",
+      "differential": -1,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-08T00:20Z",
+        "opponent": "BUF",
+        "home": false,
+        "points_for": 40,
+        "points_against": 41,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "GB": {
+      "rank": 4,
+      "avg": 4.0,
+      "median": 4,
+      "high": 4,
+      "low": 4,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 4
+      },
+      "prev": 7,
+      "delta": 3,
+      "source_delta": {
+        "espn": 3
+      },
+      "record": "1-0",
+      "differential": 14,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T20:25Z",
+        "opponent": "DET",
+        "home": true,
+        "points_for": 27,
+        "points_against": 13,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "KC": {
+      "rank": 5,
+      "avg": 5.0,
+      "median": 5,
+      "high": 5,
+      "low": 5,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 5
+      },
+      "prev": 2,
+      "delta": -3,
+      "source_delta": {
+        "espn": -3
+      },
+      "record": "0-1",
+      "differential": -6,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-06T00:00Z",
+        "opponent": "LAC",
+        "home": false,
+        "points_for": 21,
+        "points_against": 27,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "WSH": {
+      "rank": 6,
+      "avg": 6.0,
+      "median": 6,
+      "high": 6,
+      "low": 6,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 6
+      },
+      "prev": 6,
+      "delta": 0,
+      "source_delta": {
+        "espn": 0
+      },
+      "record": "1-0",
+      "differential": 15,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T17:00Z",
+        "opponent": "NYG",
+        "home": true,
+        "points_for": 21,
+        "points_against": 6,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "LAR": {
+      "rank": 7,
+      "avg": 7.0,
+      "median": 7,
+      "high": 7,
+      "low": 7,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 7
+      },
+      "prev": 8,
+      "delta": 1,
+      "source_delta": {
+        "espn": 1
+      },
+      "record": "1-0",
+      "differential": 5,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T20:25Z",
+        "opponent": "HOU",
+        "home": true,
+        "points_for": 14,
+        "points_against": 9,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "DET": {
+      "rank": 8,
+      "avg": 8.0,
+      "median": 8,
+      "high": 8,
+      "low": 8,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 8
+      },
+      "prev": 5,
+      "delta": -3,
+      "source_delta": {
+        "espn": -3
+      },
+      "record": "0-1",
+      "differential": -14,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T20:25Z",
+        "opponent": "GB",
+        "home": false,
+        "points_for": 13,
+        "points_against": 27,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "LAC": {
+      "rank": 9,
+      "avg": 9.0,
+      "median": 9,
+      "high": 9,
+      "low": 9,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 9
+      },
+      "prev": 14,
+      "delta": 5,
+      "source_delta": {
+        "espn": 5
+      },
+      "record": "1-0",
+      "differential": 6,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-06T00:00Z",
+        "opponent": "KC",
+        "home": true,
+        "points_for": 27,
+        "points_against": 21,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "TB": {
+      "rank": 10,
+      "avg": 10.0,
+      "median": 10,
+      "high": 10,
+      "low": 10,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 10
+      },
+      "prev": 13,
+      "delta": 3,
+      "source_delta": {
+        "espn": 3
+      },
+      "record": "1-0",
+      "differential": 3,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T17:00Z",
+        "opponent": "ATL",
+        "home": false,
+        "points_for": 23,
+        "points_against": 20,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "DEN": {
+      "rank": 11,
+      "avg": 11.0,
+      "median": 11,
+      "high": 11,
+      "low": 11,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 11
+      },
+      "prev": 11,
+      "delta": 0,
+      "source_delta": {
+        "espn": 0
+      },
+      "record": "1-0",
+      "differential": 8,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T20:05Z",
+        "opponent": "TEN",
+        "home": true,
+        "points_for": 20,
+        "points_against": 12,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "CIN": {
+      "rank": 12,
+      "avg": 12.0,
+      "median": 12,
+      "high": 12,
+      "low": 12,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 12
+      },
+      "prev": 9,
+      "delta": -3,
+      "source_delta": {
+        "espn": -3
+      },
+      "record": "1-0",
+      "differential": 1,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T17:00Z",
+        "opponent": "CLE",
+        "home": false,
+        "points_for": 17,
+        "points_against": 16,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "MIN": {
+      "rank": 13,
+      "avg": 13.0,
+      "median": 13,
+      "high": 13,
+      "low": 13,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 13
+      },
+      "prev": 10,
+      "delta": -3,
+      "source_delta": {
+        "espn": -3
+      },
+      "record": "1-0",
+      "differential": 3,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-09T00:15Z",
+        "opponent": "CHI",
+        "home": false,
+        "points_for": 27,
+        "points_against": 24,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "SF": {
+      "rank": 14,
+      "avg": 14.0,
+      "median": 14,
+      "high": 14,
+      "low": 14,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 14
+      },
+      "prev": 15,
+      "delta": 1,
+      "source_delta": {
+        "espn": 1
+      },
+      "record": "1-0",
+      "differential": 4,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T20:05Z",
+        "opponent": "SEA",
+        "home": false,
+        "points_for": 17,
+        "points_against": 13,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "PIT": {
+      "rank": 15,
+      "avg": 15.0,
+      "median": 15,
+      "high": 15,
+      "low": 15,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 15
+      },
+      "prev": 16,
+      "delta": 1,
+      "source_delta": {
+        "espn": 1
+      },
+      "record": "1-0",
+      "differential": 2,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T17:00Z",
+        "opponent": "NYJ",
+        "home": false,
+        "points_for": 34,
+        "points_against": 32,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "HOU": {
+      "rank": 16,
+      "avg": 16.0,
+      "median": 16,
+      "high": 16,
+      "low": 16,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 16
+      },
+      "prev": 12,
+      "delta": -4,
+      "source_delta": {
+        "espn": -4
+      },
+      "record": "0-1",
+      "differential": -5,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T20:25Z",
+        "opponent": "LAR",
+        "home": false,
+        "points_for": 9,
+        "points_against": 14,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "ATL": {
+      "rank": 17,
+      "avg": 17.0,
+      "median": 17,
+      "high": 17,
+      "low": 17,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 17
+      },
+      "prev": 19,
+      "delta": 2,
+      "source_delta": {
+        "espn": 2
+      },
+      "record": "0-1",
+      "differential": -3,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T17:00Z",
+        "opponent": "TB",
+        "home": true,
+        "points_for": 20,
+        "points_against": 23,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "ARI": {
+      "rank": 18,
+      "avg": 18.0,
+      "median": 18,
+      "high": 18,
+      "low": 18,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 18
+      },
+      "prev": 22,
+      "delta": 4,
+      "source_delta": {
+        "espn": 4
+      },
+      "record": "1-0",
+      "differential": 7,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T17:00Z",
+        "opponent": "NO",
+        "home": false,
+        "points_for": 20,
+        "points_against": 13,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "DAL": {
+      "rank": 19,
+      "avg": 19.0,
+      "median": 19,
+      "high": 19,
+      "low": 19,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 19
+      },
+      "prev": 18,
+      "delta": -1,
+      "source_delta": {
+        "espn": -1
+      },
+      "record": "0-1",
+      "differential": -4,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-05T00:20Z",
+        "opponent": "PHI",
+        "home": false,
+        "points_for": 20,
+        "points_against": 24,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "SEA": {
+      "rank": 20,
+      "avg": 20.0,
+      "median": 20,
+      "high": 20,
+      "low": 20,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 20
+      },
+      "prev": 17,
+      "delta": -3,
+      "source_delta": {
+        "espn": -3
+      },
+      "record": "0-1",
+      "differential": -4,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T20:05Z",
+        "opponent": "SF",
+        "home": true,
+        "points_for": 13,
+        "points_against": 17,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "LV": {
+      "rank": 21,
+      "avg": 21.0,
+      "median": 21,
+      "high": 21,
+      "low": 21,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 21
+      },
+      "prev": 25,
+      "delta": 4,
+      "source_delta": {
+        "espn": 4
+      },
+      "record": "1-0",
+      "differential": 7,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T17:00Z",
+        "opponent": "NE",
+        "home": false,
+        "points_for": 20,
+        "points_against": 13,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "JAX": {
+      "rank": 22,
+      "avg": 22.0,
+      "median": 22,
+      "high": 22,
+      "low": 22,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 22
+      },
+      "prev": 24,
+      "delta": 2,
+      "source_delta": {
+        "espn": 2
+      },
+      "record": "1-0",
+      "differential": 16,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T17:00Z",
+        "opponent": "CAR",
+        "home": true,
+        "points_for": 26,
+        "points_against": 10,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "IND": {
+      "rank": 23,
+      "avg": 23.0,
+      "median": 23,
+      "high": 23,
+      "low": 23,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 23
+      },
+      "prev": 26,
+      "delta": 3,
+      "source_delta": {
+        "espn": 3
+      },
+      "record": "1-0",
+      "differential": 25,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T17:00Z",
+        "opponent": "MIA",
+        "home": true,
+        "points_for": 33,
+        "points_against": 8,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "CHI": {
+      "rank": 24,
+      "avg": 24.0,
+      "median": 24,
+      "high": 24,
+      "low": 24,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 24
+      },
+      "prev": 21,
+      "delta": -3,
+      "source_delta": {
+        "espn": -3
+      },
+      "record": "0-1",
+      "differential": -3,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-09T00:15Z",
+        "opponent": "MIN",
+        "home": true,
+        "points_for": 24,
+        "points_against": 27,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "NYJ": {
+      "rank": 25,
+      "avg": 25.0,
+      "median": 25,
+      "high": 25,
+      "low": 25,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 25
+      },
+      "prev": 28,
+      "delta": 3,
+      "source_delta": {
+        "espn": 3
+      },
+      "record": "0-1",
+      "differential": -2,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T17:00Z",
+        "opponent": "PIT",
+        "home": true,
+        "points_for": 32,
+        "points_against": 34,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "MIA": {
+      "rank": 26,
+      "avg": 26.0,
+      "median": 26,
+      "high": 26,
+      "low": 26,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 26
+      },
+      "prev": 20,
+      "delta": -6,
+      "source_delta": {
+        "espn": -6
+      },
+      "record": "0-1",
+      "differential": -25,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T17:00Z",
+        "opponent": "IND",
+        "home": false,
+        "points_for": 8,
+        "points_against": 33,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "NE": {
+      "rank": 27,
+      "avg": 27.0,
+      "median": 27,
+      "high": 27,
+      "low": 27,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 27
+      },
+      "prev": 23,
+      "delta": -4,
+      "source_delta": {
+        "espn": -4
+      },
+      "record": "0-1",
+      "differential": -7,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T17:00Z",
+        "opponent": "LV",
+        "home": true,
+        "points_for": 13,
+        "points_against": 20,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "TEN": {
+      "rank": 28,
+      "avg": 28.0,
+      "median": 28,
+      "high": 28,
+      "low": 28,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 28
+      },
+      "prev": 32,
+      "delta": 4,
+      "source_delta": {
+        "espn": 4
+      },
+      "record": "0-1",
+      "differential": -8,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T20:05Z",
+        "opponent": "DEN",
+        "home": false,
+        "points_for": 12,
+        "points_against": 20,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "CLE": {
+      "rank": 29,
+      "avg": 29.0,
+      "median": 29,
+      "high": 29,
+      "low": 29,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 29
+      },
+      "prev": 30,
+      "delta": 1,
+      "source_delta": {
+        "espn": 1
+      },
+      "record": "0-1",
+      "differential": -1,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T17:00Z",
+        "opponent": "CIN",
+        "home": true,
+        "points_for": 16,
+        "points_against": 17,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "CAR": {
+      "rank": 30,
+      "avg": 30.0,
+      "median": 30,
+      "high": 30,
+      "low": 30,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 30
+      },
+      "prev": 27,
+      "delta": -3,
+      "source_delta": {
+        "espn": -3
+      },
+      "record": "0-1",
+      "differential": -16,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T17:00Z",
+        "opponent": "JAX",
+        "home": false,
+        "points_for": 10,
+        "points_against": 26,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "NYG": {
+      "rank": 31,
+      "avg": 31.0,
+      "median": 31,
+      "high": 31,
+      "low": 31,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 31
+      },
+      "prev": 29,
+      "delta": -2,
+      "source_delta": {
+        "espn": -2
+      },
+      "record": "0-1",
+      "differential": -15,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T17:00Z",
+        "opponent": "WSH",
+        "home": false,
+        "points_for": 6,
+        "points_against": 21,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "NO": {
+      "rank": 32,
+      "avg": 32.0,
+      "median": 32,
+      "high": 32,
+      "low": 32,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 1,
+      "ranks": {
+        "espn": 32
+      },
+      "prev": 31,
+      "delta": -1,
+      "source_delta": {
+        "espn": -1
+      },
+      "record": "0-1",
+      "differential": -7,
+      "last_game": {
+        "week": 1,
+        "label": "Week 1",
+        "season_type": "regular",
+        "date": "2025-09-07T17:00Z",
+        "opponent": "ARI",
+        "home": true,
+        "points_for": 13,
+        "points_against": 20,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    }
+  }
+}

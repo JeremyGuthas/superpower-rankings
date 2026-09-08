@@ -1,0 +1,122 @@
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" id="home" href="#" aria-label="Superpower Rankings home">
+      <b>⚡ Superpower</b><span>NFL consensus rankings</span>
+    </a>
+    <nav>
+      <button type="button" id="navBoard">Rankings</button>
+      <button type="button" id="navHow">How it works</button>
+      <button type="button" id="theme" title="Toggle dark mode">◐</button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero hidden" id="hero">
+  <div class="wrap">
+    <span class="chip" id="heroChip"></span>
+    <div>
+      <h1 id="heroName"></h1>
+      <div class="sub" id="heroSub"></div>
+    </div>
+    <div class="stats" id="heroStats"></div>
+  </div>
+</section>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="stepper">
+      <button type="button" id="prev" title="Previous week">‹</button>
+      <select id="week" aria-label="Week"></select>
+      <button type="button" id="next" title="Next week">›</button>
+    </div>
+    <select id="season" aria-label="Season"></select>
+    <select id="teamPick" class="hidden" aria-label="Team"></select>
+    <label class="toggle" id="colsWrap"><input type="checkbox" id="cols" checked> Outlet columns</label>
+    <select id="filter" aria-label="Conference"><option value="">All 32</option>
+      <option value="AFC">AFC</option><option value="NFC">NFC</option></select>
+    <div class="stamp" id="stamp"></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <!-- board view -->
+  <div id="viewBoard">
+    <section class="tiles" id="tiles"></section>
+    <section class="board">
+      <div class="boardhead">
+        <h2 id="boardTitle"></h2>
+        <span class="tag" id="srcCount"></span>
+        <span class="spacer"></span>
+        <span class="tag">Score = average rank</span>
+      </div>
+      <div class="scroll">
+        <table><thead><tr id="head"></tr></thead><tbody id="rows"></tbody></table>
+      </div>
+    </section>
+
+    <section class="sources">
+      <h2>Where this week's ranks came from</h2>
+      <ul id="srcList"></ul>
+    </section>
+
+    <section class="how" id="how">
+      <h2>How it works</h2>
+      <div class="body">
+        <p>Every Tuesday, once the week's power rankings have been published, the aggregator
+          finds each outlet's new article, reads all 32 teams out of it, and averages the ranks.
+          A team's <b>Superpower Score</b> is that average — lower is better. Ties break on median
+          rank, then on the team's single best ranking.</p>
+        <p>A source only counts when a complete, duplicate-free 1&ndash;32 ranking can be read out
+          of its article. Anything short of that is left out of the average for the week and listed
+          above as a miss, so the score is never built on a half-parsed list.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- team view -->
+  <div id="viewTeam" class="hidden">
+    <div class="split">
+      <section class="panel">
+        <div class="ph"><h2>Rank by week</h2></div>
+        <div class="pb">
+          <p class="note">Rank 1 sits at the top. Toggle an outlet to see how its ranking
+            compares with the consensus.</p>
+          <div class="legend" id="legend"></div>
+          <div id="chart"></div>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="ph"><h2 id="outletTitle">Outlet by outlet</h2></div>
+        <div class="scroll">
+          <table><thead><tr>
+            <th class="l">Outlet</th><th>Rank</th><th>Move</th><th class="l">Article</th>
+          </tr></thead><tbody id="outlets"></tbody></table>
+        </div>
+      </section>
+    </div>
+
+    <section class="panel" style="margin-top:15px">
+      <div class="ph"><h2>Game log</h2><span class="spacer"></span>
+        <span class="tag" id="recordPill"></span></div>
+      <div class="scroll">
+        <table><thead><tr>
+          <th class="l">Week</th><th class="l">Opponent</th><th>Result</th><th>Score</th>
+          <th>Margin</th><th class="l">Rank after</th>
+        </tr></thead><tbody id="games"></tbody></table>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:15px">
+      <div class="ph"><h2>Week by week</h2></div>
+      <div class="scroll">
+        <table><thead><tr id="wbwHead"></tr></thead><tbody id="wbw"></tbody></table>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="wrap">
+  <p>Superpower Rankings aggregates publicly published rankings and links back to every source
+     article. All rankings belong to their respective outlets.</p>
+  <p id="snapshot"></p>
+</footer>
