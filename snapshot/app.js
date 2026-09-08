@@ -84,6 +84,19 @@ function readable(hex) {
   return l > 0.55 ? _mix(hex, '#000000', 0.38) : hex;
 }
 
+/** Hero background for a team.
+ *
+ * The team gradient alone is unreadable for light-primary clubs — white on
+ * Steelers gold is about 2:1. A scrim scaled to the colour's luminance keeps
+ * the club's identity while guaranteeing the text on top stays legible. */
+function heroBackground(team) {
+  const l = luminance(team.primary);
+  const a = l > 0.5 ? 0.58 : l > 0.3 ? 0.38 : 0.16;
+  return `linear-gradient(rgba(0,0,0,${a}), rgba(0,0,0,${a + 0.08})), ` +
+         `linear-gradient(100deg, ${team.primary} 0%, ${team.primary} 58%, ` +
+         `${team.secondary} 190%)`;
+}
+
 /** Black or white, whichever is legible on top of `hex`. */
 const onColor = hex => (luminance(hex) > 0.42 ? '#101820' : '#ffffff');
 
@@ -96,12 +109,11 @@ function chip(team, size) {
   el.style.color = onColor(team.primary);
   el.style.boxShadow = `inset 0 0 0 1.5px ${team.secondary}`;
   el.textContent = team.abbr;
-  if (size) el.style.width = el.style.height = el.style.flexBasis = size + 'px';
-  const img = new Image();
-  img.alt = ''; img.loading = 'lazy';
-  img.src = `https://a.espncdn.com/i/teamlogos/nfl/500/${team.abbr.toLowerCase()}.png`;
-  img.onerror = () => img.remove();     // falls back to the colour chip
-  el.appendChild(img);
+  el.title = team.name;
+  if (size) {
+    el.style.width = el.style.height = el.style.flexBasis = size + 'px';
+    el.style.fontSize = Math.max(7, Math.round(size * 0.33)) + 'px';
+  }
   return el;
 }
 
@@ -526,8 +538,7 @@ function renderSources(w) {
 function renderTeam() {
   const data = d(), abbr = st.abbr, team = data.teamsBy[abbr], w = wk(), t = entry(w, abbr);
   $('teamPick').value = abbr;
-  $('hero').style.background =
-    `linear-gradient(100deg, ${team.primary} 0%, ${team.primary} 58%, ${team.secondary} 190%)`;
+  $('hero').style.background = heroBackground(team);
   $('heroChip').textContent = team.abbr;
   $('heroName').textContent = team.name;
   $('heroSub').textContent = `${team.division} · ` +

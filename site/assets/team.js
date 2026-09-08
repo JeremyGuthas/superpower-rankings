@@ -1,6 +1,6 @@
 import {
   loadIndex, loadSeason, latestWeek, movement, fmtDate, initTheme, rankChart,
-  OUTLET_COLORS, shortName, renderNav, gapChip, signed, chip,
+  OUTLET_COLORS, shortName, renderNav, gapChip, signed, chip, heroBackground,
 } from './app.js';
 
 const $ = id => document.getElementById(id);
@@ -66,8 +66,7 @@ function render() {
   $('teamPick').value = abbr;
 
   // hero
-  $('hero').style.background =
-    `linear-gradient(100deg, ${team.primary} 0%, ${team.primary} 58%, ${team.secondary} 190%)`;
+  $('hero').style.background = heroBackground(team);
   $('heroChip').textContent = team.abbr;
   $('heroName').textContent = team.name;
   const through = wk.games_through
