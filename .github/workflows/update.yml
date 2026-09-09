@@ -109,6 +109,56 @@ jobs:
       - id: deploy
         uses: actions/deploy-pages@v4
 
+  # Announce the new week. Runs only on the Tuesday schedule or a manual
+  # dispatch — never on a code push, which would re-announce old rankings.
+  # Every network is skipped unless its secret exists, and a ledger committed
+  # back to the repo stops the second Tuesday run re-posting the first one.
+  promote:
+    needs: deploy
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    permissions:
+      contents: write
+    env:
+      BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+      BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+      X_API_KEY: ${{ secrets.X_API_KEY }}
+      X_API_SECRET: ${{ secrets.X_API_SECRET }}
+      X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+      X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+      MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+      MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+      FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+      FACEBOOK_PAGE_TOKEN: ${{ secrets.FACEBOOK_PAGE_TOKEN }}
+      THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+      THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+      REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+      REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+      REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+      REDDIT_USER_AGENT: ${{ vars.REDDIT_USER_AGENT }}
+      REDDIT_SUBREDDITS: ${{ vars.REDDIT_SUBREDDITS }}
+      REDDIT_AUTOPOST: ${{ vars.REDDIT_AUTOPOST }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests requests-oauthlib
+      - name: Announce the new week
+        run: python -m superpower.social
+      - name: Record what was posted
+        run: |
+          git config user.name  "superpower-bot"
+          git config user.email "actions@github.com"
+          git add data/promoted.json
+          git diff --cached --quiet || {
+            git commit -m "data: recorded this week's announcements"
+            git push
+          }
+
   # Bing, Yandex, Seznam and Naver accept a push the moment pages change.
   # Google does not participate — it only takes submissions through Search
   # Console. Failing here must never fail the deploy.

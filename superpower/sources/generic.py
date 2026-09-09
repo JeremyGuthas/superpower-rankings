@@ -14,6 +14,9 @@ import xml.etree.ElementTree as ET
 from .. import http
 from .base import Article, Source, SourceFailure, looks_like_weekly
 
+#: How many discovered articles to try before giving up on a source.
+MAX_CANDIDATES = 4
+
 TITLE = re.compile(r"<title>(.*?)</title>", re.S | re.I)
 AUTHOR = re.compile(r'"author"\s*:\s*(?:\[)?\s*\{[^}]*?"name"\s*:\s*"([^"]+)"')
 PUBLISHED = re.compile(r'"datePublished"\s*:\s*"([^"]+)"')
@@ -70,14 +73,18 @@ class GenericSource(Source):
                     found.append(Article(url=url))
         return found
 
-    def find_article(self, season: int, week: int) -> Article:
-        candidates = self._from_feeds() + self._from_listings()
-        if not candidates:
+    def candidates(self, season: int, week: int) -> list[Article]:
+        found = self._from_feeds() + self._from_listings()
+        if not found:
             raise SourceFailure(f"no {self.name} power rankings article found")
-        for art in candidates:
-            if re.search(rf"week[-\s]?{week}(?!\d)", art.url + " " + art.title, re.I):
-                return art
-        return candidates[0]
+        # An article naming this week is the best guess, but only a guess.
+        named = [a for a in found
+                 if re.search(rf"week[-\s]?{week}(?!\d)", a.url + " " + a.title, re.I)]
+        rest = [a for a in found if a not in named]
+        return (named + rest)[:MAX_CANDIDATES]
+
+    def find_article(self, season: int, week: int) -> Article:
+        return self.candidates(season, week)[0]
 
     # -- loading ------------------------------------------------------------
 

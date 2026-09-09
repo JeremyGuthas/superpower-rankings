@@ -15,7 +15,7 @@ from . import games as games_mod
 from . import odds as odds_mod
 from . import season as season_mod
 from . import store
-from .aggregate import build_week, consensus_notes
+from .aggregate import build_week, consensus_notes, cross_check
 from .extract import RankParseError, extract
 from .sources import SourceResult, enabled_sources
 from .teams import all_teams
@@ -36,25 +36,48 @@ def collect(season: int, week: int, sources, live: bool = True
                                     "publishes to a single rolling URL"})
             continue
         try:
-            article = src.load(src.find_article(season, week))
-            ranks, strategy = extract(article.markup)
-        except RankParseError as exc:
-            failed.append({"id": src.id, "name": src.name,
-                           "error": f"could not parse a full 1-32 ranking ({exc})"})
-            log.warning("%s: parse failed: %s", src.id, exc)
-            continue
+            options = src.candidates(season, week)
         except Exception as exc:
             failed.append({"id": src.id, "name": src.name,
                            "error": f"{type(exc).__name__}: {exc}"})
             log.warning("%s: %s: %s", src.id, type(exc).__name__, exc)
             continue
-        ok.append(SourceResult(src.id, src.name, article, ranks, strategy))
-        log.info("%s: parsed 32 teams via %s", src.id, strategy)
+
+        parsed = None
+        last_error = "no candidate articles"
+        for article in options:
+            try:
+                loaded = src.load(article)
+                ranks, strategy = extract(loaded.markup)
+            except RankParseError as exc:
+                last_error = f"could not parse a full 1-32 ranking ({exc})"
+                log.info("%s: %s did not parse, trying the next candidate",
+                         src.id, article.url)
+                continue
+            except Exception as exc:
+                last_error = f"{type(exc).__name__}: {exc}"
+                continue
+            parsed = SourceResult(src.id, src.name, loaded, ranks, strategy)
+            break
+
+        if parsed is None:
+            failed.append({"id": src.id, "name": src.name, "error": last_error})
+            log.warning("%s: %s", src.id, last_error)
+            continue
+        ok.append(parsed)
+        log.info("%s: parsed 32 teams via %s", src.id, parsed.strategy)
     return ok, failed
 
 
 def build(season: int, week: int, sources, game_log: dict, live: bool = True) -> dict:
     results, failed = collect(season, week, sources, live=live)
+
+    # A structurally valid ranking can still be the wrong list entirely.
+    results, rejected = cross_check(results)
+    for entry in rejected:
+        log.warning("%s: %s", entry["id"], entry["error"])
+    failed.extend(rejected)
+
     if not results:
         raise SystemExit(f"no source produced a usable ranking for {season} week {week}")
 

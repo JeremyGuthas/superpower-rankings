@@ -36,6 +36,74 @@ def _sentences(week: dict, names: dict[str, str]) -> list[str]:
     return out
 
 
+# Hard limits per network. Going over does not truncate gracefully — the
+# post is rejected — so the builders below fit the copy to the limit.
+LIMITS = {"x": 280, "bluesky": 300, "mastodon": 500, "threads": 500,
+          "facebook": 2000, "discord": 2000}
+
+
+def _headline(week: dict, names: dict[str, str]) -> str:
+    """The single most interesting fact this week, in one plain sentence."""
+    s = week.get("storylines") or {}
+    if s.get("market"):
+        m = s["market"][0]
+        who = "the market" if m["gap"] > 0 else "the media"
+        return (f"{info(m['team'])['name']}: #{m['rank']} in the media consensus, "
+                f"#{m['market_rank']} at the book ({m['odds']}). {who.capitalize()} "
+                f"is the believer.")
+    if s.get("outliers"):
+        o = s["outliers"][0]
+        side = "higher" if o["gap"] > 0 else "lower"
+        return (f"{names.get(o['source'], o['source'])} has "
+                f"{info(o['team'])['name']} at #{o['rank']} — {abs(o['gap'])} spots "
+                f"{side} than everyone else.")
+    if s.get("divergent"):
+        d = s["divergent"][0]
+        return (f"{info(d['team'])['name']} sit #{d['rank']} but rank "
+                f"#{d['record_rank']} on results alone.")
+    ranked = sorted(week["teams"].items(), key=lambda kv: kv[1]["rank"])
+    return f"{info(ranked[0][0])['name']} lead the consensus."
+
+
+def _fit(parts: list[str], link: str, limit: int) -> str:
+    """Assemble the longest version of the post that fits."""
+    # A link costs its display length on most networks; assume the worst.
+    room = limit - len(link) - 2
+    out: list[str] = []
+    for part in parts:
+        candidate = "\n\n".join(out + [part])
+        if len(candidate) <= room:
+            out.append(part)
+    return "\n\n".join(out + [link])
+
+
+def platform_text(site: dict, week: dict, network: str) -> str:
+    """Copy written for one network, inside its character limit."""
+    season = site["season"]
+    names = {s["id"]: s["name"] for s in site["sources"]}
+    outlets = len(week["sources"])
+    ranked = sorted(week["teams"].items(), key=lambda kv: kv[1]["rank"])
+    link = config.url(f"{season}/week-{week['week']}/")
+    limit = LIMITS.get(network, 300)
+
+    lead = (f"{season} {week['label']} NFL power rankings — "
+            f"{outlets} outlets averaged into one board.")
+    headline = _headline(week, names)
+    top3 = " · ".join(f"{i}. {info(a)['name']}"
+                      for i, (a, _) in enumerate(ranked[:3], 1))
+
+    if network in ("facebook", "discord"):
+        top10 = "\n".join(
+            f"{t['rank']}. {info(a)['name']} — {t['avg']:.2f}"
+            for a, t in ranked[:10])
+        bullets = "\n".join(f"• {line}" for line in _sentences(week, names)[:3])
+        bullets = bullets.replace("**", "")
+        body = [lead, top10, "What stood out:\n" + bullets if bullets else ""]
+        return _fit([b for b in body if b], link, limit)
+
+    return _fit([lead, headline, top3], link, limit)
+
+
 def build(site: dict, week: dict) -> str:
     season = site["season"]
     names = {s["id"]: s["name"] for s in site["sources"]}

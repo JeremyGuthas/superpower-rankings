@@ -62,6 +62,16 @@ class Source:
     def find_article(self, season: int, week: int) -> Article:
         raise NotImplementedError
 
+    def candidates(self, season: int, week: int) -> list[Article]:
+        """Articles that might hold this week's ranking, best guess first.
+
+        Discovery matches on slugs and titles, which also catches pieces
+        *about* someone else's rankings ("Dolphins ranked bottom-five in Week
+        One power rankings"). Rather than commit to one guess, offer several
+        and let the caller keep the first that actually parses.
+        """
+        return [self.find_article(season, week)]
+
     def load(self, article: Article) -> Article:
         raise NotImplementedError
 

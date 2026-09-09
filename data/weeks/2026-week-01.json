@@ -3,7 +3,7 @@
   "week": 1,
   "label": "Week 1",
   "games_through": 0,
-  "generated": "2026-09-08T22:21:54+00:00",
+  "generated": "2026-09-09T00:37:57+00:00",
   "sources": [
     {
       "id": "espn",
@@ -13,7 +13,7 @@
       "author": "NFL Nation",
       "published": "2026-08-31T12:58:27Z",
       "strategy": "headings",
-      "fetched": "2026-09-08T22:21:43Z"
+      "fetched": "2026-09-09T00:37:42Z"
     },
     {
       "id": "nfl",
@@ -22,8 +22,8 @@
       "title": "NFL Power Rankings, Week 1: Cowboys rising after defensive makeover; Bears drop out of top 10",
       "author": "Nick Shook",
       "published": "2026-09-08T13:04:11.313Z",
-      "strategy": "bare-sequence",
-      "fetched": "2026-09-08T22:21:46Z"
+      "strategy": "rank-label",
+      "fetched": "2026-09-09T00:37:46Z"
     },
     {
       "id": "cbs",
@@ -33,7 +33,7 @@
       "author": "Pete Prisco",
       "published": "2026-09-08T09:30:00+00:00",
       "strategy": "split-lines",
-      "fetched": "2026-09-08T22:21:46Z"
+      "fetched": "2026-09-09T00:37:46Z"
     },
     {
       "id": "sharpfootball",
@@ -43,7 +43,17 @@
       "author": "Raymond Summerlin",
       "published": "2026-09-02T07:00:01-04:00",
       "strategy": "headings",
-      "fetched": "2026-09-08T22:21:47Z"
+      "fetched": "2026-09-09T00:37:46Z"
+    },
+    {
+      "id": "yahoo",
+      "name": "Yahoo Sports",
+      "url": "https://sports.yahoo.com/article/nfl-power-rankings-are-the-bills-and-josh-allen-the-biggest-threat-to-the-rams-reign-071327328.html",
+      "title": "NFL Power Rankings: Are the Bills and Josh Allen the biggest threat to the Rams' reign? - Yahoo Sports",
+      "author": "Frank Schwab",
+      "published": "2026-09-07T07:13:27Z",
+      "strategy": "headings",
+      "fetched": "2026-09-09T00:37:51Z"
     },
     {
       "id": "bleacherreport",
@@ -53,15 +63,10 @@
       "author": "Gary Davenport",
       "published": "2026-09-07T11:00:00.000Z",
       "strategy": "headings",
-      "fetched": "2026-09-08T22:21:54Z"
+      "fetched": "2026-09-09T00:37:57Z"
     }
   ],
   "failed_sources": [
-    {
-      "id": "yahoo",
-      "name": "Yahoo Sports",
-      "error": "could not parse a full 1-32 ranking (headings: no candidates; rank-label: no candidates; numbered-lines: no candidates; split-lines: no candidates; bare-sequence: found 6 teams, expected 32)"
-    },
     {
       "id": "sportingnews",
       "name": "Sporting News",
@@ -76,24 +81,25 @@
   "notes": {
     "biggest_riser": null,
     "biggest_faller": null,
-    "most_divisive": "DEN",
-    "most_agreed": "SEA"
+    "most_divisive": "JAX",
+    "most_agreed": "MIA"
   },
   "teams": {
     "LAR": {
       "rank": 1,
-      "avg": 1.8,
-      "median": 1,
+      "avg": 1.17,
+      "median": 1.0,
       "high": 1,
-      "low": 4,
-      "spread": 3,
-      "stdev": 1.17,
-      "n": 5,
+      "low": 2,
+      "spread": 1,
+      "stdev": 0.37,
+      "n": 6,
       "ranks": {
         "espn": 1,
-        "nfl": 4,
+        "nfl": 1,
         "cbs": 2,
         "sharpfootball": 1,
+        "yahoo": 1,
         "bleacherreport": 1
       },
       "prev": null,
@@ -103,6 +109,7 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
@@ -111,18 +118,19 @@
     },
     "SEA": {
       "rank": 2,
-      "avg": 2.0,
-      "median": 2,
+      "avg": 2.17,
+      "median": 2.0,
       "high": 1,
       "low": 3,
       "spread": 2,
-      "stdev": 0.63,
-      "n": 5,
+      "stdev": 0.69,
+      "n": 6,
       "ranks": {
         "espn": 2,
-        "nfl": 2,
+        "nfl": 3,
         "cbs": 1,
         "sharpfootball": 3,
+        "yahoo": 2,
         "bleacherreport": 2
       },
       "prev": null,
@@ -132,6 +140,7 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
@@ -140,18 +149,19 @@
     },
     "BUF": {
       "rank": 3,
-      "avg": 5.0,
-      "median": 4,
+      "avg": 3.5,
+      "median": 3.5,
       "high": 2,
-      "low": 11,
-      "spread": 9,
-      "stdev": 3.16,
-      "n": 5,
+      "low": 5,
+      "spread": 3,
+      "stdev": 0.96,
+      "n": 6,
       "ranks": {
         "espn": 3,
-        "nfl": 11,
+        "nfl": 4,
         "cbs": 4,
         "sharpfootball": 2,
+        "yahoo": 3,
         "bleacherreport": 5
       },
       "prev": null,
@@ -161,122 +171,7 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
-        "bleacherreport": null
-      },
-      "record": "0-0",
-      "differential": 0,
-      "last_game": null
-    },
-    "NE": {
-      "rank": 4,
-      "avg": 7.8,
-      "median": 6,
-      "high": 1,
-      "low": 16,
-      "spread": 15,
-      "stdev": 5.0,
-      "n": 5,
-      "ranks": {
-        "espn": 6,
-        "nfl": 1,
-        "cbs": 16,
-        "sharpfootball": 10,
-        "bleacherreport": 6
-      },
-      "prev": null,
-      "delta": null,
-      "source_delta": {
-        "espn": null,
-        "nfl": null,
-        "cbs": null,
-        "sharpfootball": null,
-        "bleacherreport": null
-      },
-      "record": "0-0",
-      "differential": 0,
-      "last_game": null
-    },
-    "SF": {
-      "rank": 5,
-      "avg": 8.6,
-      "median": 9,
-      "high": 3,
-      "low": 13,
-      "spread": 10,
-      "stdev": 3.26,
-      "n": 5,
-      "ranks": {
-        "espn": 9,
-        "nfl": 3,
-        "cbs": 10,
-        "sharpfootball": 13,
-        "bleacherreport": 8
-      },
-      "prev": null,
-      "delta": null,
-      "source_delta": {
-        "espn": null,
-        "nfl": null,
-        "cbs": null,
-        "sharpfootball": null,
-        "bleacherreport": null
-      },
-      "record": "0-0",
-      "differential": 0,
-      "last_game": null
-    },
-    "HOU": {
-      "rank": 6,
-      "avg": 8.8,
-      "median": 10,
-      "high": 4,
-      "low": 12,
-      "spread": 8,
-      "stdev": 2.93,
-      "n": 5,
-      "ranks": {
-        "espn": 10,
-        "nfl": 12,
-        "cbs": 11,
-        "sharpfootball": 7,
-        "bleacherreport": 4
-      },
-      "prev": null,
-      "delta": null,
-      "source_delta": {
-        "espn": null,
-        "nfl": null,
-        "cbs": null,
-        "sharpfootball": null,
-        "bleacherreport": null
-      },
-      "record": "0-0",
-      "differential": 0,
-      "last_game": null
-    },
-    "BAL": {
-      "rank": 7,
-      "avg": 9.8,
-      "median": 9,
-      "high": 8,
-      "low": 13,
-      "spread": 5,
-      "stdev": 1.94,
-      "n": 5,
-      "ranks": {
-        "espn": 8,
-        "nfl": 13,
-        "cbs": 9,
-        "sharpfootball": 8,
-        "bleacherreport": 11
-      },
-      "prev": null,
-      "delta": null,
-      "source_delta": {
-        "espn": null,
-        "nfl": null,
-        "cbs": null,
-        "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
@@ -284,19 +179,20 @@
       "last_game": null
     },
     "DEN": {
-      "rank": 8,
-      "avg": 10.0,
-      "median": 6,
-      "high": 3,
-      "low": 31,
-      "spread": 28,
-      "stdev": 10.56,
-      "n": 5,
+      "rank": 4,
+      "avg": 4.17,
+      "median": 4.0,
+      "high": 2,
+      "low": 6,
+      "spread": 4,
+      "stdev": 1.46,
+      "n": 6,
       "ranks": {
         "espn": 4,
-        "nfl": 31,
+        "nfl": 2,
         "cbs": 6,
         "sharpfootball": 6,
+        "yahoo": 4,
         "bleacherreport": 3
       },
       "prev": null,
@@ -306,27 +202,29 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
       "differential": 0,
       "last_game": null
     },
-    "CIN": {
-      "rank": 9,
-      "avg": 11.6,
-      "median": 11,
-      "high": 8,
-      "low": 16,
-      "spread": 8,
-      "stdev": 3.38,
-      "n": 5,
+    "BAL": {
+      "rank": 5,
+      "avg": 8.0,
+      "median": 8.0,
+      "high": 6,
+      "low": 11,
+      "spread": 5,
+      "stdev": 1.73,
+      "n": 6,
       "ranks": {
-        "espn": 16,
-        "nfl": 8,
-        "cbs": 8,
-        "sharpfootball": 11,
-        "bleacherreport": 15
+        "espn": 8,
+        "nfl": 6,
+        "cbs": 9,
+        "sharpfootball": 8,
+        "yahoo": 6,
+        "bleacherreport": 11
       },
       "prev": null,
       "delta": null,
@@ -335,93 +233,7 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
-        "bleacherreport": null
-      },
-      "record": "0-0",
-      "differential": 0,
-      "last_game": null
-    },
-    "GB": {
-      "rank": 10,
-      "avg": 11.8,
-      "median": 7,
-      "high": 4,
-      "low": 25,
-      "spread": 21,
-      "stdev": 7.73,
-      "n": 5,
-      "ranks": {
-        "espn": 7,
-        "nfl": 25,
-        "cbs": 7,
-        "sharpfootball": 4,
-        "bleacherreport": 16
-      },
-      "prev": null,
-      "delta": null,
-      "source_delta": {
-        "espn": null,
-        "nfl": null,
-        "cbs": null,
-        "sharpfootball": null,
-        "bleacherreport": null
-      },
-      "record": "0-0",
-      "differential": 0,
-      "last_game": null
-    },
-    "JAX": {
-      "rank": 11,
-      "avg": 11.8,
-      "median": 16,
-      "high": 3,
-      "low": 17,
-      "spread": 14,
-      "stdev": 5.71,
-      "n": 5,
-      "ranks": {
-        "espn": 17,
-        "nfl": 16,
-        "cbs": 3,
-        "sharpfootball": 16,
-        "bleacherreport": 7
-      },
-      "prev": null,
-      "delta": null,
-      "source_delta": {
-        "espn": null,
-        "nfl": null,
-        "cbs": null,
-        "sharpfootball": null,
-        "bleacherreport": null
-      },
-      "record": "0-0",
-      "differential": 0,
-      "last_game": null
-    },
-    "CHI": {
-      "rank": 12,
-      "avg": 12.4,
-      "median": 13,
-      "high": 5,
-      "low": 17,
-      "spread": 12,
-      "stdev": 4.08,
-      "n": 5,
-      "ranks": {
-        "espn": 12,
-        "nfl": 5,
-        "cbs": 15,
-        "sharpfootball": 17,
-        "bleacherreport": 13
-      },
-      "prev": null,
-      "delta": null,
-      "source_delta": {
-        "espn": null,
-        "nfl": null,
-        "cbs": null,
-        "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
@@ -429,19 +241,20 @@
       "last_game": null
     },
     "PHI": {
-      "rank": 13,
-      "avg": 12.8,
-      "median": 9,
+      "rank": 6,
+      "avg": 8.17,
+      "median": 8.5,
       "high": 5,
-      "low": 28,
-      "spread": 23,
-      "stdev": 8.01,
-      "n": 5,
+      "low": 13,
+      "spread": 8,
+      "stdev": 2.73,
+      "n": 6,
       "ranks": {
         "espn": 5,
-        "nfl": 28,
+        "nfl": 5,
         "cbs": 13,
         "sharpfootball": 9,
+        "yahoo": 8,
         "bleacherreport": 9
       },
       "prev": null,
@@ -451,27 +264,29 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
       "differential": 0,
       "last_game": null
     },
-    "DET": {
-      "rank": 14,
-      "avg": 13.4,
-      "median": 12,
-      "high": 10,
-      "low": 19,
-      "spread": 9,
-      "stdev": 3.26,
-      "n": 5,
+    "HOU": {
+      "rank": 7,
+      "avg": 8.67,
+      "median": 10.0,
+      "high": 4,
+      "low": 11,
+      "spread": 7,
+      "stdev": 2.43,
+      "n": 6,
       "ranks": {
-        "espn": 11,
+        "espn": 10,
         "nfl": 10,
-        "cbs": 19,
-        "sharpfootball": 15,
-        "bleacherreport": 12
+        "cbs": 11,
+        "sharpfootball": 7,
+        "yahoo": 10,
+        "bleacherreport": 4
       },
       "prev": null,
       "delta": null,
@@ -480,27 +295,29 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
       "differential": 0,
       "last_game": null
     },
-    "LAC": {
-      "rank": 15,
-      "avg": 13.6,
-      "median": 14,
+    "NE": {
+      "rank": 8,
+      "avg": 9.33,
+      "median": 8.0,
       "high": 5,
-      "low": 22,
-      "spread": 17,
-      "stdev": 5.82,
-      "n": 5,
+      "low": 16,
+      "spread": 11,
+      "stdev": 4.07,
+      "n": 6,
       "ranks": {
-        "espn": 14,
-        "nfl": 22,
-        "cbs": 17,
-        "sharpfootball": 5,
-        "bleacherreport": 10
+        "espn": 6,
+        "nfl": 13,
+        "cbs": 16,
+        "sharpfootball": 10,
+        "yahoo": 5,
+        "bleacherreport": 6
       },
       "prev": null,
       "delta": null,
@@ -509,6 +326,7 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
@@ -516,19 +334,20 @@
       "last_game": null
     },
     "DAL": {
-      "rank": 16,
-      "avg": 15.0,
-      "median": 14,
+      "rank": 9,
+      "avg": 10.17,
+      "median": 10.0,
       "high": 5,
-      "low": 29,
-      "spread": 24,
-      "stdev": 7.82,
-      "n": 5,
+      "low": 15,
+      "spread": 10,
+      "stdev": 3.72,
+      "n": 6,
       "ranks": {
         "espn": 15,
-        "nfl": 29,
+        "nfl": 8,
         "cbs": 5,
         "sharpfootball": 12,
+        "yahoo": 7,
         "bleacherreport": 14
       },
       "prev": null,
@@ -538,27 +357,29 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
       "differential": 0,
       "last_game": null
     },
-    "TB": {
-      "rank": 17,
-      "avg": 15.0,
-      "median": 18,
-      "high": 7,
-      "low": 18,
-      "spread": 11,
-      "stdev": 4.29,
-      "n": 5,
+    "GB": {
+      "rank": 10,
+      "avg": 10.5,
+      "median": 9.5,
+      "high": 4,
+      "low": 17,
+      "spread": 13,
+      "stdev": 4.86,
+      "n": 6,
       "ranks": {
-        "espn": 18,
-        "nfl": 7,
-        "cbs": 14,
-        "sharpfootball": 18,
-        "bleacherreport": 18
+        "espn": 7,
+        "nfl": 12,
+        "cbs": 7,
+        "sharpfootball": 4,
+        "yahoo": 17,
+        "bleacherreport": 16
       },
       "prev": null,
       "delta": null,
@@ -567,6 +388,193 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
+        "bleacherreport": null
+      },
+      "record": "0-0",
+      "differential": 0,
+      "last_game": null
+    },
+    "JAX": {
+      "rank": 11,
+      "avg": 11.0,
+      "median": 11.5,
+      "high": 3,
+      "low": 17,
+      "spread": 14,
+      "stdev": 5.07,
+      "n": 6,
+      "ranks": {
+        "espn": 17,
+        "nfl": 9,
+        "cbs": 3,
+        "sharpfootball": 16,
+        "yahoo": 14,
+        "bleacherreport": 7
+      },
+      "prev": null,
+      "delta": null,
+      "source_delta": {
+        "espn": null,
+        "nfl": null,
+        "cbs": null,
+        "sharpfootball": null,
+        "yahoo": null,
+        "bleacherreport": null
+      },
+      "record": "0-0",
+      "differential": 0,
+      "last_game": null
+    },
+    "CIN": {
+      "rank": 12,
+      "avg": 12.0,
+      "median": 13.0,
+      "high": 7,
+      "low": 16,
+      "spread": 9,
+      "stdev": 3.56,
+      "n": 6,
+      "ranks": {
+        "espn": 16,
+        "nfl": 7,
+        "cbs": 8,
+        "sharpfootball": 11,
+        "yahoo": 15,
+        "bleacherreport": 15
+      },
+      "prev": null,
+      "delta": null,
+      "source_delta": {
+        "espn": null,
+        "nfl": null,
+        "cbs": null,
+        "sharpfootball": null,
+        "yahoo": null,
+        "bleacherreport": null
+      },
+      "record": "0-0",
+      "differential": 0,
+      "last_game": null
+    },
+    "SF": {
+      "rank": 13,
+      "avg": 12.17,
+      "median": 11.5,
+      "high": 8,
+      "low": 17,
+      "spread": 9,
+      "stdev": 3.44,
+      "n": 6,
+      "ranks": {
+        "espn": 9,
+        "nfl": 17,
+        "cbs": 10,
+        "sharpfootball": 13,
+        "yahoo": 16,
+        "bleacherreport": 8
+      },
+      "prev": null,
+      "delta": null,
+      "source_delta": {
+        "espn": null,
+        "nfl": null,
+        "cbs": null,
+        "sharpfootball": null,
+        "yahoo": null,
+        "bleacherreport": null
+      },
+      "record": "0-0",
+      "differential": 0,
+      "last_game": null
+    },
+    "LAC": {
+      "rank": 14,
+      "avg": 12.5,
+      "median": 13.5,
+      "high": 5,
+      "low": 17,
+      "spread": 12,
+      "stdev": 4.03,
+      "n": 6,
+      "ranks": {
+        "espn": 14,
+        "nfl": 16,
+        "cbs": 17,
+        "sharpfootball": 5,
+        "yahoo": 13,
+        "bleacherreport": 10
+      },
+      "prev": null,
+      "delta": null,
+      "source_delta": {
+        "espn": null,
+        "nfl": null,
+        "cbs": null,
+        "sharpfootball": null,
+        "yahoo": null,
+        "bleacherreport": null
+      },
+      "record": "0-0",
+      "differential": 0,
+      "last_game": null
+    },
+    "CHI": {
+      "rank": 15,
+      "avg": 13.17,
+      "median": 12.5,
+      "high": 11,
+      "low": 17,
+      "spread": 6,
+      "stdev": 2.19,
+      "n": 6,
+      "ranks": {
+        "espn": 12,
+        "nfl": 11,
+        "cbs": 15,
+        "sharpfootball": 17,
+        "yahoo": 11,
+        "bleacherreport": 13
+      },
+      "prev": null,
+      "delta": null,
+      "source_delta": {
+        "espn": null,
+        "nfl": null,
+        "cbs": null,
+        "sharpfootball": null,
+        "yahoo": null,
+        "bleacherreport": null
+      },
+      "record": "0-0",
+      "differential": 0,
+      "last_game": null
+    },
+    "DET": {
+      "rank": 16,
+      "avg": 13.5,
+      "median": 13.5,
+      "high": 9,
+      "low": 19,
+      "spread": 10,
+      "stdev": 3.25,
+      "n": 6,
+      "ranks": {
+        "espn": 11,
+        "nfl": 15,
+        "cbs": 19,
+        "sharpfootball": 15,
+        "yahoo": 9,
+        "bleacherreport": 12
+      },
+      "prev": null,
+      "delta": null,
+      "source_delta": {
+        "espn": null,
+        "nfl": null,
+        "cbs": null,
+        "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
@@ -574,19 +582,20 @@
       "last_game": null
     },
     "KC": {
-      "rank": 18,
-      "avg": 17.6,
-      "median": 14,
+      "rank": 17,
+      "avg": 13.67,
+      "median": 13.5,
       "high": 12,
-      "low": 32,
-      "spread": 20,
-      "stdev": 7.39,
-      "n": 5,
+      "low": 17,
+      "spread": 5,
+      "stdev": 1.7,
+      "n": 6,
       "ranks": {
         "espn": 13,
-        "nfl": 32,
+        "nfl": 14,
         "cbs": 12,
         "sharpfootball": 14,
+        "yahoo": 12,
         "bleacherreport": 17
       },
       "prev": null,
@@ -596,85 +605,29 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
       "differential": 0,
       "last_game": null
     },
-    "CAR": {
-      "rank": 19,
-      "avg": 19.2,
-      "median": 22,
-      "high": 6,
-      "low": 23,
-      "spread": 17,
-      "stdev": 6.62,
-      "n": 5,
-      "ranks": {
-        "espn": 23,
-        "nfl": 6,
-        "cbs": 23,
-        "sharpfootball": 22,
-        "bleacherreport": 22
-      },
-      "prev": null,
-      "delta": null,
-      "source_delta": {
-        "espn": null,
-        "nfl": null,
-        "cbs": null,
-        "sharpfootball": null,
-        "bleacherreport": null
-      },
-      "record": "0-0",
-      "differential": 0,
-      "last_game": null
-    },
-    "PIT": {
-      "rank": 20,
-      "avg": 19.6,
-      "median": 20,
-      "high": 18,
-      "low": 21,
-      "spread": 3,
-      "stdev": 1.02,
-      "n": 5,
-      "ranks": {
-        "espn": 21,
-        "nfl": 18,
-        "cbs": 20,
-        "sharpfootball": 20,
-        "bleacherreport": 19
-      },
-      "prev": null,
-      "delta": null,
-      "source_delta": {
-        "espn": null,
-        "nfl": null,
-        "cbs": null,
-        "sharpfootball": null,
-        "bleacherreport": null
-      },
-      "record": "0-0",
-      "differential": 0,
-      "last_game": null
-    },
-    "IND": {
-      "rank": 21,
-      "avg": 19.6,
-      "median": 21,
+    "TB": {
+      "rank": 18,
+      "avg": 17.83,
+      "median": 18.0,
       "high": 14,
-      "low": 23,
-      "spread": 9,
-      "stdev": 3.07,
-      "n": 5,
+      "low": 21,
+      "spread": 7,
+      "stdev": 2.03,
+      "n": 6,
       "ranks": {
-        "espn": 19,
-        "nfl": 14,
-        "cbs": 21,
-        "sharpfootball": 21,
-        "bleacherreport": 23
+        "espn": 18,
+        "nfl": 18,
+        "cbs": 14,
+        "sharpfootball": 18,
+        "yahoo": 21,
+        "bleacherreport": 18
       },
       "prev": null,
       "delta": null,
@@ -683,35 +636,7 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
-        "bleacherreport": null
-      },
-      "record": "0-0",
-      "differential": 0,
-      "last_game": null
-    },
-    "NO": {
-      "rank": 22,
-      "avg": 20.8,
-      "median": 24,
-      "high": 9,
-      "low": 26,
-      "spread": 17,
-      "stdev": 6.24,
-      "n": 5,
-      "ranks": {
-        "espn": 25,
-        "nfl": 9,
-        "cbs": 24,
-        "sharpfootball": 26,
-        "bleacherreport": 20
-      },
-      "prev": null,
-      "delta": null,
-      "source_delta": {
-        "espn": null,
-        "nfl": null,
-        "cbs": null,
-        "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
@@ -719,19 +644,20 @@
       "last_game": null
     },
     "MIN": {
-      "rank": 23,
-      "avg": 21.2,
-      "median": 21,
+      "rank": 19,
+      "avg": 19.5,
+      "median": 19.0,
       "high": 18,
-      "low": 26,
-      "spread": 8,
-      "stdev": 2.79,
-      "n": 5,
+      "low": 22,
+      "spread": 4,
+      "stdev": 1.5,
+      "n": 6,
       "ranks": {
         "espn": 22,
-        "nfl": 26,
+        "nfl": 19,
         "cbs": 18,
         "sharpfootball": 19,
+        "yahoo": 18,
         "bleacherreport": 21
       },
       "prev": null,
@@ -741,27 +667,29 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
       "differential": 0,
       "last_game": null
     },
-    "WSH": {
-      "rank": 24,
-      "avg": 24.2,
-      "median": 25,
-      "high": 20,
-      "low": 27,
-      "spread": 7,
-      "stdev": 2.48,
-      "n": 5,
+    "PIT": {
+      "rank": 20,
+      "avg": 20.17,
+      "median": 20.0,
+      "high": 19,
+      "low": 21,
+      "spread": 2,
+      "stdev": 0.69,
+      "n": 6,
       "ranks": {
-        "espn": 20,
-        "nfl": 27,
-        "cbs": 26,
-        "sharpfootball": 23,
-        "bleacherreport": 25
+        "espn": 21,
+        "nfl": 21,
+        "cbs": 20,
+        "sharpfootball": 20,
+        "yahoo": 20,
+        "bleacherreport": 19
       },
       "prev": null,
       "delta": null,
@@ -770,6 +698,100 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
+        "bleacherreport": null
+      },
+      "record": "0-0",
+      "differential": 0,
+      "last_game": null
+    },
+    "IND": {
+      "rank": 21,
+      "avg": 20.5,
+      "median": 20.5,
+      "high": 19,
+      "low": 23,
+      "spread": 4,
+      "stdev": 1.38,
+      "n": 6,
+      "ranks": {
+        "espn": 19,
+        "nfl": 20,
+        "cbs": 21,
+        "sharpfootball": 21,
+        "yahoo": 19,
+        "bleacherreport": 23
+      },
+      "prev": null,
+      "delta": null,
+      "source_delta": {
+        "espn": null,
+        "nfl": null,
+        "cbs": null,
+        "sharpfootball": null,
+        "yahoo": null,
+        "bleacherreport": null
+      },
+      "record": "0-0",
+      "differential": 0,
+      "last_game": null
+    },
+    "CAR": {
+      "rank": 22,
+      "avg": 23.0,
+      "median": 23.0,
+      "high": 22,
+      "low": 25,
+      "spread": 3,
+      "stdev": 1.0,
+      "n": 6,
+      "ranks": {
+        "espn": 23,
+        "nfl": 23,
+        "cbs": 23,
+        "sharpfootball": 22,
+        "yahoo": 25,
+        "bleacherreport": 22
+      },
+      "prev": null,
+      "delta": null,
+      "source_delta": {
+        "espn": null,
+        "nfl": null,
+        "cbs": null,
+        "sharpfootball": null,
+        "yahoo": null,
+        "bleacherreport": null
+      },
+      "record": "0-0",
+      "differential": 0,
+      "last_game": null
+    },
+    "NO": {
+      "rank": 23,
+      "avg": 23.5,
+      "median": 24.0,
+      "high": 20,
+      "low": 26,
+      "spread": 6,
+      "stdev": 1.98,
+      "n": 6,
+      "ranks": {
+        "espn": 25,
+        "nfl": 22,
+        "cbs": 24,
+        "sharpfootball": 26,
+        "yahoo": 24,
+        "bleacherreport": 20
+      },
+      "prev": null,
+      "delta": null,
+      "source_delta": {
+        "espn": null,
+        "nfl": null,
+        "cbs": null,
+        "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
@@ -777,19 +799,20 @@
       "last_game": null
     },
     "NYG": {
-      "rank": 25,
-      "avg": 24.8,
-      "median": 24,
+      "rank": 24,
+      "avg": 23.83,
+      "median": 24.0,
       "high": 22,
-      "low": 30,
-      "spread": 8,
-      "stdev": 2.71,
-      "n": 5,
+      "low": 26,
+      "spread": 4,
+      "stdev": 1.21,
+      "n": 6,
       "ranks": {
         "espn": 24,
-        "nfl": 30,
+        "nfl": 26,
         "cbs": 22,
         "sharpfootball": 24,
+        "yahoo": 23,
         "bleacherreport": 24
       },
       "prev": null,
@@ -799,27 +822,29 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
       "differential": 0,
       "last_game": null
     },
-    "ATL": {
-      "rank": 26,
-      "avg": 24.8,
-      "median": 26,
-      "high": 17,
-      "low": 28,
+    "WSH": {
+      "rank": 25,
+      "avg": 24.5,
+      "median": 24.0,
+      "high": 20,
+      "low": 31,
       "spread": 11,
-      "stdev": 4.07,
-      "n": 5,
+      "stdev": 3.5,
+      "n": 6,
       "ranks": {
-        "espn": 26,
-        "nfl": 17,
-        "cbs": 25,
-        "sharpfootball": 28,
-        "bleacherreport": 28
+        "espn": 20,
+        "nfl": 31,
+        "cbs": 26,
+        "sharpfootball": 23,
+        "yahoo": 22,
+        "bleacherreport": 25
       },
       "prev": null,
       "delta": null,
@@ -828,35 +853,7 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
-        "bleacherreport": null
-      },
-      "record": "0-0",
-      "differential": 0,
-      "last_game": null
-    },
-    "NYJ": {
-      "rank": 27,
-      "avg": 25.8,
-      "median": 27,
-      "high": 19,
-      "low": 29,
-      "spread": 10,
-      "stdev": 3.71,
-      "n": 5,
-      "ranks": {
-        "espn": 29,
-        "nfl": 19,
-        "cbs": 27,
-        "sharpfootball": 25,
-        "bleacherreport": 29
-      },
-      "prev": null,
-      "delta": null,
-      "source_delta": {
-        "espn": null,
-        "nfl": null,
-        "cbs": null,
-        "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
@@ -864,19 +861,20 @@
       "last_game": null
     },
     "TEN": {
-      "rank": 28,
-      "avg": 26.0,
-      "median": 27,
-      "high": 20,
+      "rank": 26,
+      "avg": 26.83,
+      "median": 27.0,
+      "high": 24,
       "low": 28,
-      "spread": 8,
-      "stdev": 3.03,
-      "n": 5,
+      "spread": 4,
+      "stdev": 1.34,
+      "n": 6,
       "ranks": {
         "espn": 28,
-        "nfl": 20,
+        "nfl": 24,
         "cbs": 28,
         "sharpfootball": 27,
+        "yahoo": 27,
         "bleacherreport": 27
       },
       "prev": null,
@@ -886,6 +884,38 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
+        "bleacherreport": null
+      },
+      "record": "0-0",
+      "differential": 0,
+      "last_game": null
+    },
+    "ATL": {
+      "rank": 27,
+      "avg": 27.0,
+      "median": 27.5,
+      "high": 25,
+      "low": 28,
+      "spread": 3,
+      "stdev": 1.15,
+      "n": 6,
+      "ranks": {
+        "espn": 26,
+        "nfl": 27,
+        "cbs": 25,
+        "sharpfootball": 28,
+        "yahoo": 28,
+        "bleacherreport": 28
+      },
+      "prev": null,
+      "delta": null,
+      "source_delta": {
+        "espn": null,
+        "nfl": null,
+        "cbs": null,
+        "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
@@ -893,19 +923,20 @@
       "last_game": null
     },
     "LV": {
-      "rank": 29,
-      "avg": 27.0,
-      "median": 27,
-      "high": 24,
+      "rank": 28,
+      "avg": 27.67,
+      "median": 28.0,
+      "high": 26,
       "low": 29,
-      "spread": 5,
-      "stdev": 1.9,
-      "n": 5,
+      "spread": 3,
+      "stdev": 1.37,
+      "n": 6,
       "ranks": {
         "espn": 27,
-        "nfl": 24,
+        "nfl": 29,
         "cbs": 29,
         "sharpfootball": 29,
+        "yahoo": 26,
         "bleacherreport": 26
       },
       "prev": null,
@@ -915,27 +946,29 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
       "differential": 0,
       "last_game": null
     },
-    "CLE": {
-      "rank": 30,
-      "avg": 27.6,
-      "median": 31,
-      "high": 15,
-      "low": 31,
-      "spread": 16,
-      "stdev": 6.31,
-      "n": 5,
+    "NYJ": {
+      "rank": 29,
+      "avg": 27.83,
+      "median": 28.5,
+      "high": 25,
+      "low": 29,
+      "spread": 4,
+      "stdev": 1.46,
+      "n": 6,
       "ranks": {
-        "espn": 31,
-        "nfl": 15,
-        "cbs": 31,
-        "sharpfootball": 31,
-        "bleacherreport": 30
+        "espn": 29,
+        "nfl": 28,
+        "cbs": 27,
+        "sharpfootball": 25,
+        "yahoo": 29,
+        "bleacherreport": 29
       },
       "prev": null,
       "delta": null,
@@ -944,6 +977,7 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
@@ -951,19 +985,20 @@
       "last_game": null
     },
     "ARI": {
-      "rank": 31,
-      "avg": 28.4,
-      "median": 30,
-      "high": 21,
+      "rank": 30,
+      "avg": 29.5,
+      "median": 30.0,
+      "high": 25,
       "low": 31,
-      "spread": 10,
-      "stdev": 3.72,
-      "n": 5,
+      "spread": 6,
+      "stdev": 2.06,
+      "n": 6,
       "ranks": {
         "espn": 30,
-        "nfl": 21,
+        "nfl": 25,
         "cbs": 30,
         "sharpfootball": 30,
+        "yahoo": 31,
         "bleacherreport": 31
       },
       "prev": null,
@@ -973,6 +1008,38 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
+        "bleacherreport": null
+      },
+      "record": "0-0",
+      "differential": 0,
+      "last_game": null
+    },
+    "CLE": {
+      "rank": 31,
+      "avg": 30.5,
+      "median": 30.5,
+      "high": 30,
+      "low": 31,
+      "spread": 1,
+      "stdev": 0.5,
+      "n": 6,
+      "ranks": {
+        "espn": 31,
+        "nfl": 30,
+        "cbs": 31,
+        "sharpfootball": 31,
+        "yahoo": 30,
+        "bleacherreport": 30
+      },
+      "prev": null,
+      "delta": null,
+      "source_delta": {
+        "espn": null,
+        "nfl": null,
+        "cbs": null,
+        "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",
@@ -981,18 +1048,19 @@
     },
     "MIA": {
       "rank": 32,
-      "avg": 30.2,
-      "median": 32,
-      "high": 23,
+      "avg": 32.0,
+      "median": 32.0,
+      "high": 32,
       "low": 32,
-      "spread": 9,
-      "stdev": 3.6,
-      "n": 5,
+      "spread": 0,
+      "stdev": 0.0,
+      "n": 6,
       "ranks": {
         "espn": 32,
-        "nfl": 23,
+        "nfl": 32,
         "cbs": 32,
         "sharpfootball": 32,
+        "yahoo": 32,
         "bleacherreport": 32
       },
       "prev": null,
@@ -1002,6 +1070,7 @@
         "nfl": null,
         "cbs": null,
         "sharpfootball": null,
+        "yahoo": null,
         "bleacherreport": null
       },
       "record": "0-0",

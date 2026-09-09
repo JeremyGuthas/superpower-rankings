@@ -13,6 +13,60 @@ def _tiebreak(entry: dict) -> tuple:
     return (entry["avg"], entry["median"], entry["high"], entry["abbr"])
 
 
+#: A source below this rank-correlation with the rest is treated as a parsing
+#: failure rather than a hot take. Genuine editorial disagreement between NFL
+#: outlets runs around 0.85-0.95; a mis-parse lands near zero.
+MIN_AGREEMENT = 0.5
+
+#: Below this many sources there is no "rest of the field" to compare against.
+MIN_SOURCES_TO_CROSS_CHECK = 3
+
+
+def _spearman(a: dict[str, int], b: dict[str, int]) -> float | None:
+    shared = set(a) & set(b)
+    n = len(shared)
+    if n < 3:
+        return None
+    d2 = sum((a[k] - b[k]) ** 2 for k in shared)
+    return 1 - (6 * d2) / (n * (n * n - 1))
+
+
+def cross_check(results: list) -> tuple[list, list[dict]]:
+    """Drop sources that disagree with every other source.
+
+    A parser can produce a complete, duplicate-free 1-32 ranking and still be
+    reading the wrong part of a page — a fixture ticker, a nav strip, a list
+    of "related teams". Validation cannot see that, because the output is
+    structurally perfect. What gives it away is that it agrees with nobody.
+    """
+    if len(results) < MIN_SOURCES_TO_CROSS_CHECK:
+        return list(results), []
+
+    kept, dropped = [], []
+    for candidate in results:
+        others = [r for r in results if r is not candidate]
+        # Compare against the others' median rank for each team, which is
+        # far more robust than comparing to any single source.
+        median_rank: dict[str, int] = {}
+        for abbr in candidate.ranks:
+            values = sorted(r.ranks[abbr] for r in others if abbr in r.ranks)
+            if values:
+                median_rank[abbr] = values[len(values) // 2]
+
+        agreement = _spearman(candidate.ranks, median_rank)
+        if agreement is not None and agreement < MIN_AGREEMENT:
+            dropped.append({
+                "id": candidate.source_id,
+                "name": candidate.source_name,
+                "error": (f"dropped: its ranking agrees with the other outlets "
+                          f"only {agreement:.2f} (needs {MIN_AGREEMENT:.2f}). "
+                          f"That is a parsing failure, not a hot take."),
+            })
+        else:
+            kept.append(candidate)
+    return kept, dropped
+
+
 def build_week(results: Iterable, previous: dict | None = None) -> dict:
     """`results` is an iterable of SourceResult. Returns a week payload."""
     results = list(results)

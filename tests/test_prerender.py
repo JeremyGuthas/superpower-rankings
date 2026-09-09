@@ -217,8 +217,9 @@ def test_workflow_passes_every_setting_config_reads():
     locally, silently does nothing in production. This caught exactly that."""
     import re as _re
     workflow = (ROOT / ".github" / "workflows" / "update.yml").read_text()
-    env_block = workflow[workflow.index("\nenv:"):workflow.index("\njobs:")]
-    passed = set(_re.findall(r"^  ([A-Z_]+):", env_block, _re.M))
+    # Credentials sit in the job that needs them, not the global env block,
+    # so scan the whole file.
+    passed = set(_re.findall(r"^\s*([A-Z_]+):\s*\$\{\{", workflow, _re.M))
     read = set(_re.findall(r'os\.environ\.get\("([A-Z_]+)"',
                            (ROOT / "superpower" / "config.py").read_text()))
     missing = read - passed

@@ -110,8 +110,12 @@ def _build_alias_map() -> dict[str, str]:
 ALIASES = _build_alias_map()
 
 # Longest-first so "Los Angeles Rams" wins over "Rams" when both could match.
+# Two- and three-letter abbreviations are ordinary English words ("no", "ne",
+# "gb"), so they are matched only when a whole field is the team — never
+# inside prose. Losing "KC" in a sentence costs little; reading "No Rank
+# change" as the Saints corrupts a whole ranking.
 _PROSE_ALIASES = sorted(
-    (a for a in ALIASES if len(a) > 3 or a in {"sf", "gb", "kc", "tb", "ne", "no"}),
+    (a for a in ALIASES if len(a) > 3),
     key=len,
     reverse=True,
 )
@@ -133,6 +137,22 @@ def resolve(name: str) -> str | None:
         return ALIASES[key]
     m = _PROSE_RE.search(key)
     return ALIASES[m.group(1)] if m else None
+
+
+def resolve_exact(name: str) -> str | None:
+    """Resolve only when the whole string names a team.
+
+    Used wherever a field is expected to *be* a team name — a table cell, a
+    heading, the line after a rank number. Unlike `resolve`, it never scans
+    for a team mentioned inside other words.
+    """
+    if not name:
+        return None
+    key = _norm(name)
+    if key in ALIASES:
+        return ALIASES[key]
+    key = re.sub(r"\s*\(.*?\)\s*$", "", key).strip()
+    return ALIASES.get(key)
 
 
 def find_in_text(text: str) -> str | None:

@@ -82,6 +82,78 @@ def ads_txt() -> str:
     return f"google.com, pub-{pub}, DIRECT, f08c47fec0942fa0\n"
 
 
+# --------------------------------------------------------------------------
+# Social distribution.
+#
+# Search traffic takes months. Posting does not — but only if it actually
+# happens every week, which is why it is automated. Each network is off until
+# its credentials exist, and an unconfigured network is skipped silently.
+#
+# Credentials come from GitHub Actions *secrets*, never from this file.
+# --------------------------------------------------------------------------
+
+#: Networks that post automatically. Reddit is deliberately absent by default:
+#: see REDDIT_AUTOPOST below.
+SOCIAL = {
+    "bluesky": {
+        "handle": os.environ.get("BLUESKY_HANDLE", ""),
+        "app_password": os.environ.get("BLUESKY_APP_PASSWORD", ""),
+    },
+    "x": {
+        "api_key": os.environ.get("X_API_KEY", ""),
+        "api_secret": os.environ.get("X_API_SECRET", ""),
+        "access_token": os.environ.get("X_ACCESS_TOKEN", ""),
+        "access_secret": os.environ.get("X_ACCESS_SECRET", ""),
+    },
+    "mastodon": {
+        "base_url": os.environ.get("MASTODON_BASE_URL", ""),
+        "token": os.environ.get("MASTODON_TOKEN", ""),
+    },
+    "facebook": {
+        "page_id": os.environ.get("FACEBOOK_PAGE_ID", ""),
+        "token": os.environ.get("FACEBOOK_PAGE_TOKEN", ""),
+    },
+    "threads": {
+        "user_id": os.environ.get("THREADS_USER_ID", ""),
+        "token": os.environ.get("THREADS_TOKEN", ""),
+    },
+    "discord": {
+        "webhook": os.environ.get("DISCORD_WEBHOOK", ""),
+    },
+    "reddit": {
+        "client_id": os.environ.get("REDDIT_CLIENT_ID", ""),
+        "client_secret": os.environ.get("REDDIT_CLIENT_SECRET", ""),
+        "username": os.environ.get("REDDIT_USERNAME", ""),
+        "password": os.environ.get("REDDIT_PASSWORD", ""),
+        "user_agent": os.environ.get(
+            "REDDIT_USER_AGENT", "superpowerrankings-weekly/1.0"),
+    },
+}
+
+#: Subreddits to submit to, comma separated. Leave empty and nothing is posted.
+REDDIT_SUBREDDITS = [
+    s.strip().lstrip("r/")
+    for s in os.environ.get("REDDIT_SUBREDDITS", "").split(",") if s.strip()
+]
+
+#: Reddit auto-posting is OFF unless this is explicitly "true".
+#:
+#: Most large subreddits treat a bot posting its own domain weekly as spam,
+#: and the penalty is a site-wide domain ban — which would cost far more than
+#: the posts are worth. With this off, the Tuesday job still writes the ready
+#: to paste submission and can notify you, but a human presses submit.
+REDDIT_AUTOPOST = os.environ.get("REDDIT_AUTOPOST", "").lower() == "true"
+
+
+def social_enabled(network: str) -> bool:
+    creds = SOCIAL.get(network, {})
+    return bool(creds) and all(creds.get(k) for k in creds if k != "user_agent")
+
+
+def any_social_enabled() -> bool:
+    return any(social_enabled(n) for n in SOCIAL)
+
+
 def ads_enabled() -> bool:
     return bool(AD_CLIENT)
 

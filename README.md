@@ -226,6 +226,41 @@ Placement rules the design follows: ads sit *between* sections and are labelled
 as advertising, never inside the ranking table. The newsletter appears inline
 once per page — no overlay, no timed popup. Nothing shifts layout after load.
 
+## Distribution
+
+The Tuesday job announces the new week to whichever networks are configured.
+Copy is written per network, inside its character limit, and leads with the
+angle no single outlet can publish — who is the outlier, where the rankings
+and the results disagree, where the media and the market part ways.
+
+Credentials are GitHub Actions **secrets**, never repository variables and
+never files in the repo. A network with no secret is skipped silently.
+
+| Secret(s) | Network |
+|---|---|
+| `BLUESKY_HANDLE`, `BLUESKY_APP_PASSWORD` | Bluesky — easiest to set up |
+| `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET` | X |
+| `MASTODON_BASE_URL`, `MASTODON_TOKEN` | Mastodon |
+| `FACEBOOK_PAGE_ID`, `FACEBOOK_PAGE_TOKEN` | a Facebook Page |
+| `THREADS_USER_ID`, `THREADS_TOKEN` | Threads |
+| `DISCORD_WEBHOOK` | a Discord channel |
+
+`data/promoted.json` records what has been announced, so the second Tuesday
+run never re-posts the first one. `--force` overrides it; `--dry-run` shows
+the copy without sending anything.
+
+### Reddit is deliberately not automatic
+
+Reddit is the best early traffic source for a site like this and the easiest
+one to lose permanently. Most large subreddits treat an account that posts its
+own domain on a schedule as spam, and the penalty is a **site-wide domain ban**
+that no amount of good content undoes.
+
+So the job prepares the submission and stops. `site/share/latest-kit.md` holds
+the title and body, ready to paste. Auto-posting exists behind
+`REDDIT_AUTOPOST=true` plus `REDDIT_SUBREDDITS`, but turning it on is a
+deliberate decision to accept that risk, not a default.
+
 ## Automatic updates
 
 `.github/workflows/update.yml` runs every **Tuesday at 16:00 and 20:00 UTC**
@@ -279,6 +314,13 @@ They cover team-name matching (every alias every outlet uses), each extraction
 strategy, the rejection of incomplete or duplicated rankings, the Tuesday
 calendar rollover, the averaging and tie-breaks, movement deltas, and the guard
 that keeps rolling-URL sources out of backfilled history.
+
+They also cover distribution: that copy fits every network's character limit,
+that nothing posts without credentials, that a week is never announced twice,
+that a failed post is not recorded as sent, that one network failing does not
+stop the others, and that Reddit does not post itself. Every one of those tests
+runs with the network stubbed to raise, so a test that tries to reach the
+internet fails loudly.
 
 They also cover the published site: that no monetisation markup appears while
 unconfigured, that ad units are labelled and affiliate links disclosed, that

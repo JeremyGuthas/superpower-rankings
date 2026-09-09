@@ -24,7 +24,7 @@ class NFLcom(Source):
     name = "NFL.com"
     homepage = "https://www.nfl.com/news/"
 
-    def find_article(self, season: int, week: int) -> Article:
+    def candidates(self, season: int, week: int) -> list[Article]:
         seen: list[str] = []
         for pool in POOLS:
             try:
@@ -37,11 +37,13 @@ class NFLcom(Source):
                     seen.append(url)
         if not seen:
             raise SourceFailure("no NFL.com power rankings article found")
-        # Prefer a slug that names the current week, else the first (newest) hit.
-        for url in seen:
-            if f"week-{week}" in url and not re.search(rf"week-{week}\d", url):
-                return Article(url=url)
-        return Article(url=seen[0])
+        named = [u for u in seen
+                 if f"week-{week}" in u and not re.search(rf"week-{week}\d", u)]
+        rest = [u for u in seen if u not in named]
+        return [Article(url=u) for u in (named + rest)[:4]]
+
+    def find_article(self, season: int, week: int) -> Article:
+        return self.candidates(season, week)[0]
 
     def load(self, article: Article) -> Article:
         page = http.get(article.url, cache_hours=3)

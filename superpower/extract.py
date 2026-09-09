@@ -12,7 +12,7 @@ import html
 import logging
 import re
 
-from .teams import TEAMS, find_in_text, resolve
+from .teams import TEAMS, find_in_text, resolve, resolve_exact
 
 log = logging.getLogger(__name__)
 
@@ -87,19 +87,30 @@ def from_numbered_lines(text: str) -> list[tuple[int, str]]:
     return out
 
 
+#: How far past the rank number a team name may sit. NFL.com's in-season
+#: edition inserts a movement arrow and a "No Rank change" caption between
+#: the two; the preseason edition does not. Scanning a few lines absorbs
+#: that difference instead of breaking on it.
+_RANK_LABEL_LOOKAHEAD = 5
+
+
 def from_rank_label_lines(text: str) -> list[tuple[int, str]]:
-    """NFL.com style: a bare "Rank" line, then the number, then the team."""
-    lines = text.split("\n")
+    """NFL.com style: a bare "Rank" line, the number, then the team."""
+    lines = [ln.strip() for ln in text.split("\n")]
     out = []
-    for i, line in enumerate(lines[:-2]):
-        if line.strip().lower() not in {"rank", "rk", "ranking"}:
+    for i, line in enumerate(lines):
+        if line.lower() not in {"rank", "rk", "ranking"}:
             continue
-        num, team = lines[i + 1].strip(), lines[i + 2].strip()
-        if not num.isdigit():
+        if i + 1 >= len(lines) or not lines[i + 1].isdigit():
             continue
-        abbr = resolve(team) or find_in_text(team)
-        if abbr:
-            out.append((int(num), abbr))
+        rank = int(lines[i + 1])
+        for candidate in lines[i + 2 : i + 2 + _RANK_LABEL_LOOKAHEAD]:
+            if not candidate or len(candidate) > 45:
+                continue
+            abbr = resolve_exact(candidate)
+            if abbr:
+                out.append((rank, abbr))
+                break
     return out
 
 
@@ -113,23 +124,11 @@ def from_split_lines(text: str) -> list[tuple[int, str]]:
         for nxt in lines[i + 1 : i + 3]:
             if len(nxt) > 45:
                 break
-            abbr = resolve(nxt)
+            abbr = resolve_exact(nxt)
             if abbr:
                 out.append((int(line), abbr))
                 break
     return out
-
-
-def from_bare_sequence(text: str) -> list[tuple[int, str]]:
-    """Last resort: 32 team names in order with no usable rank numbers."""
-    seen: list[str] = []
-    for line in text.split("\n"):
-        if len(line) > 60:
-            continue
-        abbr = resolve(line.strip())
-        if abbr and abbr not in seen:
-            seen.append(abbr)
-    return [(i + 1, a) for i, a in enumerate(seen)]
 
 
 STRATEGIES = (
@@ -137,7 +136,11 @@ STRATEGIES = (
     ("rank-label", lambda markup, text: from_rank_label_lines(text)),
     ("numbered-lines", lambda markup, text: from_numbered_lines(text)),
     ("split-lines", lambda markup, text: from_split_lines(text)),
-    ("bare-sequence", lambda markup, text: from_bare_sequence(text)),
+    # There is deliberately no "read the team names in order" fallback.
+    # Such a strategy assigns 1..32 by order of appearance, so it always
+    # produces a clean permutation and can never fail validation — which
+    # is exactly how a page's fixture ticker once got published as a
+    # ranking. A source we cannot read properly is dropped instead.
 )
 
 

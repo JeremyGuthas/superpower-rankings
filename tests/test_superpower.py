@@ -201,3 +201,94 @@ def test_rolling_url_sources_cannot_backfill_history():
     for sid in ("cbs", "sharpfootball"):
         assert BY_ID[sid].supports_history is False
     assert BY_ID["espn"].supports_history is True
+
+
+# --------------------------------------- regression: the ticker incident
+#
+# NFL.com's in-season format inserts a movement arrow and a "No Rank change"
+# caption between the rank number and the team. The parser missed the team,
+# the ordering fallback then read the page's *fixture ticker* as a ranking,
+# and because that fallback numbers teams 1..32 by order of appearance it
+# produced a structurally perfect — and completely wrong — board.
+
+NFL_INSEASON = "".join(
+    f"<div>Rank</div><div>{i}</div><div>—</div><div>No Rank change</div>"
+    f"<div>{n}</div><p>A paragraph about the team.</p>"
+    for i, n in enumerate(ORDER, 1))
+
+
+def test_rank_label_survives_movement_captions():
+    ranks, strategy = extract.extract(NFL_INSEASON)
+    assert strategy == "rank-label"
+    assert ranks["LAR"] == 1 and ranks["TEN"] == 32
+
+
+def test_no_rank_change_is_not_the_new_orleans_saints():
+    # "no" is New Orleans' abbreviation and also an English word.
+    assert teams.resolve_exact("No Rank change") is None
+    assert teams.resolve("No Rank change") is None
+    assert teams.resolve_exact("New Orleans Saints") == "NO"
+    assert teams.resolve_exact("NO") == "NO"
+
+
+@pytest.mark.parametrize("phrase", [
+    "No Rank change", "no change", "Not ranked", "Next up", "No movement",
+])
+def test_short_abbreviations_never_match_inside_prose(phrase):
+    assert teams.find_in_text(phrase) is None
+
+
+def test_ordering_fallback_is_gone():
+    """A strategy that numbers teams by order of appearance can never fail
+    validation, so validation offers it no protection. It must not exist."""
+    assert not hasattr(extract, "from_bare_sequence")
+    assert "bare-sequence" not in {name for name, _ in extract.STRATEGIES}
+
+
+def test_a_page_of_team_names_in_the_wrong_order_is_rejected():
+    ticker = "".join(f"<div>{n}</div><div>{teams.resolve(n)}</div>"
+                     for n in reversed(ORDER))
+    with pytest.raises(extract.RankParseError):
+        extract.extract(ticker)
+
+
+# ------------------------------------------------ cross-source agreement
+
+class _Src:
+    def __init__(self, sid, ranks):
+        self.source_id, self.source_name, self.ranks = sid, sid.upper(), ranks
+
+
+def _perm(order):
+    return {teams.resolve(n): i for i, n in enumerate(order, 1)}
+
+
+def test_cross_check_drops_a_source_that_agrees_with_nobody():
+    good = _perm(ORDER)
+    nudged = {a: max(1, min(32, r + (1 if r % 3 else -1))) for a, r in good.items()}
+    reversed_ = _perm(list(reversed(ORDER)))
+    kept, dropped = aggregate.cross_check(
+        [_Src("a", good), _Src("b", nudged), _Src("c", dict(good)), _Src("bad", reversed_)])
+    assert [s.source_id for s in kept] == ["a", "b", "c"]
+    assert len(dropped) == 1 and dropped[0]["id"] == "bad"
+    assert "parsing failure" in dropped[0]["error"]
+
+
+def test_cross_check_keeps_genuine_disagreement():
+    """Outlets really do differ. Only a mis-parse lands near zero."""
+    good = _perm(ORDER)
+    spicy = dict(good)
+    # Move four teams a long way — a contrarian board, not a broken one.
+    for abbr, rank in list(spicy.items())[:4]:
+        spicy[abbr] = min(32, rank + 12)
+    kept, dropped = aggregate.cross_check(
+        [_Src("a", good), _Src("b", dict(good)), _Src("c", spicy)])
+    assert dropped == []
+    assert len(kept) == 3
+
+
+def test_cross_check_declines_to_judge_two_sources():
+    good = _perm(ORDER)
+    reversed_ = _perm(list(reversed(ORDER)))
+    kept, dropped = aggregate.cross_check([_Src("a", good), _Src("bad", reversed_)])
+    assert len(kept) == 2 and dropped == []
