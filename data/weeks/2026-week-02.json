@@ -3,7 +3,7 @@
   "week": 2,
   "label": "Week 2",
   "games_through": 1,
-  "generated": "2026-09-15T19:22:23+00:00",
+  "generated": "2026-09-15T22:42:54+00:00",
   "sources": [
     {
       "id": "espn",
@@ -13,7 +13,7 @@
       "author": "NFL Nation",
       "published": "2026-09-15T14:26:42Z",
       "strategy": "headings",
-      "fetched": "2026-09-15T19:22:10Z"
+      "fetched": "2026-09-15T22:42:39Z"
     },
     {
       "id": "nfl",
@@ -23,7 +23,7 @@
       "author": "Nick Shook",
       "published": "2026-09-15T13:52:06.248Z",
       "strategy": "rank-label",
-      "fetched": "2026-09-15T19:22:13Z"
+      "fetched": "2026-09-15T22:42:42Z"
     },
     {
       "id": "cbs",
@@ -33,7 +33,7 @@
       "author": "Pete Prisco",
       "published": "2026-09-15T14:14:00+00:00",
       "strategy": "split-lines",
-      "fetched": "2026-09-15T19:22:13Z"
+      "fetched": "2026-09-15T22:42:42Z"
     },
     {
       "id": "sharpfootball",
@@ -43,7 +43,7 @@
       "author": "Raymond Summerlin",
       "published": "2026-09-14T15:00:01-04:00",
       "strategy": "headings",
-      "fetched": "2026-09-15T19:22:13Z"
+      "fetched": "2026-09-15T22:42:43Z"
     },
     {
       "id": "bleacherreport",
@@ -53,19 +53,19 @@
       "author": "B/R NFL Staff",
       "published": "2026-09-14T16:36:08.000Z",
       "strategy": "headings",
-      "fetched": "2026-09-15T19:22:23Z"
+      "fetched": "2026-09-15T22:42:54Z"
     }
   ],
   "failed_sources": [
     {
       "id": "yahoo",
       "name": "Yahoo Sports",
-      "error": "could not parse a full 1-32 ranking (headings: no candidates; rank-label: no candidates; numbered-lines: no candidates; split-lines: no candidates)"
+      "error": "could not parse a full 1-32 ranking (headings: no candidates; rank-label: no candidates; numbered-lines: found 1 teams, expected 32; split-lines: no candidates)"
     },
     {
       "id": "sportingnews",
       "name": "Sporting News",
-      "error": "SourceFailure: no Sporting News power rankings article found"
+      "error": "could not parse a full 1-32 ranking (headings: no candidates; rank-label: no candidates; numbered-lines: no candidates; split-lines: no candidates)"
     },
     {
       "id": "foxsports",
