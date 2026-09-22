@@ -16,28 +16,28 @@ Page to link:    https://superpowerrankings.com/2026/week-3/
 **Body**
 
 I average every major NFL power ranking into one consensus board —
-ESPN, NFL.com, CBS Sports, Sharp Football Analysis, Bleacher Report this week. Full table with each outlet's rank for all 32:
+ESPN, NFL.com, CBS Sports, Sharp Football Analysis, Yahoo Sports, Bleacher Report this week. Full table with each outlet's rank for all 32:
 https://superpowerrankings.com/2026/week-3/
 
 Top 10:
 
-1. Seattle Seahawks — 1.60
-2. Buffalo Bills — 1.80
-3. San Francisco 49ers — 3.80 (▲1)
-4. Kansas City Chiefs — 5.20 (▲5)
-5. Los Angeles Rams — 5.80
-6. Baltimore Ravens — 6.80 (▼3)
-7. Cincinnati Bengals — 6.80 (▲4)
-8. Philadelphia Eagles — 8.00 (▼1)
-9. Denver Broncos — 8.00 (▼1)
-10. Jacksonville Jaguars — 8.60 (▼4)
+1. Buffalo Bills — 1.67 (▲1)
+2. Seattle Seahawks — 1.67 (▼1)
+3. San Francisco 49ers — 3.67 (▲1)
+4. Kansas City Chiefs — 5.33 (▲5)
+5. Los Angeles Rams — 5.50
+6. Cincinnati Bengals — 6.50 (▲5)
+7. Baltimore Ravens — 6.83 (▼4)
+8. Philadelphia Eagles — 8.17 (▼1)
+9. Jacksonville Jaguars — 8.50 (▼3)
+10. Denver Broncos — 8.67 (▼2)
 
 What stood out:
 
-- **Jacksonville Jaguars** — CBS Sports has them at #2, 8 spots higher than the consensus #10.
-- **Kansas City Chiefs** — CBS Sports has them at #10, 6 spots lower than the consensus #4.
-- **Las Vegas Raiders** (2-0) sit #23 but rank #3 on results — 20 spots behind what they have earned.
-- **Houston Texans** (0-2) sit #11 but rank #27 on results — 16 spots ahead of what they have earned.
+- **Jacksonville Jaguars** — CBS Sports has them at #2, 7 spots higher than the consensus #9.
+- **Las Vegas Raiders** — CBS Sports has them at #28, 7 spots lower than the consensus #21.
+- **Las Vegas Raiders** (2-0) sit #21 but rank #3 on results — 18 spots behind what they have earned.
+- **Houston Texans** (0-2) sit #14 but rank #27 on results — 13 spots ahead of what they have earned.
 - **New York Giants** — #19 in the consensus but #27 at the book (+18000); the media is the believer.
 - **Los Angeles Chargers** — #25 in the consensus but #18 at the book (+4500); the market is the believer.
 
@@ -47,9 +47,9 @@ The whole archive is free JSON if anyone wants to play with it: https://superpow
 
 ## X / Bluesky
 
-2026 Week 3 NFL power rankings — 5 outlets averaged into one board.
+2026 Week 3 NFL power rankings — 6 outlets averaged into one board.
 
-Jacksonville Jaguars — CBS Sports has them at #2, 8 spots higher than the consensus #10.
+Jacksonville Jaguars — CBS Sports has them at #2, 7 spots higher than the consensus #9.
 
 Full 32: https://superpowerrankings.com/2026/week-3/
 
@@ -57,7 +57,7 @@ Full 32: https://superpowerrankings.com/2026/week-3/
 
 ## One-line version, for a group chat
 
-2026 Week 3 consensus rankings, 5 outlets averaged: https://superpowerrankings.com/2026/week-3/
+2026 Week 3 consensus rankings, 6 outlets averaged: https://superpowerrankings.com/2026/week-3/
 
 ---
 

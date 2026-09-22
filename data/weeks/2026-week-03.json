@@ -3,7 +3,7 @@
   "week": 3,
   "label": "Week 3",
   "games_through": 2,
-  "generated": "2026-09-22T19:23:36+00:00",
+  "generated": "2026-09-22T22:43:42+00:00",
   "sources": [
     {
       "id": "espn",
@@ -13,7 +13,7 @@
       "author": "NFL Nation",
       "published": "2026-09-22T16:21:13Z",
       "strategy": "headings",
-      "fetched": "2026-09-22T19:23:21Z"
+      "fetched": "2026-09-22T22:43:31Z"
     },
     {
       "id": "nfl",
@@ -23,7 +23,7 @@
       "author": "Nick Shook",
       "published": "2026-09-22T15:10:14.656Z",
       "strategy": "rank-label",
-      "fetched": "2026-09-22T19:23:24Z"
+      "fetched": "2026-09-22T22:43:34Z"
     },
     {
       "id": "cbs",
@@ -33,7 +33,7 @@
       "author": "Pete Prisco",
       "published": "2026-09-15T14:14:00+00:00",
       "strategy": "split-lines",
-      "fetched": "2026-09-22T19:23:24Z"
+      "fetched": "2026-09-22T22:43:34Z"
     },
     {
       "id": "sharpfootball",
@@ -43,7 +43,17 @@
       "author": "Raymond Summerlin",
       "published": "2026-09-21T12:00:01-04:00",
       "strategy": "headings",
-      "fetched": "2026-09-22T19:23:24Z"
+      "fetched": "2026-09-22T22:43:35Z"
+    },
+    {
+      "id": "yahoo",
+      "name": "Yahoo Sports",
+      "url": "https://sports.yahoo.com/nfl/article/nfl-power-rankings-week-3-are-the-vikings-the-best-team-in-the-nfc-north-032818598.html",
+      "title": "NFL Power Rankings entering Week 3: Are the Vikings the best team in the NFC North?",
+      "author": "Frank Schwab",
+      "published": "2026-09-22T21:28:24Z",
+      "strategy": "headings",
+      "fetched": "2026-09-22T22:43:38Z"
     },
     {
       "id": "bleacherreport",
@@ -53,15 +63,10 @@
       "author": "B/R NFL Staff",
       "published": "2026-09-21T16:39:49.000Z",
       "strategy": "headings",
-      "fetched": "2026-09-22T19:23:36Z"
+      "fetched": "2026-09-22T22:43:42Z"
     }
   ],
   "failed_sources": [
-    {
-      "id": "yahoo",
-      "name": "Yahoo Sports",
-      "error": "could not parse a full 1-32 ranking (headings: no candidates; rank-label: no candidates; numbered-lines: no candidates; split-lines: no candidates)"
-    },
     {
       "id": "sportingnews",
       "name": "Sporting News",
@@ -74,76 +79,37 @@
     }
   ],
   "notes": {
-    "biggest_riser": "KC",
-    "biggest_faller": "WSH",
+    "biggest_riser": "LV",
+    "biggest_faller": "TB",
     "most_divisive": "JAX",
     "most_agreed": "MIA"
   },
   "teams": {
-    "SEA": {
-      "rank": 1,
-      "avg": 1.6,
-      "median": 1,
-      "high": 1,
-      "low": 3,
-      "spread": 2,
-      "stdev": 0.8,
-      "n": 5,
-      "ranks": {
-        "espn": 2,
-        "nfl": 1,
-        "cbs": 1,
-        "sharpfootball": 3,
-        "bleacherreport": 1
-      },
-      "prev": 1,
-      "delta": 0,
-      "source_delta": {
-        "espn": 0,
-        "nfl": 0,
-        "cbs": 0,
-        "sharpfootball": 1,
-        "bleacherreport": 0
-      },
-      "record": "2-0",
-      "differential": 27,
-      "last_game": {
-        "week": 2,
-        "label": "Week 2",
-        "season_type": "regular",
-        "date": "2026-09-20T20:25Z",
-        "opponent": "ARI",
-        "home": false,
-        "points_for": 31,
-        "points_against": 7,
-        "result": "W",
-        "completed": true,
-        "detail": "Final"
-      }
-    },
     "BUF": {
-      "rank": 2,
-      "avg": 1.8,
-      "median": 2,
+      "rank": 1,
+      "avg": 1.67,
+      "median": 1.5,
       "high": 1,
       "low": 3,
       "spread": 2,
       "stdev": 0.75,
-      "n": 5,
+      "n": 6,
       "ranks": {
         "espn": 1,
         "nfl": 2,
         "cbs": 3,
         "sharpfootball": 1,
+        "yahoo": 1,
         "bleacherreport": 2
       },
       "prev": 2,
-      "delta": 0,
+      "delta": 1,
       "source_delta": {
         "espn": 0,
         "nfl": 0,
         "cbs": 0,
         "sharpfootball": 0,
+        "yahoo": null,
         "bleacherreport": 0
       },
       "record": "2-0",
@@ -162,20 +128,64 @@
         "detail": "Final"
       }
     },
+    "SEA": {
+      "rank": 2,
+      "avg": 1.67,
+      "median": 1.5,
+      "high": 1,
+      "low": 3,
+      "spread": 2,
+      "stdev": 0.75,
+      "n": 6,
+      "ranks": {
+        "espn": 2,
+        "nfl": 1,
+        "cbs": 1,
+        "sharpfootball": 3,
+        "yahoo": 2,
+        "bleacherreport": 1
+      },
+      "prev": 1,
+      "delta": -1,
+      "source_delta": {
+        "espn": 0,
+        "nfl": 0,
+        "cbs": 0,
+        "sharpfootball": 1,
+        "yahoo": null,
+        "bleacherreport": 0
+      },
+      "record": "2-0",
+      "differential": 27,
+      "last_game": {
+        "week": 2,
+        "label": "Week 2",
+        "season_type": "regular",
+        "date": "2026-09-20T20:25Z",
+        "opponent": "ARI",
+        "home": false,
+        "points_for": 31,
+        "points_against": 7,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
     "SF": {
       "rank": 3,
-      "avg": 3.8,
-      "median": 3,
+      "avg": 3.67,
+      "median": 3.0,
       "high": 2,
       "low": 7,
       "spread": 5,
-      "stdev": 1.72,
-      "n": 5,
+      "stdev": 1.6,
+      "n": 6,
       "ranks": {
         "espn": 3,
         "nfl": 7,
         "cbs": 4,
         "sharpfootball": 2,
+        "yahoo": 3,
         "bleacherreport": 3
       },
       "prev": 4,
@@ -185,6 +195,7 @@
         "nfl": 2,
         "cbs": 0,
         "sharpfootball": 1,
+        "yahoo": null,
         "bleacherreport": 0
       },
       "record": "2-0",
@@ -205,18 +216,19 @@
     },
     "KC": {
       "rank": 4,
-      "avg": 5.2,
-      "median": 4,
+      "avg": 5.33,
+      "median": 4.0,
       "high": 4,
       "low": 10,
       "spread": 6,
-      "stdev": 2.4,
-      "n": 5,
+      "stdev": 2.21,
+      "n": 6,
       "ranks": {
         "espn": 4,
         "nfl": 4,
         "cbs": 10,
         "sharpfootball": 4,
+        "yahoo": 6,
         "bleacherreport": 4
       },
       "prev": 9,
@@ -226,6 +238,7 @@
         "nfl": 6,
         "cbs": 0,
         "sharpfootball": 2,
+        "yahoo": null,
         "bleacherreport": 6
       },
       "record": "2-0",
@@ -246,18 +259,19 @@
     },
     "LAR": {
       "rank": 5,
-      "avg": 5.8,
-      "median": 5,
-      "high": 5,
+      "avg": 5.5,
+      "median": 5.0,
+      "high": 4,
       "low": 8,
-      "spread": 3,
-      "stdev": 1.17,
-      "n": 5,
+      "spread": 4,
+      "stdev": 1.26,
+      "n": 6,
       "ranks": {
         "espn": 5,
         "nfl": 8,
         "cbs": 5,
         "sharpfootball": 5,
+        "yahoo": 4,
         "bleacherreport": 6
       },
       "prev": 5,
@@ -267,6 +281,7 @@
         "nfl": -1,
         "cbs": 0,
         "sharpfootball": 0,
+        "yahoo": null,
         "bleacherreport": 0
       },
       "record": "1-1",
@@ -285,70 +300,31 @@
         "detail": "Final"
       }
     },
-    "BAL": {
-      "rank": 6,
-      "avg": 6.8,
-      "median": 7,
-      "high": 5,
-      "low": 9,
-      "spread": 4,
-      "stdev": 1.33,
-      "n": 5,
-      "ranks": {
-        "espn": 7,
-        "nfl": 5,
-        "cbs": 6,
-        "sharpfootball": 7,
-        "bleacherreport": 9
-      },
-      "prev": 3,
-      "delta": -3,
-      "source_delta": {
-        "espn": -4,
-        "nfl": -2,
-        "cbs": 0,
-        "sharpfootball": -5,
-        "bleacherreport": -5
-      },
-      "record": "1-1",
-      "differential": 11,
-      "last_game": {
-        "week": 2,
-        "label": "Week 2",
-        "season_type": "regular",
-        "date": "2026-09-20T17:00Z",
-        "opponent": "NO",
-        "home": true,
-        "points_for": 17,
-        "points_against": 24,
-        "result": "L",
-        "completed": true,
-        "detail": "Final"
-      }
-    },
     "CIN": {
-      "rank": 7,
-      "avg": 6.8,
-      "median": 8,
+      "rank": 6,
+      "avg": 6.5,
+      "median": 7.0,
       "high": 3,
       "low": 9,
       "spread": 6,
-      "stdev": 2.14,
-      "n": 5,
+      "stdev": 2.06,
+      "n": 6,
       "ranks": {
         "espn": 9,
         "nfl": 3,
         "cbs": 8,
         "sharpfootball": 6,
+        "yahoo": 5,
         "bleacherreport": 8
       },
       "prev": 11,
-      "delta": 4,
+      "delta": 5,
       "source_delta": {
         "espn": 6,
         "nfl": 1,
         "cbs": 0,
         "sharpfootball": 2,
+        "yahoo": null,
         "bleacherreport": 6
       },
       "record": "2-0",
@@ -367,20 +343,64 @@
         "detail": "Final"
       }
     },
+    "BAL": {
+      "rank": 7,
+      "avg": 6.83,
+      "median": 7.0,
+      "high": 5,
+      "low": 9,
+      "spread": 4,
+      "stdev": 1.21,
+      "n": 6,
+      "ranks": {
+        "espn": 7,
+        "nfl": 5,
+        "cbs": 6,
+        "sharpfootball": 7,
+        "yahoo": 7,
+        "bleacherreport": 9
+      },
+      "prev": 3,
+      "delta": -4,
+      "source_delta": {
+        "espn": -4,
+        "nfl": -2,
+        "cbs": 0,
+        "sharpfootball": -5,
+        "yahoo": null,
+        "bleacherreport": -5
+      },
+      "record": "1-1",
+      "differential": 11,
+      "last_game": {
+        "week": 2,
+        "label": "Week 2",
+        "season_type": "regular",
+        "date": "2026-09-20T17:00Z",
+        "opponent": "NO",
+        "home": true,
+        "points_for": 17,
+        "points_against": 24,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
     "PHI": {
       "rank": 8,
-      "avg": 8.0,
-      "median": 7,
+      "avg": 8.17,
+      "median": 8.0,
       "high": 5,
       "low": 12,
       "spread": 7,
-      "stdev": 2.61,
-      "n": 5,
+      "stdev": 2.41,
+      "n": 6,
       "ranks": {
         "espn": 6,
         "nfl": 10,
         "cbs": 7,
         "sharpfootball": 12,
+        "yahoo": 9,
         "bleacherreport": 5
       },
       "prev": 7,
@@ -390,6 +410,7 @@
         "nfl": 1,
         "cbs": 0,
         "sharpfootball": -1,
+        "yahoo": null,
         "bleacherreport": 2
       },
       "record": "2-0",
@@ -408,70 +429,31 @@
         "detail": "Final"
       }
     },
-    "DEN": {
-      "rank": 9,
-      "avg": 8.0,
-      "median": 8,
-      "high": 6,
-      "low": 11,
-      "spread": 5,
-      "stdev": 1.67,
-      "n": 5,
-      "ranks": {
-        "espn": 8,
-        "nfl": 6,
-        "cbs": 11,
-        "sharpfootball": 8,
-        "bleacherreport": 7
-      },
-      "prev": 8,
-      "delta": -1,
-      "source_delta": {
-        "espn": 1,
-        "nfl": 0,
-        "cbs": 0,
-        "sharpfootball": 2,
-        "bleacherreport": 1
-      },
-      "record": "1-1",
-      "differential": -14,
-      "last_game": {
-        "week": 2,
-        "label": "Week 2",
-        "season_type": "regular",
-        "date": "2026-09-20T20:05Z",
-        "opponent": "JAX",
-        "home": true,
-        "points_for": 20,
-        "points_against": 13,
-        "result": "W",
-        "completed": true,
-        "detail": "Final"
-      }
-    },
     "JAX": {
-      "rank": 10,
-      "avg": 8.6,
-      "median": 9,
+      "rank": 9,
+      "avg": 8.5,
+      "median": 9.0,
       "high": 2,
       "low": 13,
       "spread": 11,
-      "stdev": 3.61,
-      "n": 5,
+      "stdev": 3.3,
+      "n": 6,
       "ranks": {
         "espn": 13,
         "nfl": 9,
         "cbs": 2,
         "sharpfootball": 9,
+        "yahoo": 8,
         "bleacherreport": 10
       },
       "prev": 6,
-      "delta": -4,
+      "delta": -3,
       "source_delta": {
         "espn": 0,
         "nfl": -4,
         "cbs": 0,
         "sharpfootball": 0,
+        "yahoo": null,
         "bleacherreport": -5
       },
       "record": "1-1",
@@ -490,70 +472,74 @@
         "detail": "Final"
       }
     },
-    "HOU": {
-      "rank": 11,
-      "avg": 12.8,
-      "median": 12,
-      "high": 10,
-      "low": 16,
+    "DEN": {
+      "rank": 10,
+      "avg": 8.67,
+      "median": 8.0,
+      "high": 6,
+      "low": 12,
       "spread": 6,
-      "stdev": 2.32,
-      "n": 5,
+      "stdev": 2.13,
+      "n": 6,
       "ranks": {
-        "espn": 15,
-        "nfl": 11,
-        "cbs": 12,
-        "sharpfootball": 10,
-        "bleacherreport": 16
+        "espn": 8,
+        "nfl": 6,
+        "cbs": 11,
+        "sharpfootball": 8,
+        "yahoo": 12,
+        "bleacherreport": 7
       },
-      "prev": 12,
-      "delta": 1,
+      "prev": 8,
+      "delta": -2,
       "source_delta": {
-        "espn": -4,
-        "nfl": 1,
+        "espn": 1,
+        "nfl": 0,
         "cbs": 0,
-        "sharpfootball": -3,
-        "bleacherreport": -5
+        "sharpfootball": 2,
+        "yahoo": null,
+        "bleacherreport": 1
       },
-      "record": "0-2",
-      "differential": -19,
+      "record": "1-1",
+      "differential": -14,
       "last_game": {
         "week": 2,
         "label": "Week 2",
         "season_type": "regular",
-        "date": "2026-09-20T17:00Z",
-        "opponent": "CIN",
+        "date": "2026-09-20T20:05Z",
+        "opponent": "JAX",
         "home": true,
-        "points_for": 6,
-        "points_against": 20,
-        "result": "L",
+        "points_for": 20,
+        "points_against": 13,
+        "result": "W",
         "completed": true,
         "detail": "Final"
       }
     },
     "MIN": {
-      "rank": 12,
-      "avg": 13.0,
-      "median": 13,
-      "high": 11,
+      "rank": 11,
+      "avg": 12.5,
+      "median": 12.5,
+      "high": 10,
       "low": 15,
-      "spread": 4,
-      "stdev": 1.41,
-      "n": 5,
+      "spread": 5,
+      "stdev": 1.71,
+      "n": 6,
       "ranks": {
         "espn": 12,
         "nfl": 15,
         "cbs": 13,
         "sharpfootball": 14,
+        "yahoo": 10,
         "bleacherreport": 11
       },
       "prev": 16,
-      "delta": 4,
+      "delta": 5,
       "source_delta": {
         "espn": 5,
         "nfl": 7,
         "cbs": 0,
         "sharpfootball": 1,
+        "yahoo": null,
         "bleacherreport": 4
       },
       "record": "2-0",
@@ -573,28 +559,30 @@
       }
     },
     "CHI": {
-      "rank": 13,
-      "avg": 13.2,
-      "median": 14,
+      "rank": 12,
+      "avg": 13.33,
+      "median": 14.0,
       "high": 9,
       "low": 16,
       "spread": 7,
-      "stdev": 2.79,
-      "n": 5,
+      "stdev": 2.56,
+      "n": 6,
       "ranks": {
         "espn": 11,
         "nfl": 16,
         "cbs": 9,
         "sharpfootball": 16,
+        "yahoo": 14,
         "bleacherreport": 14
       },
       "prev": 10,
-      "delta": -3,
+      "delta": -2,
       "source_delta": {
         "espn": -4,
         "nfl": -8,
         "cbs": 0,
         "sharpfootball": -3,
+        "yahoo": null,
         "bleacherreport": -5
       },
       "record": "1-1",
@@ -614,28 +602,30 @@
       }
     },
     "NE": {
-      "rank": 14,
-      "avg": 14.0,
-      "median": 12,
+      "rank": 13,
+      "avg": 13.5,
+      "median": 11.5,
       "high": 10,
       "low": 19,
       "spread": 9,
-      "stdev": 3.74,
-      "n": 5,
+      "stdev": 3.59,
+      "n": 6,
       "ranks": {
         "espn": 10,
         "nfl": 18,
         "cbs": 19,
         "sharpfootball": 11,
+        "yahoo": 11,
         "bleacherreport": 12
       },
       "prev": 14,
-      "delta": 0,
+      "delta": 1,
       "source_delta": {
         "espn": 0,
         "nfl": 0,
         "cbs": 0,
         "sharpfootball": 3,
+        "yahoo": null,
         "bleacherreport": 0
       },
       "record": "1-1",
@@ -654,20 +644,64 @@
         "detail": "Final"
       }
     },
+    "HOU": {
+      "rank": 14,
+      "avg": 13.83,
+      "median": 13.5,
+      "high": 10,
+      "low": 19,
+      "spread": 9,
+      "stdev": 3.13,
+      "n": 6,
+      "ranks": {
+        "espn": 15,
+        "nfl": 11,
+        "cbs": 12,
+        "sharpfootball": 10,
+        "yahoo": 19,
+        "bleacherreport": 16
+      },
+      "prev": 12,
+      "delta": -2,
+      "source_delta": {
+        "espn": -4,
+        "nfl": 1,
+        "cbs": 0,
+        "sharpfootball": -3,
+        "yahoo": null,
+        "bleacherreport": -5
+      },
+      "record": "0-2",
+      "differential": -19,
+      "last_game": {
+        "week": 2,
+        "label": "Week 2",
+        "season_type": "regular",
+        "date": "2026-09-20T17:00Z",
+        "opponent": "CIN",
+        "home": true,
+        "points_for": 6,
+        "points_against": 20,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
     "DET": {
       "rank": 15,
-      "avg": 14.0,
-      "median": 14,
+      "avg": 13.83,
+      "median": 13.5,
       "high": 13,
       "low": 15,
       "spread": 2,
-      "stdev": 0.89,
-      "n": 5,
+      "stdev": 0.9,
+      "n": 6,
       "ranks": {
         "espn": 14,
         "nfl": 13,
         "cbs": 15,
         "sharpfootball": 13,
+        "yahoo": 13,
         "bleacherreport": 15
       },
       "prev": 13,
@@ -677,6 +711,7 @@
         "nfl": 0,
         "cbs": 0,
         "sharpfootball": -1,
+        "yahoo": null,
         "bleacherreport": -2
       },
       "record": "1-1",
@@ -697,18 +732,19 @@
     },
     "DAL": {
       "rank": 16,
-      "avg": 15.4,
-      "median": 16,
+      "avg": 15.67,
+      "median": 16.5,
       "high": 12,
       "low": 17,
       "spread": 5,
-      "stdev": 1.85,
-      "n": 5,
+      "stdev": 1.8,
+      "n": 6,
       "ranks": {
         "espn": 16,
         "nfl": 12,
         "cbs": 17,
         "sharpfootball": 15,
+        "yahoo": 17,
         "bleacherreport": 17
       },
       "prev": 17,
@@ -718,6 +754,7 @@
         "nfl": 5,
         "cbs": 0,
         "sharpfootball": 6,
+        "yahoo": null,
         "bleacherreport": 1
       },
       "record": "1-1",
@@ -738,18 +775,19 @@
     },
     "NO": {
       "rank": 17,
-      "avg": 17.2,
-      "median": 17,
+      "avg": 16.83,
+      "median": 16.0,
       "high": 13,
       "low": 23,
       "spread": 10,
-      "stdev": 3.6,
-      "n": 5,
+      "stdev": 3.39,
+      "n": 6,
       "ranks": {
         "espn": 19,
         "nfl": 14,
         "cbs": 23,
         "sharpfootball": 17,
+        "yahoo": 15,
         "bleacherreport": 13
       },
       "prev": 22,
@@ -759,6 +797,7 @@
         "nfl": 7,
         "cbs": 0,
         "sharpfootball": 8,
+        "yahoo": null,
         "bleacherreport": 9
       },
       "record": "1-1",
@@ -779,18 +818,19 @@
     },
     "GB": {
       "rank": 18,
-      "avg": 17.6,
-      "median": 18,
+      "avg": 18.0,
+      "median": 18.5,
       "high": 14,
       "low": 20,
       "spread": 6,
-      "stdev": 2.06,
-      "n": 5,
+      "stdev": 2.08,
+      "n": 6,
       "ranks": {
         "espn": 17,
         "nfl": 20,
         "cbs": 14,
         "sharpfootball": 19,
+        "yahoo": 20,
         "bleacherreport": 18
       },
       "prev": 15,
@@ -800,6 +840,7 @@
         "nfl": -4,
         "cbs": 0,
         "sharpfootball": -2,
+        "yahoo": null,
         "bleacherreport": -1
       },
       "record": "1-1",
@@ -820,18 +861,19 @@
     },
     "NYG": {
       "rank": 19,
-      "avg": 20.2,
-      "median": 21,
+      "avg": 19.5,
+      "median": 19.5,
       "high": 16,
       "low": 24,
       "spread": 8,
-      "stdev": 2.86,
-      "n": 5,
+      "stdev": 3.04,
+      "n": 6,
       "ranks": {
         "espn": 18,
         "nfl": 21,
         "cbs": 16,
         "sharpfootball": 24,
+        "yahoo": 16,
         "bleacherreport": 22
       },
       "prev": 18,
@@ -841,6 +883,7 @@
         "nfl": -6,
         "cbs": 0,
         "sharpfootball": -4,
+        "yahoo": null,
         "bleacherreport": -1
       },
       "record": "1-1",
@@ -861,18 +904,19 @@
     },
     "CAR": {
       "rank": 20,
-      "avg": 20.4,
-      "median": 21,
+      "avg": 20.67,
+      "median": 21.0,
       "high": 17,
       "low": 25,
       "spread": 8,
-      "stdev": 2.8,
-      "n": 5,
+      "stdev": 2.62,
+      "n": 6,
       "ranks": {
         "espn": 21,
         "nfl": 17,
         "cbs": 25,
         "sharpfootball": 18,
+        "yahoo": 22,
         "bleacherreport": 21
       },
       "prev": 25,
@@ -882,6 +926,7 @@
         "nfl": 10,
         "cbs": 0,
         "sharpfootball": 6,
+        "yahoo": null,
         "bleacherreport": 2
       },
       "record": "1-1",
@@ -900,111 +945,31 @@
         "detail": "Final"
       }
     },
-    "PIT": {
-      "rank": 21,
-      "avg": 22.0,
-      "median": 20,
-      "high": 19,
-      "low": 26,
-      "spread": 7,
-      "stdev": 2.9,
-      "n": 5,
-      "ranks": {
-        "espn": 25,
-        "nfl": 26,
-        "cbs": 20,
-        "sharpfootball": 20,
-        "bleacherreport": 19
-      },
-      "prev": 20,
-      "delta": -1,
-      "source_delta": {
-        "espn": -4,
-        "nfl": -3,
-        "cbs": 0,
-        "sharpfootball": -4,
-        "bleacherreport": -3
-      },
-      "record": "1-1",
-      "differential": -10,
-      "last_game": {
-        "week": 2,
-        "label": "Week 2",
-        "season_type": "regular",
-        "date": "2026-09-20T17:00Z",
-        "opponent": "NE",
-        "home": false,
-        "points_for": 3,
-        "points_against": 20,
-        "result": "L",
-        "completed": true,
-        "detail": "Final"
-      }
-    },
-    "TB": {
-      "rank": 22,
-      "avg": 22.0,
-      "median": 23,
-      "high": 18,
-      "low": 24,
-      "spread": 6,
-      "stdev": 2.28,
-      "n": 5,
-      "ranks": {
-        "espn": 23,
-        "nfl": 24,
-        "cbs": 18,
-        "sharpfootball": 21,
-        "bleacherreport": 24
-      },
-      "prev": 19,
-      "delta": -3,
-      "source_delta": {
-        "espn": -3,
-        "nfl": -10,
-        "cbs": 0,
-        "sharpfootball": -2,
-        "bleacherreport": -4
-      },
-      "record": "0-2",
-      "differential": -10,
-      "last_game": {
-        "week": 2,
-        "label": "Week 2",
-        "season_type": "regular",
-        "date": "2026-09-20T17:00Z",
-        "opponent": "CLE",
-        "home": true,
-        "points_for": 19,
-        "points_against": 23,
-        "result": "L",
-        "completed": true,
-        "detail": "Final"
-      }
-    },
     "LV": {
-      "rank": 23,
-      "avg": 22.6,
-      "median": 22,
-      "high": 20,
+      "rank": 21,
+      "avg": 21.83,
+      "median": 21.0,
+      "high": 18,
       "low": 28,
-      "spread": 8,
-      "stdev": 2.94,
-      "n": 5,
+      "spread": 10,
+      "stdev": 3.18,
+      "n": 6,
       "ranks": {
         "espn": 20,
         "nfl": 22,
         "cbs": 28,
         "sharpfootball": 23,
+        "yahoo": 18,
         "bleacherreport": 20
       },
       "prev": 28,
-      "delta": 5,
+      "delta": 7,
       "source_delta": {
         "espn": 8,
         "nfl": 7,
         "cbs": 0,
         "sharpfootball": 5,
+        "yahoo": null,
         "bleacherreport": 4
       },
       "record": "2-0",
@@ -1023,29 +988,74 @@
         "detail": "Final"
       }
     },
+    "PIT": {
+      "rank": 22,
+      "avg": 22.17,
+      "median": 21.5,
+      "high": 19,
+      "low": 26,
+      "spread": 7,
+      "stdev": 2.67,
+      "n": 6,
+      "ranks": {
+        "espn": 25,
+        "nfl": 26,
+        "cbs": 20,
+        "sharpfootball": 20,
+        "yahoo": 23,
+        "bleacherreport": 19
+      },
+      "prev": 20,
+      "delta": -2,
+      "source_delta": {
+        "espn": -4,
+        "nfl": -3,
+        "cbs": 0,
+        "sharpfootball": -4,
+        "yahoo": null,
+        "bleacherreport": -3
+      },
+      "record": "1-1",
+      "differential": -10,
+      "last_game": {
+        "week": 2,
+        "label": "Week 2",
+        "season_type": "regular",
+        "date": "2026-09-20T17:00Z",
+        "opponent": "NE",
+        "home": false,
+        "points_for": 3,
+        "points_against": 20,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
     "IND": {
-      "rank": 24,
-      "avg": 22.6,
-      "median": 23,
+      "rank": 23,
+      "avg": 22.33,
+      "median": 22.5,
       "high": 19,
       "low": 25,
       "spread": 6,
-      "stdev": 2.06,
-      "n": 5,
+      "stdev": 1.97,
+      "n": 6,
       "ranks": {
         "espn": 24,
         "nfl": 19,
         "cbs": 22,
         "sharpfootball": 25,
+        "yahoo": 21,
         "bleacherreport": 23
       },
       "prev": 26,
-      "delta": 2,
+      "delta": 3,
       "source_delta": {
         "espn": -2,
         "nfl": 7,
         "cbs": 0,
         "sharpfootball": 2,
+        "yahoo": null,
         "bleacherreport": 5
       },
       "record": "0-2",
@@ -1064,20 +1074,64 @@
         "detail": "Final/OT"
       }
     },
+    "TB": {
+      "rank": 24,
+      "avg": 22.5,
+      "median": 23.5,
+      "high": 18,
+      "low": 25,
+      "spread": 7,
+      "stdev": 2.36,
+      "n": 6,
+      "ranks": {
+        "espn": 23,
+        "nfl": 24,
+        "cbs": 18,
+        "sharpfootball": 21,
+        "yahoo": 25,
+        "bleacherreport": 24
+      },
+      "prev": 19,
+      "delta": -5,
+      "source_delta": {
+        "espn": -3,
+        "nfl": -10,
+        "cbs": 0,
+        "sharpfootball": -2,
+        "yahoo": null,
+        "bleacherreport": -4
+      },
+      "record": "0-2",
+      "differential": -10,
+      "last_game": {
+        "week": 2,
+        "label": "Week 2",
+        "season_type": "regular",
+        "date": "2026-09-20T17:00Z",
+        "opponent": "CLE",
+        "home": true,
+        "points_for": 19,
+        "points_against": 23,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
     "LAC": {
       "rank": 25,
-      "avg": 24.8,
-      "median": 25,
+      "avg": 25.0,
+      "median": 25.5,
       "high": 21,
       "low": 29,
       "spread": 8,
-      "stdev": 2.99,
-      "n": 5,
+      "stdev": 2.77,
+      "n": 6,
       "ranks": {
         "espn": 22,
         "nfl": 29,
         "cbs": 21,
         "sharpfootball": 27,
+        "yahoo": 26,
         "bleacherreport": 25
       },
       "prev": 21,
@@ -1087,6 +1141,7 @@
         "nfl": -9,
         "cbs": 0,
         "sharpfootball": -9,
+        "yahoo": null,
         "bleacherreport": -6
       },
       "record": "0-2",
@@ -1107,18 +1162,19 @@
     },
     "NYJ": {
       "rank": 26,
-      "avg": 25.4,
-      "median": 26,
+      "avg": 25.83,
+      "median": 26.5,
       "high": 22,
-      "low": 27,
-      "spread": 5,
-      "stdev": 1.85,
-      "n": 5,
+      "low": 28,
+      "spread": 6,
+      "stdev": 1.95,
+      "n": 6,
       "ranks": {
         "espn": 27,
         "nfl": 25,
         "cbs": 27,
         "sharpfootball": 22,
+        "yahoo": 28,
         "bleacherreport": 26
       },
       "prev": 27,
@@ -1128,6 +1184,7 @@
         "nfl": -1,
         "cbs": 0,
         "sharpfootball": 0,
+        "yahoo": null,
         "bleacherreport": 0
       },
       "record": "1-1",
@@ -1148,18 +1205,19 @@
     },
     "ARI": {
       "rank": 27,
-      "avg": 26.6,
-      "median": 26,
+      "avg": 27.0,
+      "median": 26.5,
       "high": 24,
       "low": 30,
       "spread": 6,
-      "stdev": 1.96,
-      "n": 5,
+      "stdev": 2.0,
+      "n": 6,
       "ranks": {
         "espn": 26,
         "nfl": 30,
         "cbs": 24,
         "sharpfootball": 26,
+        "yahoo": 29,
         "bleacherreport": 27
       },
       "prev": 23,
@@ -1169,6 +1227,7 @@
         "nfl": -11,
         "cbs": 0,
         "sharpfootball": 0,
+        "yahoo": null,
         "bleacherreport": -2
       },
       "record": "1-1",
@@ -1189,18 +1248,19 @@
     },
     "CLE": {
       "rank": 28,
-      "avg": 27.8,
-      "median": 28,
+      "avg": 27.17,
+      "median": 28.0,
       "high": 23,
       "low": 31,
       "spread": 8,
-      "stdev": 2.64,
-      "n": 5,
+      "stdev": 2.79,
+      "n": 6,
       "ranks": {
         "espn": 29,
         "nfl": 23,
         "cbs": 31,
         "sharpfootball": 28,
+        "yahoo": 24,
         "bleacherreport": 28
       },
       "prev": 32,
@@ -1210,6 +1270,7 @@
         "nfl": 9,
         "cbs": 0,
         "sharpfootball": 4,
+        "yahoo": null,
         "bleacherreport": 4
       },
       "record": "1-1",
@@ -1230,18 +1291,19 @@
     },
     "WSH": {
       "rank": 29,
-      "avg": 28.2,
-      "median": 28,
+      "avg": 28.0,
+      "median": 28.0,
       "high": 26,
       "low": 30,
       "spread": 4,
-      "stdev": 1.33,
-      "n": 5,
+      "stdev": 1.29,
+      "n": 6,
       "ranks": {
         "espn": 28,
         "nfl": 28,
         "cbs": 26,
         "sharpfootball": 30,
+        "yahoo": 27,
         "bleacherreport": 29
       },
       "prev": 24,
@@ -1251,6 +1313,7 @@
         "nfl": -3,
         "cbs": 0,
         "sharpfootball": -7,
+        "yahoo": null,
         "bleacherreport": -2
       },
       "record": "0-2",
@@ -1271,18 +1334,19 @@
     },
     "TEN": {
       "rank": 30,
-      "avg": 29.2,
-      "median": 30,
+      "avg": 29.33,
+      "median": 30.0,
       "high": 27,
       "low": 30,
       "spread": 3,
-      "stdev": 1.17,
-      "n": 5,
+      "stdev": 1.11,
+      "n": 6,
       "ranks": {
         "espn": 30,
         "nfl": 27,
         "cbs": 30,
         "sharpfootball": 29,
+        "yahoo": 30,
         "bleacherreport": 30
       },
       "prev": 30,
@@ -1292,6 +1356,7 @@
         "nfl": 4,
         "cbs": 0,
         "sharpfootball": 1,
+        "yahoo": null,
         "bleacherreport": 0
       },
       "record": "0-2",
@@ -1312,18 +1377,19 @@
     },
     "ATL": {
       "rank": 31,
-      "avg": 30.6,
-      "median": 31,
+      "avg": 30.67,
+      "median": 31.0,
       "high": 29,
       "low": 31,
       "spread": 2,
-      "stdev": 0.8,
-      "n": 5,
+      "stdev": 0.75,
+      "n": 6,
       "ranks": {
         "espn": 31,
         "nfl": 31,
         "cbs": 29,
         "sharpfootball": 31,
+        "yahoo": 31,
         "bleacherreport": 31
       },
       "prev": 29,
@@ -1333,6 +1399,7 @@
         "nfl": -3,
         "cbs": 0,
         "sharpfootball": -2,
+        "yahoo": null,
         "bleacherreport": -2
       },
       "record": "0-2",
@@ -1354,17 +1421,18 @@
     "MIA": {
       "rank": 32,
       "avg": 32.0,
-      "median": 32,
+      "median": 32.0,
       "high": 32,
       "low": 32,
       "spread": 0,
       "stdev": 0.0,
-      "n": 5,
+      "n": 6,
       "ranks": {
         "espn": 32,
         "nfl": 32,
         "cbs": 32,
         "sharpfootball": 32,
+        "yahoo": 32,
         "bleacherreport": 32
       },
       "prev": 31,
@@ -1374,6 +1442,7 @@
         "nfl": -2,
         "cbs": 0,
         "sharpfootball": -1,
+        "yahoo": null,
         "bleacherreport": -1
       },
       "record": "0-2",
