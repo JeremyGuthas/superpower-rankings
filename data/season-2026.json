@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "generated": "2026-09-29T20:20:12+00:00",
+  "generated": "2026-09-29T23:26:10+00:00",
   "teams": [
     {
       "abbr": "ARI",
@@ -6539,7 +6539,7 @@
       "week": 4,
       "label": "Week 4",
       "games_through": 3,
-      "generated": "2026-09-29T20:20:12+00:00",
+      "generated": "2026-09-29T23:26:10+00:00",
       "sources": [
         {
           "id": "espn",
@@ -6549,7 +6549,7 @@
           "author": "NFL Nation",
           "published": "2026-09-29T15:18:28Z",
           "strategy": "headings",
-          "fetched": "2026-09-29T20:20:00Z"
+          "fetched": "2026-09-29T23:25:59Z"
         },
         {
           "id": "nfl",
@@ -6559,7 +6559,7 @@
           "author": "Nick Shook",
           "published": "2026-09-29T15:15:38.69Z",
           "strategy": "rank-label",
-          "fetched": "2026-09-29T20:20:03Z"
+          "fetched": "2026-09-29T23:26:02Z"
         },
         {
           "id": "cbs",
@@ -6569,7 +6569,7 @@
           "author": "Pete Prisco",
           "published": "2026-09-29T11:32:19+00:00",
           "strategy": "split-lines",
-          "fetched": "2026-09-29T20:20:03Z"
+          "fetched": "2026-09-29T23:26:02Z"
         },
         {
           "id": "sharpfootball",
@@ -6579,7 +6579,7 @@
           "author": "Raymond Summerlin",
           "published": "2026-09-28T22:30:01-04:00",
           "strategy": "headings",
-          "fetched": "2026-09-29T20:20:04Z"
+          "fetched": "2026-09-29T23:26:03Z"
         },
         {
           "id": "bleacherreport",
@@ -6589,14 +6589,14 @@
           "author": "Gary Davenport",
           "published": "2026-09-28T16:34:58.000Z",
           "strategy": "headings",
-          "fetched": "2026-09-29T20:20:12Z"
+          "fetched": "2026-09-29T23:26:10Z"
         }
       ],
       "failed_sources": [
         {
           "id": "yahoo",
           "name": "Yahoo Sports",
-          "error": "could not parse a full 1-32 ranking (headings: no candidates; rank-label: no candidates; numbered-lines: found 1 teams, expected 32; split-lines: no candidates)"
+          "error": "SourceFailure: no Yahoo Sports power rankings article found"
         },
         {
           "id": "sportingnews",
