@@ -1,10 +1,10 @@
 {
-  "generated": "2026-09-22T22:43:42+00:00",
+  "generated": "2026-09-29T20:20:12+00:00",
   "default_season": 2026,
   "seasons": [
     {
       "season": 2026,
-      "latest_week": 3,
+      "latest_week": 4,
       "weeks": [
         {
           "week": 1,
@@ -20,6 +20,11 @@
           "week": 3,
           "label": "Week 3",
           "sources": 6
+        },
+        {
+          "week": 4,
+          "label": "Week 4",
+          "sources": 5
         }
       ]
     },
