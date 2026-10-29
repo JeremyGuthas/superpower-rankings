@@ -1,9 +1,9 @@
-# Weekly share kit — 2026 Week 4
+# Weekly share kit — 2026 Week 8
 
 Generated automatically. Paste as-is; nothing here needs rewriting.
 
-Image to attach: https://superpowerrankings.com/share/og/2026-week-04.png
-Page to link:    https://superpowerrankings.com/2026/week-4/
+Image to attach: https://superpowerrankings.com/share/og/2026-week-08.png
+Page to link:    https://superpowerrankings.com/2026/week-8/
 
 ---
 
@@ -11,35 +11,34 @@ Page to link:    https://superpowerrankings.com/2026/week-4/
 
 **Title**
 
-[OC] 2026 Week 4 NFL Power Rankings — every major outlet averaged into one board
+[OC] 2026 Week 8 NFL Power Rankings — every major outlet averaged into one board
 
 **Body**
 
 I average every major NFL power ranking into one consensus board —
 ESPN, NFL.com, CBS Sports, Sharp Football Analysis, Bleacher Report this week. Full table with each outlet's rank for all 32:
-https://superpowerrankings.com/2026/week-4/
+https://superpowerrankings.com/2026/week-8/
 
 Top 10:
 
-1. Buffalo Bills — 1.40
-2. San Francisco 49ers — 2.00 (▲1)
-3. Kansas City Chiefs — 2.60 (▲1)
-4. Seattle Seahawks — 4.60 (▼2)
-5. Denver Broncos — 5.40 (▲5)
-6. Baltimore Ravens — 6.40 (▲1)
-7. Jacksonville Jaguars — 7.40 (▲2)
-8. Minnesota Vikings — 7.80 (▲3)
-9. Los Angeles Rams — 9.60 (▼4)
-10. Philadelphia Eagles — 11.60 (▼2)
+1. Buffalo Bills — 1.80
+2. San Francisco 49ers — 2.80
+3. Minnesota Vikings — 3.20
+4. Kansas City Chiefs — 4.00
+5. Seattle Seahawks — 5.00
+6. Jacksonville Jaguars — 6.60
+7. Denver Broncos — 7.60
+8. Cincinnati Bengals — 7.80
+9. Chicago Bears — 8.40
+10. New England Patriots — 9.80
 
 What stood out:
 
-- **New England Patriots** — NFL.com has them at #31, 13 spots lower than the consensus #18.
-- **New York Jets** — NFL.com has them at #18, 9 spots higher than the consensus #27.
-- **Los Angeles Rams** (1-2) sit #9 but rank #20 on results — 11 spots ahead of what they have earned.
-- **Las Vegas Raiders** (3-0) sit #14 but rank #3 on results — 11 spots behind what they have earned.
-- **Las Vegas Raiders** — #14 in the consensus but #23 at the book (+9000); the media is the believer.
-- **Cleveland Browns** — #19 in the consensus but #28 at the book (+20000); the media is the believer.
+- **Los Angeles Rams** — Sharp Football Analysis has them at #10, 6 spots higher than the consensus #16.
+- **Pittsburgh Steelers** (5-2) sit #15 but rank #6 on results — 9 spots behind what they have earned.
+- **Seattle Seahawks** (4-3) sit #5 but rank #13 on results — 8 spots ahead of what they have earned.
+- **Los Angeles Rams** — #16 in the consensus but #5 at the book (+1100); the market is the believer.
+- **Cleveland Browns** — #14 in the consensus but #24 at the book (+15000); the media is the believer.
 
 The whole archive is free JSON if anyone wants to play with it: https://superpowerrankings.com/api/
 
@@ -47,17 +46,17 @@ The whole archive is free JSON if anyone wants to play with it: https://superpow
 
 ## X / Bluesky
 
-2026 Week 4 NFL power rankings — 5 outlets averaged into one board.
+2026 Week 8 NFL power rankings — 5 outlets averaged into one board.
 
-New England Patriots — NFL.com has them at #31, 13 spots lower than the consensus #18.
+Los Angeles Rams — Sharp Football Analysis has them at #10, 6 spots higher than the consensus #16.
 
-Full 32: https://superpowerrankings.com/2026/week-4/
+Full 32: https://superpowerrankings.com/2026/week-8/
 
 ---
 
 ## One-line version, for a group chat
 
-2026 Week 4 consensus rankings, 5 outlets averaged: https://superpowerrankings.com/2026/week-4/
+2026 Week 8 consensus rankings, 5 outlets averaged: https://superpowerrankings.com/2026/week-8/
 
 ---
 
