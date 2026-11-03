@@ -1,9 +1,9 @@
-# Weekly share kit — 2026 Week 8
+# Weekly share kit — 2026 Week 9
 
 Generated automatically. Paste as-is; nothing here needs rewriting.
 
-Image to attach: https://superpowerrankings.com/share/og/2026-week-08.png
-Page to link:    https://superpowerrankings.com/2026/week-8/
+Image to attach: https://superpowerrankings.com/share/og/2026-week-09.png
+Page to link:    https://superpowerrankings.com/2026/week-9/
 
 ---
 
@@ -11,34 +11,35 @@ Page to link:    https://superpowerrankings.com/2026/week-8/
 
 **Title**
 
-[OC] 2026 Week 8 NFL Power Rankings — every major outlet averaged into one board
+[OC] 2026 Week 9 NFL Power Rankings — every major outlet averaged into one board
 
 **Body**
 
 I average every major NFL power ranking into one consensus board —
-ESPN, NFL.com, CBS Sports, Sharp Football Analysis, Bleacher Report this week. Full table with each outlet's rank for all 32:
-https://superpowerrankings.com/2026/week-8/
+ESPN, NFL.com, CBS Sports, Sharp Football Analysis, Yahoo Sports, Bleacher Report this week. Full table with each outlet's rank for all 32:
+https://superpowerrankings.com/2026/week-9/
 
 Top 10:
 
-1. Buffalo Bills — 1.80
-2. San Francisco 49ers — 2.80
-3. Minnesota Vikings — 3.20
-4. Kansas City Chiefs — 4.00
-5. Seattle Seahawks — 5.00
-6. Jacksonville Jaguars — 6.60
-7. Denver Broncos — 7.60
-8. Cincinnati Bengals — 7.80
-9. Chicago Bears — 8.40
-10. New England Patriots — 9.80
+1. Buffalo Bills — 1.00
+2. San Francisco 49ers — 2.00
+3. Jacksonville Jaguars — 3.83 (▲3)
+4. Chicago Bears — 4.00 (▲5)
+5. Denver Broncos — 5.17 (▲2)
+6. Detroit Lions — 7.00 (▲5)
+7. Minnesota Vikings — 8.17 (▼4)
+8. Kansas City Chiefs — 8.67 (▼4)
+9. Cincinnati Bengals — 9.00 (▼1)
+10. Seattle Seahawks — 9.50 (▼5)
 
 What stood out:
 
-- **Los Angeles Rams** — Sharp Football Analysis has them at #10, 6 spots higher than the consensus #16.
-- **Pittsburgh Steelers** (5-2) sit #15 but rank #6 on results — 9 spots behind what they have earned.
-- **Seattle Seahawks** (4-3) sit #5 but rank #13 on results — 8 spots ahead of what they have earned.
-- **Los Angeles Rams** — #16 in the consensus but #5 at the book (+1100); the market is the believer.
-- **Cleveland Browns** — #14 in the consensus but #24 at the book (+15000); the media is the believer.
+- **Kansas City Chiefs** — Yahoo Sports has them at #15, 7 spots lower than the consensus #8.
+- **Houston Texans** — Sharp Football Analysis has them at #15, 6 spots higher than the consensus #21.
+- **Pittsburgh Steelers** (6-2) sit #12 but rank #5 on results — 7 spots behind what they have earned.
+- **Seattle Seahawks** (4-4) sit #10 but rank #16 on results — 6 spots ahead of what they have earned.
+- **Cleveland Browns** — #16 in the consensus but #24 at the book (+15000); the media is the believer.
+- **Dallas Cowboys** — #23 in the consensus but #15 at the book (+5000); the market is the believer.
 
 The whole archive is free JSON if anyone wants to play with it: https://superpowerrankings.com/api/
 
@@ -46,17 +47,17 @@ The whole archive is free JSON if anyone wants to play with it: https://superpow
 
 ## X / Bluesky
 
-2026 Week 8 NFL power rankings — 5 outlets averaged into one board.
+2026 Week 9 NFL power rankings — 6 outlets averaged into one board.
 
-Los Angeles Rams — Sharp Football Analysis has them at #10, 6 spots higher than the consensus #16.
+Kansas City Chiefs — Yahoo Sports has them at #15, 7 spots lower than the consensus #8.
 
-Full 32: https://superpowerrankings.com/2026/week-8/
+Full 32: https://superpowerrankings.com/2026/week-9/
 
 ---
 
 ## One-line version, for a group chat
 
-2026 Week 8 consensus rankings, 5 outlets averaged: https://superpowerrankings.com/2026/week-8/
+2026 Week 9 consensus rankings, 6 outlets averaged: https://superpowerrankings.com/2026/week-9/
 
 ---
 
