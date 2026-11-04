@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "generated": "2026-11-03T21:21:54+00:00",
+  "generated": "2026-11-04T00:22:52+00:00",
   "teams": [
     {
       "abbr": "ARI",
@@ -10778,7 +10778,7 @@
       "week": 9,
       "label": "Week 9",
       "games_through": 8,
-      "generated": "2026-11-03T21:21:54+00:00",
+      "generated": "2026-11-04T00:22:52+00:00",
       "sources": [
         {
           "id": "espn",
@@ -10788,7 +10788,7 @@
           "author": "NFL Nation",
           "published": "2026-11-03T16:44:34Z",
           "strategy": "headings",
-          "fetched": "2026-11-03T21:21:42Z"
+          "fetched": "2026-11-04T00:22:09Z"
         },
         {
           "id": "nfl",
@@ -10798,7 +10798,7 @@
           "author": "Nick Shook",
           "published": "2026-11-03T15:54:11.411Z",
           "strategy": "rank-label",
-          "fetched": "2026-11-03T21:21:45Z"
+          "fetched": "2026-11-04T00:22:39Z"
         },
         {
           "id": "cbs",
@@ -10808,7 +10808,7 @@
           "author": "Pete Prisco",
           "published": "2026-11-03T10:00:00+00:00",
           "strategy": "split-lines",
-          "fetched": "2026-11-03T21:21:45Z"
+          "fetched": "2026-11-04T00:22:40Z"
         },
         {
           "id": "sharpfootball",
@@ -10818,17 +10818,7 @@
           "author": "Raymond Summerlin",
           "published": "2026-11-02T14:30:01-05:00",
           "strategy": "headings",
-          "fetched": "2026-11-03T21:21:46Z"
-        },
-        {
-          "id": "yahoo",
-          "name": "Yahoo Sports",
-          "url": "https://sports.yahoo.com/articles/2026-nfl-week-9-power-210000091.html",
-          "title": "2026 NFL Week 9 Power Rankings: Cowboys proving no bottom exists",
-          "author": "RJ Ochoa",
-          "published": "2026-11-03T21:00:00Z",
-          "strategy": "numbered-lines",
-          "fetched": "2026-11-03T21:21:49Z"
+          "fetched": "2026-11-04T00:22:40Z"
         },
         {
           "id": "bleacherreport",
@@ -10838,10 +10828,15 @@
           "author": "Gary Davenport",
           "published": "2026-11-02T18:48:18.000Z",
           "strategy": "headings",
-          "fetched": "2026-11-03T21:21:54Z"
+          "fetched": "2026-11-04T00:22:52Z"
         }
       ],
       "failed_sources": [
+        {
+          "id": "yahoo",
+          "name": "Yahoo Sports",
+          "error": "could not parse a full 1-32 ranking (headings: no candidates; rank-label: no candidates; numbered-lines: no candidates; split-lines: no candidates)"
+        },
         {
           "id": "sportingnews",
           "name": "Sporting News",
@@ -10856,25 +10851,24 @@
       "notes": {
         "biggest_riser": "TB",
         "biggest_faller": "BAL",
-        "most_divisive": "KC",
+        "most_divisive": "LAR",
         "most_agreed": "BUF"
       },
       "teams": {
         "BUF": {
           "rank": 1,
           "avg": 1.0,
-          "median": 1.0,
+          "median": 1,
           "high": 1,
           "low": 1,
           "spread": 0,
           "stdev": 0.0,
-          "n": 6,
+          "n": 5,
           "ranks": {
             "espn": 1,
             "nfl": 1,
             "cbs": 1,
             "sharpfootball": 1,
-            "yahoo": 1,
             "bleacherreport": 1
           },
           "prev": 1,
@@ -10884,7 +10878,6 @@
             "nfl": 1,
             "cbs": 1,
             "sharpfootball": 0,
-            "yahoo": null,
             "bleacherreport": 0
           },
           "record": "6-1",
@@ -10919,25 +10912,24 @@
           "divergence": 1,
           "market_rank": 2,
           "market_odds": "+600",
-          "market_probability": 0.11751,
+          "market_probability": 0.11761,
           "market_gap": -1,
-          "sos_rank": 14
+          "sos_rank": 15
         },
         "SF": {
           "rank": 2,
           "avg": 2.0,
-          "median": 2.0,
+          "median": 2,
           "high": 2,
           "low": 2,
           "spread": 0,
           "stdev": 0.0,
-          "n": 6,
+          "n": 5,
           "ranks": {
             "espn": 2,
             "nfl": 2,
             "cbs": 2,
             "sharpfootball": 2,
-            "yahoo": 2,
             "bleacherreport": 2
           },
           "prev": 2,
@@ -10947,7 +10939,6 @@
             "nfl": 1,
             "cbs": 1,
             "sharpfootball": 2,
-            "yahoo": null,
             "bleacherreport": 1
           },
           "record": "6-1",
@@ -10965,10 +10956,10 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 18,
-          "sos_remaining": 18.3,
+          "sos_played": 18.43,
+          "sos_remaining": 18.2,
           "opponents_remaining": 10,
-          "sos_full": 18.18,
+          "sos_full": 18.29,
           "next_game": {
             "week": 9,
             "label": "Week 9",
@@ -10982,25 +10973,24 @@
           "divergence": -1,
           "market_rank": 1,
           "market_odds": "+580",
-          "market_probability": 0.12096,
+          "market_probability": 0.12106,
           "market_gap": 1,
           "sos_rank": 25
         },
         "JAX": {
           "rank": 3,
-          "avg": 3.83,
-          "median": 3.5,
+          "avg": 3.6,
+          "median": 3,
           "high": 3,
           "low": 5,
           "spread": 2,
-          "stdev": 0.9,
-          "n": 6,
+          "stdev": 0.8,
+          "n": 5,
           "ranks": {
             "espn": 3,
             "nfl": 4,
             "cbs": 3,
             "sharpfootball": 3,
-            "yahoo": 5,
             "bleacherreport": 5
           },
           "prev": 6,
@@ -11010,7 +11000,6 @@
             "nfl": 2,
             "cbs": 6,
             "sharpfootball": 2,
-            "yahoo": null,
             "bleacherreport": 3
           },
           "record": "5-2",
@@ -11028,10 +11017,10 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 17.29,
-          "sos_remaining": 21.1,
+          "sos_played": 17.14,
+          "sos_remaining": 20.5,
           "opponents_remaining": 10,
-          "sos_full": 19.53,
+          "sos_full": 19.12,
           "next_game": {
             "week": 9,
             "label": "Week 9",
@@ -11045,25 +11034,24 @@
           "divergence": 4,
           "market_rank": 4,
           "market_odds": "+950",
-          "market_probability": 0.07834,
+          "market_probability": 0.0784,
           "market_gap": -1,
-          "sos_rank": 32
+          "sos_rank": 31
         },
         "CHI": {
           "rank": 4,
           "avg": 4.0,
-          "median": 4.0,
+          "median": 4,
           "high": 3,
           "low": 5,
           "spread": 2,
-          "stdev": 0.58,
-          "n": 6,
+          "stdev": 0.63,
+          "n": 5,
           "ranks": {
             "espn": 5,
             "nfl": 3,
             "cbs": 4,
             "sharpfootball": 4,
-            "yahoo": 4,
             "bleacherreport": 4
           },
           "prev": 9,
@@ -11073,7 +11061,6 @@
             "nfl": 6,
             "cbs": 4,
             "sharpfootball": 7,
-            "yahoo": null,
             "bleacherreport": 1
           },
           "record": "6-2",
@@ -11091,10 +11078,10 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 16.62,
-          "sos_remaining": 12,
+          "sos_played": 17,
+          "sos_remaining": 12.56,
           "opponents_remaining": 9,
-          "sos_full": 14.18,
+          "sos_full": 14.65,
           "next_game": {
             "week": 9,
             "label": "Week 9",
@@ -11107,26 +11094,25 @@
           "record_rank": 4,
           "divergence": 0,
           "market_rank": 3,
-          "market_odds": "+950",
-          "market_probability": 0.07834,
+          "market_odds": "+780",
+          "market_probability": 0.09355,
           "market_gap": 1,
           "sos_rank": 1
         },
         "DEN": {
           "rank": 5,
-          "avg": 5.17,
-          "median": 5.0,
+          "avg": 4.6,
+          "median": 5,
           "high": 3,
-          "low": 8,
-          "spread": 5,
-          "stdev": 1.57,
-          "n": 6,
+          "low": 6,
+          "spread": 3,
+          "stdev": 1.02,
+          "n": 5,
           "ranks": {
             "espn": 4,
             "nfl": 6,
             "cbs": 5,
             "sharpfootball": 5,
-            "yahoo": 8,
             "bleacherreport": 3
           },
           "prev": 7,
@@ -11136,7 +11122,6 @@
             "nfl": 2,
             "cbs": 2,
             "sharpfootball": 2,
-            "yahoo": null,
             "bleacherreport": 3
           },
           "record": "6-2",
@@ -11154,10 +11139,10 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 12.62,
-          "sos_remaining": 19.33,
+          "sos_played": 12.12,
+          "sos_remaining": 19.44,
           "opponents_remaining": 9,
-          "sos_full": 16.18,
+          "sos_full": 16,
           "next_game": {
             "week": 9,
             "label": "Week 9",
@@ -11171,35 +11156,155 @@
           "divergence": 1,
           "market_rank": 9,
           "market_odds": "+1600",
-          "market_probability": 0.04839,
+          "market_probability": 0.04843,
           "market_gap": -4,
-          "sos_rank": 29
+          "sos_rank": 30
+        },
+        "KC": {
+          "rank": 6,
+          "avg": 7.4,
+          "median": 7,
+          "high": 6,
+          "low": 10,
+          "spread": 4,
+          "stdev": 1.36,
+          "n": 5,
+          "ranks": {
+            "espn": 6,
+            "nfl": 10,
+            "cbs": 7,
+            "sharpfootball": 7,
+            "bleacherreport": 7
+          },
+          "prev": 4,
+          "delta": -2,
+          "source_delta": {
+            "espn": -4,
+            "nfl": -3,
+            "cbs": -3,
+            "sharpfootball": -4,
+            "bleacherreport": -3
+          },
+          "record": "5-2",
+          "differential": 36,
+          "last_game": {
+            "week": 8,
+            "label": "Week 8",
+            "season_type": "regular",
+            "date": "2026-11-01T21:25Z",
+            "opponent": "DEN",
+            "home": false,
+            "points_for": 24,
+            "points_against": 28,
+            "result": "L",
+            "completed": true,
+            "detail": "Final"
+          },
+          "sos_played": 19.29,
+          "sos_remaining": 16.3,
+          "opponents_remaining": 10,
+          "sos_full": 17.53,
+          "next_game": {
+            "week": 9,
+            "label": "Week 9",
+            "date": "2026-11-08T18:00Z",
+            "opponent": "NYJ",
+            "home": true,
+            "opponent_rank": 27
+          },
+          "outlier": null,
+          "record_rank": 9,
+          "divergence": 3,
+          "market_rank": 5,
+          "market_odds": "+1000",
+          "market_probability": 0.07484,
+          "market_gap": 1,
+          "sos_rank": 17
+        },
+        "MIN": {
+          "rank": 7,
+          "avg": 7.6,
+          "median": 7,
+          "high": 6,
+          "low": 10,
+          "spread": 4,
+          "stdev": 1.62,
+          "n": 5,
+          "ranks": {
+            "espn": 7,
+            "nfl": 9,
+            "cbs": 6,
+            "sharpfootball": 10,
+            "bleacherreport": 6
+          },
+          "prev": 3,
+          "delta": -4,
+          "source_delta": {
+            "espn": -3,
+            "nfl": -8,
+            "cbs": -5,
+            "sharpfootball": -2,
+            "bleacherreport": -4
+          },
+          "record": "6-1",
+          "differential": 47,
+          "last_game": {
+            "week": 8,
+            "label": "Week 8",
+            "season_type": "regular",
+            "date": "2026-11-01T18:00Z",
+            "opponent": "DET",
+            "home": false,
+            "points_for": 15,
+            "points_against": 19,
+            "result": "L",
+            "completed": true,
+            "detail": "Final"
+          },
+          "sos_played": 18.43,
+          "sos_remaining": 13,
+          "opponents_remaining": 10,
+          "sos_full": 15.24,
+          "next_game": {
+            "week": 9,
+            "label": "Week 9",
+            "date": "2026-11-10T01:15Z",
+            "opponent": "BUF",
+            "home": true,
+            "opponent_rank": 1
+          },
+          "outlier": null,
+          "record_rank": 3,
+          "divergence": -4,
+          "market_rank": 12,
+          "market_odds": "+2200",
+          "market_probability": 0.03579,
+          "market_gap": -5,
+          "sos_rank": 2
         },
         "DET": {
-          "rank": 6,
-          "avg": 7.0,
-          "median": 8.0,
-          "high": 3,
+          "rank": 8,
+          "avg": 7.8,
+          "median": 8,
+          "high": 5,
           "low": 9,
-          "spread": 6,
-          "stdev": 2.24,
-          "n": 6,
+          "spread": 4,
+          "stdev": 1.47,
+          "n": 5,
           "ranks": {
             "espn": 9,
             "nfl": 5,
             "cbs": 9,
             "sharpfootball": 8,
-            "yahoo": 3,
             "bleacherreport": 8
           },
           "prev": 11,
-          "delta": 5,
+          "delta": 3,
           "source_delta": {
             "espn": 3,
             "nfl": 6,
             "cbs": 1,
             "sharpfootball": 1,
-            "yahoo": null,
             "bleacherreport": 3
           },
           "record": "5-2",
@@ -11218,171 +11323,40 @@
             "detail": "Final"
           },
           "sos_played": 16.57,
-          "sos_remaining": 14.9,
+          "sos_remaining": 15,
           "opponents_remaining": 10,
-          "sos_full": 15.59,
+          "sos_full": 15.65,
           "next_game": {
             "week": 9,
             "label": "Week 9",
             "date": "2026-11-08T18:00Z",
             "opponent": "MIA",
             "home": false,
-            "opponent_rank": 29
+            "opponent_rank": 30
           },
           "outlier": null,
           "record_rank": 10,
-          "divergence": 4,
-          "market_rank": 10,
+          "divergence": 2,
+          "market_rank": 11,
           "market_odds": "+1900",
-          "market_probability": 0.04113,
-          "market_gap": -4,
+          "market_probability": 0.04116,
+          "market_gap": -3,
           "sos_rank": 10
-        },
-        "MIN": {
-          "rank": 7,
-          "avg": 8.17,
-          "median": 8.0,
-          "high": 6,
-          "low": 11,
-          "spread": 5,
-          "stdev": 1.95,
-          "n": 6,
-          "ranks": {
-            "espn": 7,
-            "nfl": 9,
-            "cbs": 6,
-            "sharpfootball": 10,
-            "yahoo": 11,
-            "bleacherreport": 6
-          },
-          "prev": 3,
-          "delta": -4,
-          "source_delta": {
-            "espn": -3,
-            "nfl": -8,
-            "cbs": -5,
-            "sharpfootball": -2,
-            "yahoo": null,
-            "bleacherreport": -4
-          },
-          "record": "6-1",
-          "differential": 47,
-          "last_game": {
-            "week": 8,
-            "label": "Week 8",
-            "season_type": "regular",
-            "date": "2026-11-01T18:00Z",
-            "opponent": "DET",
-            "home": false,
-            "points_for": 15,
-            "points_against": 19,
-            "result": "L",
-            "completed": true,
-            "detail": "Final"
-          },
-          "sos_played": 18,
-          "sos_remaining": 12.6,
-          "opponents_remaining": 10,
-          "sos_full": 14.82,
-          "next_game": {
-            "week": 9,
-            "label": "Week 9",
-            "date": "2026-11-10T01:15Z",
-            "opponent": "BUF",
-            "home": true,
-            "opponent_rank": 1
-          },
-          "outlier": null,
-          "record_rank": 3,
-          "divergence": -4,
-          "market_rank": 12,
-          "market_odds": "+1900",
-          "market_probability": 0.04113,
-          "market_gap": -5,
-          "sos_rank": 2
-        },
-        "KC": {
-          "rank": 8,
-          "avg": 8.67,
-          "median": 7.0,
-          "high": 6,
-          "low": 15,
-          "spread": 9,
-          "stdev": 3.09,
-          "n": 6,
-          "ranks": {
-            "espn": 6,
-            "nfl": 10,
-            "cbs": 7,
-            "sharpfootball": 7,
-            "yahoo": 15,
-            "bleacherreport": 7
-          },
-          "prev": 4,
-          "delta": -4,
-          "source_delta": {
-            "espn": -4,
-            "nfl": -3,
-            "cbs": -3,
-            "sharpfootball": -4,
-            "yahoo": null,
-            "bleacherreport": -3
-          },
-          "record": "5-2",
-          "differential": 36,
-          "last_game": {
-            "week": 8,
-            "label": "Week 8",
-            "season_type": "regular",
-            "date": "2026-11-01T21:25Z",
-            "opponent": "DEN",
-            "home": false,
-            "points_for": 24,
-            "points_against": 28,
-            "result": "L",
-            "completed": true,
-            "detail": "Final"
-          },
-          "sos_played": 19.14,
-          "sos_remaining": 16.1,
-          "opponents_remaining": 10,
-          "sos_full": 17.35,
-          "next_game": {
-            "week": 9,
-            "label": "Week 9",
-            "date": "2026-11-08T18:00Z",
-            "opponent": "NYJ",
-            "home": true,
-            "opponent_rank": 27
-          },
-          "outlier": {
-            "source": "yahoo",
-            "rank": 15,
-            "gap": -7
-          },
-          "record_rank": 9,
-          "divergence": 1,
-          "market_rank": 5,
-          "market_odds": "+1000",
-          "market_probability": 0.07478,
-          "market_gap": 3,
-          "sos_rank": 15
         },
         "CIN": {
           "rank": 9,
-          "avg": 9.0,
-          "median": 9.0,
-          "high": 7,
+          "avg": 9.4,
+          "median": 10,
+          "high": 8,
           "low": 11,
-          "spread": 4,
-          "stdev": 1.41,
-          "n": 6,
+          "spread": 3,
+          "stdev": 1.2,
+          "n": 5,
           "ranks": {
             "espn": 10,
             "nfl": 8,
             "cbs": 8,
             "sharpfootball": 11,
-            "yahoo": 7,
             "bleacherreport": 10
           },
           "prev": 8,
@@ -11392,7 +11366,6 @@
             "nfl": -3,
             "cbs": -3,
             "sharpfootball": -5,
-            "yahoo": null,
             "bleacherreport": 0
           },
           "record": "5-2",
@@ -11410,42 +11383,41 @@
             "completed": true,
             "detail": "Final/OT"
           },
-          "sos_played": 18.86,
+          "sos_played": 18.43,
           "sos_remaining": 19.1,
           "opponents_remaining": 10,
-          "sos_full": 19,
+          "sos_full": 18.82,
           "next_game": {
             "week": 9,
             "label": "Week 9",
             "date": "2026-11-08T14:30Z",
             "opponent": "ATL",
             "home": false,
-            "opponent_rank": 19
+            "opponent_rank": 21
           },
           "outlier": null,
           "record_rank": 8,
           "divergence": -1,
           "market_rank": 8,
           "market_odds": "+1400",
-          "market_probability": 0.05484,
+          "market_probability": 0.05488,
           "market_gap": 1,
           "sos_rank": 27
         },
         "SEA": {
           "rank": 10,
-          "avg": 9.5,
-          "median": 8.5,
+          "avg": 9.6,
+          "median": 8,
           "high": 6,
           "low": 14,
           "spread": 8,
-          "stdev": 2.99,
-          "n": 6,
+          "stdev": 3.26,
+          "n": 5,
           "ranks": {
             "espn": 8,
             "nfl": 7,
             "cbs": 14,
             "sharpfootball": 6,
-            "yahoo": 9,
             "bleacherreport": 13
           },
           "prev": 5,
@@ -11455,7 +11427,6 @@
             "nfl": -3,
             "cbs": -8,
             "sharpfootball": -4,
-            "yahoo": null,
             "bleacherreport": -6
           },
           "record": "4-4",
@@ -11473,10 +11444,10 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 13.88,
-          "sos_remaining": 17.78,
+          "sos_played": 13.62,
+          "sos_remaining": 17.89,
           "opponents_remaining": 9,
-          "sos_full": 15.94,
+          "sos_full": 15.88,
           "next_game": {
             "week": 9,
             "label": "Week 9",
@@ -11488,27 +11459,26 @@
           "outlier": null,
           "record_rank": 16,
           "divergence": 6,
-          "market_rank": 6,
-          "market_odds": "+1050",
-          "market_probability": 0.07153,
-          "market_gap": 4,
+          "market_rank": 7,
+          "market_odds": "+1250",
+          "market_probability": 0.06098,
+          "market_gap": 3,
           "sos_rank": 23
         },
         "NE": {
           "rank": 11,
-          "avg": 10.33,
-          "median": 11.0,
-          "high": 6,
+          "avg": 11.2,
+          "median": 11,
+          "high": 11,
           "low": 12,
-          "spread": 6,
-          "stdev": 1.97,
-          "n": 6,
+          "spread": 1,
+          "stdev": 0.4,
+          "n": 5,
           "ranks": {
             "espn": 11,
             "nfl": 11,
             "cbs": 11,
             "sharpfootball": 12,
-            "yahoo": 6,
             "bleacherreport": 11
           },
           "prev": 10,
@@ -11518,7 +11488,6 @@
             "nfl": -1,
             "cbs": 0,
             "sharpfootball": 0,
-            "yahoo": null,
             "bleacherreport": -2
           },
           "record": "5-3",
@@ -11536,10 +11505,10 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 13.5,
-          "sos_remaining": 14.22,
+          "sos_played": 13.62,
+          "sos_remaining": 14.33,
           "opponents_remaining": 9,
-          "sos_full": 13.88,
+          "sos_full": 14,
           "next_game": {
             "week": 9,
             "label": "Week 9",
@@ -11551,27 +11520,26 @@
           "outlier": null,
           "record_rank": 12,
           "divergence": 1,
-          "market_rank": 11,
+          "market_rank": 10,
           "market_odds": "+1900",
-          "market_probability": 0.04113,
-          "market_gap": 0,
-          "sos_rank": 6
+          "market_probability": 0.04116,
+          "market_gap": 1,
+          "sos_rank": 7
         },
         "PIT": {
           "rank": 12,
-          "avg": 11.67,
-          "median": 12.0,
+          "avg": 11.6,
+          "median": 12,
           "high": 9,
           "low": 14,
           "spread": 5,
-          "stdev": 1.7,
-          "n": 6,
+          "stdev": 1.85,
+          "n": 5,
           "ranks": {
             "espn": 13,
             "nfl": 12,
             "cbs": 10,
             "sharpfootball": 14,
-            "yahoo": 12,
             "bleacherreport": 9
           },
           "prev": 15,
@@ -11581,7 +11549,6 @@
             "nfl": 2,
             "cbs": 5,
             "sharpfootball": 1,
-            "yahoo": null,
             "bleacherreport": 4
           },
           "record": "6-2",
@@ -11599,10 +11566,10 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 18.12,
-          "sos_remaining": 17.11,
+          "sos_played": 18.38,
+          "sos_remaining": 16.78,
           "opponents_remaining": 9,
-          "sos_full": 17.59,
+          "sos_full": 17.53,
           "next_game": {
             "week": 10,
             "label": "Week 10",
@@ -11616,25 +11583,24 @@
           "divergence": -7,
           "market_rank": 16,
           "market_odds": "+5000",
-          "market_probability": 0.01613,
+          "market_probability": 0.01614,
           "market_gap": -4,
-          "sos_rank": 20
+          "sos_rank": 19
         },
         "GB": {
           "rank": 13,
-          "avg": 12.33,
-          "median": 12.5,
-          "high": 10,
+          "avg": 12.8,
+          "median": 13,
+          "high": 12,
           "low": 14,
-          "spread": 4,
-          "stdev": 1.25,
-          "n": 6,
+          "spread": 2,
+          "stdev": 0.75,
+          "n": 5,
           "ranks": {
             "espn": 14,
             "nfl": 13,
             "cbs": 12,
             "sharpfootball": 13,
-            "yahoo": 10,
             "bleacherreport": 12
           },
           "prev": 13,
@@ -11644,7 +11610,6 @@
             "nfl": 2,
             "cbs": 1,
             "sharpfootball": 1,
-            "yahoo": null,
             "bleacherreport": 2
           },
           "record": "5-3",
@@ -11662,10 +11627,10 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 15.12,
-          "sos_remaining": 13.22,
+          "sos_played": 15.62,
+          "sos_remaining": 13.33,
           "opponents_remaining": 9,
-          "sos_full": 14.12,
+          "sos_full": 14.41,
           "next_game": {
             "week": 9,
             "label": "Week 9",
@@ -11679,25 +11644,24 @@
           "divergence": 0,
           "market_rank": 13,
           "market_odds": "+3000",
-          "market_probability": 0.02653,
+          "market_probability": 0.02656,
           "market_gap": 0,
           "sos_rank": 5
         },
         "LAR": {
           "rank": 14,
-          "avg": 13.17,
-          "median": 13.0,
+          "avg": 13.2,
+          "median": 13,
           "high": 9,
           "low": 18,
           "spread": 9,
-          "stdev": 2.67,
-          "n": 6,
+          "stdev": 2.93,
+          "n": 5,
           "ranks": {
             "espn": 12,
             "nfl": 18,
             "cbs": 13,
             "sharpfootball": 9,
-            "yahoo": 13,
             "bleacherreport": 14
           },
           "prev": 16,
@@ -11707,7 +11671,6 @@
             "nfl": 3,
             "cbs": 3,
             "sharpfootball": 1,
-            "yahoo": null,
             "bleacherreport": 2
           },
           "record": "4-4",
@@ -11725,10 +11688,10 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 16.12,
-          "sos_remaining": 14.67,
+          "sos_played": 16.25,
+          "sos_remaining": 14.44,
           "opponents_remaining": 9,
-          "sos_full": 15.35,
+          "sos_full": 15.29,
           "next_game": {
             "week": 9,
             "label": "Week 9",
@@ -11740,27 +11703,26 @@
           "outlier": null,
           "record_rank": 15,
           "divergence": 1,
-          "market_rank": 7,
+          "market_rank": 6,
           "market_odds": "+1100",
-          "market_probability": 0.06855,
-          "market_gap": 7,
-          "sos_rank": 7
+          "market_probability": 0.0686,
+          "market_gap": 8,
+          "sos_rank": 8
         },
         "NYG": {
           "rank": 15,
-          "avg": 15.5,
-          "median": 15.0,
+          "avg": 15.4,
+          "median": 15,
           "high": 14,
           "low": 18,
           "spread": 4,
-          "stdev": 1.26,
-          "n": 6,
+          "stdev": 1.36,
+          "n": 5,
           "ranks": {
             "espn": 15,
             "nfl": 14,
             "cbs": 15,
             "sharpfootball": 18,
-            "yahoo": 16,
             "bleacherreport": 15
           },
           "prev": 19,
@@ -11770,7 +11732,6 @@
             "nfl": 3,
             "cbs": 2,
             "sharpfootball": 3,
-            "yahoo": null,
             "bleacherreport": 2
           },
           "record": "4-2-1",
@@ -11788,8 +11749,8 @@
             "completed": true,
             "detail": "Final/OT"
           },
-          "sos_played": 23.29,
-          "sos_remaining": 17.2,
+          "sos_played": 22.71,
+          "sos_remaining": 17.6,
           "opponents_remaining": 10,
           "sos_full": 19.71,
           "next_game": {
@@ -11798,32 +11759,31 @@
             "date": "2026-11-08T18:00Z",
             "opponent": "PHI",
             "home": false,
-            "opponent_rank": 28
+            "opponent_rank": 29
           },
           "outlier": null,
           "record_rank": 11,
           "divergence": -4,
           "market_rank": 17,
           "market_odds": "+6500",
-          "market_probability": 0.01246,
+          "market_probability": 0.01247,
           "market_gap": -2,
-          "sos_rank": 21
+          "sos_rank": 22
         },
         "CLE": {
           "rank": 16,
-          "avg": 16.67,
-          "median": 16.5,
+          "avg": 16.6,
+          "median": 16,
           "high": 15,
           "low": 19,
           "spread": 4,
-          "stdev": 1.25,
-          "n": 6,
+          "stdev": 1.36,
+          "n": 5,
           "ranks": {
             "espn": 16,
             "nfl": 15,
             "cbs": 17,
             "sharpfootball": 19,
-            "yahoo": 17,
             "bleacherreport": 16
           },
           "prev": 14,
@@ -11833,7 +11793,6 @@
             "nfl": -3,
             "cbs": -3,
             "sharpfootball": -2,
-            "yahoo": null,
             "bleacherreport": -4
           },
           "record": "5-3",
@@ -11851,10 +11810,10 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 17.38,
+          "sos_played": 17.12,
           "sos_remaining": 19.11,
           "opponents_remaining": 9,
-          "sos_full": 18.29,
+          "sos_full": 18.18,
           "next_game": {
             "week": 9,
             "label": "Week 9",
@@ -11874,19 +11833,18 @@
         },
         "TB": {
           "rank": 17,
-          "avg": 17.67,
-          "median": 17.0,
+          "avg": 17.4,
+          "median": 16,
           "high": 16,
           "low": 21,
           "spread": 5,
-          "stdev": 1.89,
-          "n": 6,
+          "stdev": 1.96,
+          "n": 5,
           "ranks": {
             "espn": 18,
             "nfl": 16,
             "cbs": 16,
             "sharpfootball": 16,
-            "yahoo": 19,
             "bleacherreport": 21
           },
           "prev": 23,
@@ -11896,7 +11854,6 @@
             "nfl": 3,
             "cbs": 7,
             "sharpfootball": 6,
-            "yahoo": null,
             "bleacherreport": 2
           },
           "record": "3-5",
@@ -11914,10 +11871,10 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 14.62,
-          "sos_remaining": 18.33,
+          "sos_played": 14.88,
+          "sos_remaining": 18.78,
           "opponents_remaining": 9,
-          "sos_full": 16.59,
+          "sos_full": 16.94,
           "next_game": {
             "week": 9,
             "label": "Week 9",
@@ -11931,25 +11888,24 @@
           "divergence": 3,
           "market_rank": 19,
           "market_odds": "+7400",
-          "market_probability": 0.01097,
+          "market_probability": 0.01098,
           "market_gap": -2,
           "sos_rank": 26
         },
         "CAR": {
           "rank": 18,
-          "avg": 18.83,
-          "median": 18.0,
+          "avg": 18.2,
+          "median": 18,
           "high": 17,
-          "low": 22,
-          "spread": 5,
-          "stdev": 1.95,
-          "n": 6,
+          "low": 21,
+          "spread": 4,
+          "stdev": 1.47,
+          "n": 5,
           "ranks": {
             "espn": 17,
             "nfl": 21,
             "cbs": 18,
             "sharpfootball": 17,
-            "yahoo": 22,
             "bleacherreport": 18
           },
           "prev": 17,
@@ -11959,7 +11915,6 @@
             "nfl": -1,
             "cbs": 0,
             "sharpfootball": -1,
-            "yahoo": null,
             "bleacherreport": 0
           },
           "record": "3-4",
@@ -11977,10 +11932,10 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 14.71,
-          "sos_remaining": 15.1,
+          "sos_played": 15.43,
+          "sos_remaining": 15.3,
           "opponents_remaining": 10,
-          "sos_full": 14.94,
+          "sos_full": 15.35,
           "next_game": {
             "week": 9,
             "label": "Week 9",
@@ -11998,31 +11953,151 @@
           "market_gap": 0,
           "sos_rank": 11
         },
-        "ATL": {
+        "HOU": {
           "rank": 19,
-          "avg": 19.33,
-          "median": 20.0,
-          "high": 14,
+          "avg": 19.8,
+          "median": 20,
+          "high": 15,
           "low": 23,
-          "spread": 9,
-          "stdev": 3.09,
-          "n": 6,
+          "spread": 8,
+          "stdev": 2.79,
+          "n": 5,
+          "ranks": {
+            "espn": 22,
+            "nfl": 19,
+            "cbs": 23,
+            "sharpfootball": 15,
+            "bleacherreport": 20
+          },
+          "prev": 20,
+          "delta": 1,
+          "source_delta": {
+            "espn": -6,
+            "nfl": -1,
+            "cbs": -2,
+            "sharpfootball": 3,
+            "bleacherreport": 2
+          },
+          "record": "2-5",
+          "differential": -5,
+          "last_game": {
+            "week": 7,
+            "label": "Week 7",
+            "season_type": "regular",
+            "date": "2026-10-25T17:00Z",
+            "opponent": "NYG",
+            "home": true,
+            "points_for": 21,
+            "points_against": 27,
+            "result": "L",
+            "completed": true,
+            "detail": "Final/OT"
+          },
+          "sos_played": 15.71,
+          "sos_remaining": 20.9,
+          "opponents_remaining": 10,
+          "sos_full": 18.76,
+          "next_game": {
+            "week": 9,
+            "label": "Week 9",
+            "date": "2026-11-08T21:05Z",
+            "opponent": "LAC",
+            "home": false,
+            "opponent_rank": 32
+          },
+          "outlier": null,
+          "record_rank": 25,
+          "divergence": 6,
+          "market_rank": 14,
+          "market_odds": "+3500",
+          "market_probability": 0.02287,
+          "market_gap": 5,
+          "sos_rank": 32
+        },
+        "BAL": {
+          "rank": 20,
+          "avg": 20.0,
+          "median": 20,
+          "high": 19,
+          "low": 22,
+          "spread": 3,
+          "stdev": 1.1,
+          "n": 5,
+          "ranks": {
+            "espn": 19,
+            "nfl": 22,
+            "cbs": 20,
+            "sharpfootball": 20,
+            "bleacherreport": 19
+          },
+          "prev": 12,
+          "delta": -8,
+          "source_delta": {
+            "espn": -11,
+            "nfl": -6,
+            "cbs": -8,
+            "sharpfootball": -7,
+            "bleacherreport": -4
+          },
+          "record": "4-4",
+          "differential": -24,
+          "last_game": {
+            "week": 8,
+            "label": "Week 8",
+            "season_type": "regular",
+            "date": "2026-11-01T18:00Z",
+            "opponent": "BUF",
+            "home": false,
+            "points_for": 10,
+            "points_against": 36,
+            "result": "L",
+            "completed": true,
+            "detail": "Final"
+          },
+          "sos_played": 19.38,
+          "sos_remaining": 15.33,
+          "opponents_remaining": 9,
+          "sos_full": 17.24,
+          "next_game": {
+            "week": 9,
+            "label": "Week 9",
+            "date": "2026-11-06T01:15Z",
+            "opponent": "JAX",
+            "home": true,
+            "opponent_rank": 3
+          },
+          "outlier": null,
+          "record_rank": 18,
+          "divergence": -2,
+          "market_rank": 21,
+          "market_odds": "+10000",
+          "market_probability": 0.00815,
+          "market_gap": -1,
+          "sos_rank": 12
+        },
+        "ATL": {
+          "rank": 21,
+          "avg": 20.4,
+          "median": 21,
+          "high": 17,
+          "low": 23,
+          "spread": 6,
+          "stdev": 2.15,
+          "n": 5,
           "ranks": {
             "espn": 21,
             "nfl": 17,
             "cbs": 19,
             "sharpfootball": 22,
-            "yahoo": 14,
             "bleacherreport": 23
           },
           "prev": 18,
-          "delta": -1,
+          "delta": -3,
           "source_delta": {
             "espn": 1,
             "nfl": -4,
             "cbs": 0,
             "sharpfootball": -3,
-            "yahoo": null,
             "bleacherreport": -4
           },
           "record": "3-5",
@@ -12054,158 +12129,27 @@
           },
           "outlier": null,
           "record_rank": 22,
-          "divergence": 3,
+          "divergence": 1,
           "market_rank": 20,
           "market_odds": "+8400",
-          "market_probability": 0.00968,
-          "market_gap": -1,
-          "sos_rank": 8
-        },
-        "BAL": {
-          "rank": 20,
-          "avg": 19.67,
-          "median": 19.5,
-          "high": 18,
-          "low": 22,
-          "spread": 4,
-          "stdev": 1.25,
-          "n": 6,
-          "ranks": {
-            "espn": 19,
-            "nfl": 22,
-            "cbs": 20,
-            "sharpfootball": 20,
-            "yahoo": 18,
-            "bleacherreport": 19
-          },
-          "prev": 12,
-          "delta": -8,
-          "source_delta": {
-            "espn": -11,
-            "nfl": -6,
-            "cbs": -8,
-            "sharpfootball": -7,
-            "yahoo": null,
-            "bleacherreport": -4
-          },
-          "record": "4-4",
-          "differential": -24,
-          "last_game": {
-            "week": 8,
-            "label": "Week 8",
-            "season_type": "regular",
-            "date": "2026-11-01T18:00Z",
-            "opponent": "BUF",
-            "home": false,
-            "points_for": 10,
-            "points_against": 36,
-            "result": "L",
-            "completed": true,
-            "detail": "Final"
-          },
-          "sos_played": 19.38,
-          "sos_remaining": 15.56,
-          "opponents_remaining": 9,
-          "sos_full": 17.35,
-          "next_game": {
-            "week": 9,
-            "label": "Week 9",
-            "date": "2026-11-06T01:15Z",
-            "opponent": "JAX",
-            "home": true,
-            "opponent_rank": 3
-          },
-          "outlier": null,
-          "record_rank": 18,
-          "divergence": -2,
-          "market_rank": 21,
-          "market_odds": "+10000",
-          "market_probability": 0.00814,
-          "market_gap": -1,
-          "sos_rank": 13
-        },
-        "HOU": {
-          "rank": 21,
-          "avg": 20.33,
-          "median": 21.0,
-          "high": 15,
-          "low": 23,
-          "spread": 8,
-          "stdev": 2.81,
-          "n": 6,
-          "ranks": {
-            "espn": 22,
-            "nfl": 19,
-            "cbs": 23,
-            "sharpfootball": 15,
-            "yahoo": 23,
-            "bleacherreport": 20
-          },
-          "prev": 20,
-          "delta": -1,
-          "source_delta": {
-            "espn": -6,
-            "nfl": -1,
-            "cbs": -2,
-            "sharpfootball": 3,
-            "yahoo": null,
-            "bleacherreport": 2
-          },
-          "record": "2-5",
-          "differential": -5,
-          "last_game": {
-            "week": 7,
-            "label": "Week 7",
-            "season_type": "regular",
-            "date": "2026-10-25T17:00Z",
-            "opponent": "NYG",
-            "home": true,
-            "points_for": 21,
-            "points_against": 27,
-            "result": "L",
-            "completed": true,
-            "detail": "Final/OT"
-          },
-          "sos_played": 16,
-          "sos_remaining": 21,
-          "opponents_remaining": 10,
-          "sos_full": 18.94,
-          "next_game": {
-            "week": 9,
-            "label": "Week 9",
-            "date": "2026-11-08T21:05Z",
-            "opponent": "LAC",
-            "home": false,
-            "opponent_rank": 32
-          },
-          "outlier": {
-            "source": "sharpfootball",
-            "rank": 15,
-            "gap": 6
-          },
-          "record_rank": 25,
-          "divergence": 4,
-          "market_rank": 14,
-          "market_odds": "+3500",
-          "market_probability": 0.02285,
-          "market_gap": 7,
-          "sos_rank": 31
+          "market_probability": 0.00969,
+          "market_gap": 1,
+          "sos_rank": 9
         },
         "LV": {
           "rank": 22,
-          "avg": 20.67,
-          "median": 20.0,
+          "avg": 20.8,
+          "median": 20,
           "high": 17,
           "low": 24,
           "spread": 7,
-          "stdev": 2.29,
-          "n": 6,
+          "stdev": 2.48,
+          "n": 5,
           "ranks": {
             "espn": 20,
             "nfl": 20,
             "cbs": 24,
             "sharpfootball": 23,
-            "yahoo": 20,
             "bleacherreport": 17
           },
           "prev": 22,
@@ -12215,7 +12159,6 @@
             "nfl": 5,
             "cbs": -2,
             "sharpfootball": 0,
-            "yahoo": null,
             "bleacherreport": 3
           },
           "record": "4-4",
@@ -12233,10 +12176,10 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 18.5,
-          "sos_remaining": 14.67,
+          "sos_played": 18.38,
+          "sos_remaining": 14.22,
           "opponents_remaining": 9,
-          "sos_full": 16.47,
+          "sos_full": 16.18,
           "next_game": {
             "week": 9,
             "label": "Week 9",
@@ -12252,23 +12195,22 @@
           "market_odds": "+15000",
           "market_probability": 0.00545,
           "market_gap": -1,
-          "sos_rank": 9
+          "sos_rank": 6
         },
         "DAL": {
           "rank": 23,
-          "avg": 22.67,
-          "median": 22.5,
+          "avg": 22.4,
+          "median": 22,
           "high": 21,
           "low": 24,
           "spread": 3,
-          "stdev": 1.11,
-          "n": 6,
+          "stdev": 1.02,
+          "n": 5,
           "ranks": {
             "espn": 23,
             "nfl": 24,
             "cbs": 22,
             "sharpfootball": 21,
-            "yahoo": 24,
             "bleacherreport": 22
           },
           "prev": 21,
@@ -12278,7 +12220,6 @@
             "nfl": -2,
             "cbs": -2,
             "sharpfootball": -1,
-            "yahoo": null,
             "bleacherreport": -1
           },
           "record": "3-5",
@@ -12296,10 +12237,10 @@
             "completed": true,
             "detail": "Final/OT"
           },
-          "sos_played": 20.38,
-          "sos_remaining": 17.56,
+          "sos_played": 20.25,
+          "sos_remaining": 17.44,
           "opponents_remaining": 9,
-          "sos_full": 18.88,
+          "sos_full": 18.76,
           "next_game": {
             "week": 9,
             "label": "Week 9",
@@ -12313,25 +12254,24 @@
           "divergence": -2,
           "market_rank": 15,
           "market_odds": "+5000",
-          "market_probability": 0.01613,
+          "market_probability": 0.01614,
           "market_gap": 8,
-          "sos_rank": 22
+          "sos_rank": 21
         },
         "ARI": {
           "rank": 24,
-          "avg": 22.83,
-          "median": 23.5,
+          "avg": 23.2,
+          "median": 24,
           "high": 21,
           "low": 24,
           "spread": 3,
-          "stdev": 1.34,
-          "n": 6,
+          "stdev": 1.17,
+          "n": 5,
           "ranks": {
             "espn": 24,
             "nfl": 23,
             "cbs": 21,
             "sharpfootball": 24,
-            "yahoo": 21,
             "bleacherreport": 24
           },
           "prev": 28,
@@ -12341,7 +12281,6 @@
             "nfl": 7,
             "cbs": 7,
             "sharpfootball": 3,
-            "yahoo": null,
             "bleacherreport": 4
           },
           "record": "3-5",
@@ -12359,10 +12298,10 @@
             "completed": true,
             "detail": "Final/OT"
           },
-          "sos_played": 13.38,
-          "sos_remaining": 18,
+          "sos_played": 13.62,
+          "sos_remaining": 17.89,
           "opponents_remaining": 9,
-          "sos_full": 15.82,
+          "sos_full": 15.88,
           "next_game": {
             "week": 9,
             "label": "Week 9",
@@ -12382,19 +12321,18 @@
         },
         "WSH": {
           "rank": 25,
-          "avg": 25.5,
-          "median": 25.0,
+          "avg": 25.6,
+          "median": 25,
           "high": 25,
           "low": 27,
           "spread": 2,
-          "stdev": 0.76,
-          "n": 6,
+          "stdev": 0.8,
+          "n": 5,
           "ranks": {
             "espn": 25,
             "nfl": 26,
             "cbs": 27,
             "sharpfootball": 25,
-            "yahoo": 25,
             "bleacherreport": 25
           },
           "prev": 26,
@@ -12404,7 +12342,6 @@
             "nfl": -2,
             "cbs": 2,
             "sharpfootball": 1,
-            "yahoo": null,
             "bleacherreport": 2
           },
           "record": "2-4-1",
@@ -12422,8 +12359,8 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 19.57,
-          "sos_remaining": 16.5,
+          "sos_played": 19.86,
+          "sos_remaining": 16.3,
           "opponents_remaining": 10,
           "sos_full": 17.76,
           "next_game": {
@@ -12445,19 +12382,18 @@
         },
         "NO": {
           "rank": 26,
-          "avg": 26.67,
-          "median": 26.0,
+          "avg": 26.8,
+          "median": 26,
           "high": 26,
           "low": 28,
           "spread": 2,
-          "stdev": 0.94,
-          "n": 6,
+          "stdev": 0.98,
+          "n": 5,
           "ranks": {
             "espn": 26,
             "nfl": 28,
             "cbs": 26,
             "sharpfootball": 26,
-            "yahoo": 26,
             "bleacherreport": 28
           },
           "prev": 25,
@@ -12467,7 +12403,6 @@
             "nfl": -5,
             "cbs": 1,
             "sharpfootball": -2,
-            "yahoo": null,
             "bleacherreport": -3
           },
           "record": "2-5",
@@ -12485,10 +12420,10 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 14.43,
-          "sos_remaining": 15.5,
+          "sos_played": 15,
+          "sos_remaining": 15.7,
           "opponents_remaining": 10,
-          "sos_full": 15.06,
+          "sos_full": 15.41,
           "next_game": {
             "week": 9,
             "label": "Week 9",
@@ -12502,25 +12437,24 @@
           "divergence": 0,
           "market_rank": 25,
           "market_odds": "+20000",
-          "market_probability": 0.00409,
+          "market_probability": 0.0041,
           "market_gap": 1,
-          "sos_rank": 12
+          "sos_rank": 13
         },
         "NYJ": {
           "rank": 27,
-          "avg": 27.67,
-          "median": 28.5,
+          "avg": 27.4,
+          "median": 28,
           "high": 25,
           "low": 29,
           "spread": 4,
-          "stdev": 1.6,
-          "n": 6,
+          "stdev": 1.62,
+          "n": 5,
           "ranks": {
             "espn": 28,
             "nfl": 29,
             "cbs": 25,
             "sharpfootball": 29,
-            "yahoo": 29,
             "bleacherreport": 26
           },
           "prev": 27,
@@ -12530,7 +12464,6 @@
             "nfl": 0,
             "cbs": 1,
             "sharpfootball": 1,
-            "yahoo": null,
             "bleacherreport": 0
           },
           "record": "2-6",
@@ -12548,8 +12481,8 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 16.38,
-          "sos_remaining": 13.11,
+          "sos_played": 16.5,
+          "sos_remaining": 13,
           "opponents_remaining": 9,
           "sos_full": 14.65,
           "next_game": {
@@ -12558,7 +12491,7 @@
             "date": "2026-11-08T18:00Z",
             "opponent": "KC",
             "home": false,
-            "opponent_rank": 8
+            "opponent_rank": 6
           },
           "outlier": null,
           "record_rank": 27,
@@ -12567,159 +12500,31 @@
           "market_odds": "+100000",
           "market_probability": 0.00082,
           "market_gap": -4,
-          "sos_rank": 4
-        },
-        "PHI": {
-          "rank": 28,
-          "avg": 28.5,
-          "median": 27.5,
-          "high": 27,
-          "low": 32,
-          "spread": 5,
-          "stdev": 1.89,
-          "n": 6,
-          "ranks": {
-            "espn": 27,
-            "nfl": 32,
-            "cbs": 28,
-            "sharpfootball": 30,
-            "yahoo": 27,
-            "bleacherreport": 27
-          },
-          "prev": 24,
-          "delta": -4,
-          "source_delta": {
-            "espn": -6,
-            "nfl": -4,
-            "cbs": -4,
-            "sharpfootball": -5,
-            "yahoo": null,
-            "bleacherreport": -3
-          },
-          "record": "2-6",
-          "differential": -65,
-          "last_game": {
-            "week": 8,
-            "label": "Week 8",
-            "season_type": "regular",
-            "date": "2026-11-02T01:20Z",
-            "opponent": "WSH",
-            "home": false,
-            "points_for": 10,
-            "points_against": 27,
-            "result": "L",
-            "completed": true,
-            "detail": "Final"
-          },
-          "sos_played": 17.75,
-          "sos_remaining": 17,
-          "opponents_remaining": 9,
-          "sos_full": 17.35,
-          "next_game": {
-            "week": 9,
-            "label": "Week 9",
-            "date": "2026-11-08T18:00Z",
-            "opponent": "NYG",
-            "home": true,
-            "opponent_rank": 15
-          },
-          "outlier": null,
-          "record_rank": 29,
-          "divergence": 1,
-          "market_rank": 26,
-          "market_odds": "+50000",
-          "market_probability": 0.00164,
-          "market_gap": 2,
-          "sos_rank": 19
-        },
-        "MIA": {
-          "rank": 29,
-          "avg": 29.0,
-          "median": 29.0,
-          "high": 27,
-          "low": 31,
-          "spread": 4,
-          "stdev": 1.29,
-          "n": 6,
-          "ranks": {
-            "espn": 31,
-            "nfl": 27,
-            "cbs": 29,
-            "sharpfootball": 28,
-            "yahoo": 30,
-            "bleacherreport": 29
-          },
-          "prev": 30,
-          "delta": 1,
-          "source_delta": {
-            "espn": 1,
-            "nfl": -1,
-            "cbs": 1,
-            "sharpfootball": 1,
-            "yahoo": null,
-            "bleacherreport": 1
-          },
-          "record": "1-6",
-          "differential": -64,
-          "last_game": {
-            "week": 8,
-            "label": "Week 8",
-            "season_type": "regular",
-            "date": "2026-11-01T21:25Z",
-            "opponent": "NE",
-            "home": true,
-            "points_for": 19,
-            "points_against": 24,
-            "result": "L",
-            "completed": true,
-            "detail": "Final"
-          },
-          "sos_played": 12.29,
-          "sos_remaining": 13.1,
-          "opponents_remaining": 10,
-          "sos_full": 12.76,
-          "next_game": {
-            "week": 9,
-            "label": "Week 9",
-            "date": "2026-11-08T18:00Z",
-            "opponent": "DET",
-            "home": true,
-            "opponent_rank": 6
-          },
-          "outlier": null,
-          "record_rank": 30,
-          "divergence": 1,
-          "market_rank": 32,
-          "market_odds": "+100000",
-          "market_probability": 0.00082,
-          "market_gap": -3,
           "sos_rank": 3
         },
         "TEN": {
-          "rank": 30,
-          "avg": 29.0,
-          "median": 30.0,
+          "rank": 28,
+          "avg": 28.6,
+          "median": 30,
           "high": 25,
           "low": 31,
           "spread": 6,
           "stdev": 2.24,
-          "n": 6,
+          "n": 5,
           "ranks": {
             "espn": 30,
             "nfl": 25,
             "cbs": 31,
             "sharpfootball": 27,
-            "yahoo": 31,
             "bleacherreport": 30
           },
           "prev": 31,
-          "delta": 1,
+          "delta": 3,
           "source_delta": {
             "espn": 0,
             "nfl": 2,
             "cbs": 0,
             "sharpfootball": 1,
-            "yahoo": null,
             "bleacherreport": 1
           },
           "record": "1-7",
@@ -12737,10 +12542,10 @@
             "completed": true,
             "detail": "Final/OT"
           },
-          "sos_played": 20.88,
+          "sos_played": 20.75,
           "sos_remaining": 16.22,
           "opponents_remaining": 9,
-          "sos_full": 18.41,
+          "sos_full": 18.35,
           "next_game": {
             "week": 10,
             "label": "Week 10",
@@ -12751,28 +12556,149 @@
           },
           "outlier": null,
           "record_rank": 31,
-          "divergence": 1,
+          "divergence": 3,
           "market_rank": 30,
           "market_odds": "+100000",
           "market_probability": 0.00082,
-          "market_gap": 0,
-          "sos_rank": 17
+          "market_gap": -2,
+          "sos_rank": 16
+        },
+        "PHI": {
+          "rank": 29,
+          "avg": 28.8,
+          "median": 28,
+          "high": 27,
+          "low": 32,
+          "spread": 5,
+          "stdev": 1.94,
+          "n": 5,
+          "ranks": {
+            "espn": 27,
+            "nfl": 32,
+            "cbs": 28,
+            "sharpfootball": 30,
+            "bleacherreport": 27
+          },
+          "prev": 24,
+          "delta": -5,
+          "source_delta": {
+            "espn": -6,
+            "nfl": -4,
+            "cbs": -4,
+            "sharpfootball": -5,
+            "bleacherreport": -3
+          },
+          "record": "2-6",
+          "differential": -65,
+          "last_game": {
+            "week": 8,
+            "label": "Week 8",
+            "season_type": "regular",
+            "date": "2026-11-02T01:20Z",
+            "opponent": "WSH",
+            "home": false,
+            "points_for": 10,
+            "points_against": 27,
+            "result": "L",
+            "completed": true,
+            "detail": "Final"
+          },
+          "sos_played": 17.5,
+          "sos_remaining": 16.78,
+          "opponents_remaining": 9,
+          "sos_full": 17.12,
+          "next_game": {
+            "week": 9,
+            "label": "Week 9",
+            "date": "2026-11-08T18:00Z",
+            "opponent": "NYG",
+            "home": true,
+            "opponent_rank": 15
+          },
+          "outlier": null,
+          "record_rank": 29,
+          "divergence": 0,
+          "market_rank": 26,
+          "market_odds": "+50000",
+          "market_probability": 0.00164,
+          "market_gap": 3,
+          "sos_rank": 20
+        },
+        "MIA": {
+          "rank": 30,
+          "avg": 28.8,
+          "median": 29,
+          "high": 27,
+          "low": 31,
+          "spread": 4,
+          "stdev": 1.33,
+          "n": 5,
+          "ranks": {
+            "espn": 31,
+            "nfl": 27,
+            "cbs": 29,
+            "sharpfootball": 28,
+            "bleacherreport": 29
+          },
+          "prev": 30,
+          "delta": 0,
+          "source_delta": {
+            "espn": 1,
+            "nfl": -1,
+            "cbs": 1,
+            "sharpfootball": 1,
+            "bleacherreport": 1
+          },
+          "record": "1-6",
+          "differential": -64,
+          "last_game": {
+            "week": 8,
+            "label": "Week 8",
+            "season_type": "regular",
+            "date": "2026-11-01T21:25Z",
+            "opponent": "NE",
+            "home": true,
+            "points_for": 19,
+            "points_against": 24,
+            "result": "L",
+            "completed": true,
+            "detail": "Final"
+          },
+          "sos_played": 12,
+          "sos_remaining": 13.3,
+          "opponents_remaining": 10,
+          "sos_full": 12.76,
+          "next_game": {
+            "week": 9,
+            "label": "Week 9",
+            "date": "2026-11-08T18:00Z",
+            "opponent": "DET",
+            "home": true,
+            "opponent_rank": 8
+          },
+          "outlier": null,
+          "record_rank": 30,
+          "divergence": 0,
+          "market_rank": 32,
+          "market_odds": "+100000",
+          "market_probability": 0.00082,
+          "market_gap": -2,
+          "sos_rank": 4
         },
         "IND": {
           "rank": 31,
-          "avg": 30.0,
-          "median": 30.5,
-          "high": 28,
+          "avg": 30.4,
+          "median": 31,
+          "high": 29,
           "low": 31,
-          "spread": 3,
-          "stdev": 1.15,
-          "n": 6,
+          "spread": 2,
+          "stdev": 0.8,
+          "n": 5,
           "ranks": {
             "espn": 29,
             "nfl": 31,
             "cbs": 30,
             "sharpfootball": 31,
-            "yahoo": 28,
             "bleacherreport": 31
           },
           "prev": 29,
@@ -12782,7 +12708,6 @@
             "nfl": 0,
             "cbs": -5,
             "sharpfootball": 0,
-            "yahoo": null,
             "bleacherreport": -2
           },
           "record": "2-6",
@@ -12800,10 +12725,10 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 15.75,
-          "sos_remaining": 19.33,
+          "sos_played": 15,
+          "sos_remaining": 19.11,
           "opponents_remaining": 9,
-          "sos_full": 17.65,
+          "sos_full": 17.18,
           "next_game": {
             "week": 9,
             "label": "Week 9",
@@ -12819,23 +12744,22 @@
           "market_odds": "+80000",
           "market_probability": 0.00103,
           "market_gap": 3,
-          "sos_rank": 30
+          "sos_rank": 29
         },
         "LAC": {
           "rank": 32,
-          "avg": 31.67,
-          "median": 32.0,
+          "avg": 31.6,
+          "median": 32,
           "high": 30,
           "low": 32,
           "spread": 2,
-          "stdev": 0.75,
-          "n": 6,
+          "stdev": 0.8,
+          "n": 5,
           "ranks": {
             "espn": 32,
             "nfl": 30,
             "cbs": 32,
             "sharpfootball": 32,
-            "yahoo": 32,
             "bleacherreport": 32
           },
           "prev": 32,
@@ -12845,7 +12769,6 @@
             "nfl": 2,
             "cbs": 0,
             "sharpfootball": 0,
-            "yahoo": null,
             "bleacherreport": 0
           },
           "record": "0-7",
@@ -12863,17 +12786,17 @@
             "completed": true,
             "detail": "Final"
           },
-          "sos_played": 12,
-          "sos_remaining": 16.2,
+          "sos_played": 11.71,
+          "sos_remaining": 15.9,
           "opponents_remaining": 10,
-          "sos_full": 14.47,
+          "sos_full": 14.18,
           "next_game": {
             "week": 9,
             "label": "Week 9",
             "date": "2026-11-08T21:05Z",
             "opponent": "HOU",
             "home": true,
-            "opponent_rank": 21
+            "opponent_rank": 19
           },
           "outlier": null,
           "record_rank": 32,
@@ -12882,26 +12805,11 @@
           "market_odds": "+100000",
           "market_probability": 0.00082,
           "market_gap": 3,
-          "sos_rank": 16
+          "sos_rank": 14
         }
       },
       "storylines": {
-        "outliers": [
-          {
-            "team": "KC",
-            "source": "yahoo",
-            "rank": 15,
-            "consensus": 8,
-            "gap": -7
-          },
-          {
-            "team": "HOU",
-            "source": "sharpfootball",
-            "rank": 15,
-            "consensus": 21,
-            "gap": 6
-          }
-        ],
+        "outliers": [],
         "divergent": [
           {
             "team": "PIT",
@@ -12916,9 +12824,23 @@
             "record_rank": 16,
             "record": "4-4",
             "gap": 6
+          },
+          {
+            "team": "HOU",
+            "rank": 19,
+            "record_rank": 25,
+            "record": "2-5",
+            "gap": 6
           }
         ],
         "market": [
+          {
+            "team": "LAR",
+            "rank": 14,
+            "market_rank": 6,
+            "odds": "+1100",
+            "gap": 8
+          },
           {
             "team": "CLE",
             "rank": 16,
@@ -12932,20 +12854,6 @@
             "market_rank": 15,
             "odds": "+5000",
             "gap": 8
-          },
-          {
-            "team": "LAR",
-            "rank": 14,
-            "market_rank": 7,
-            "odds": "+1100",
-            "gap": 7
-          },
-          {
-            "team": "HOU",
-            "rank": 21,
-            "market_rank": 14,
-            "odds": "+3500",
-            "gap": 7
           }
         ],
         "market_meta": {
@@ -12953,7 +12861,7 @@
           "market": "NFL - Super Bowl Winner"
         },
         "hardest_remaining": "CHI",
-        "easiest_remaining": "JAX"
+        "easiest_remaining": "HOU"
       }
     }
   ],
@@ -20424,103 +20332,103 @@
       "SF": {
         "american": "+580",
         "raw_probability": 0.14706,
-        "probability": 0.12096,
+        "probability": 0.12106,
         "market_rank": 1
       },
       "BUF": {
         "american": "+600",
         "raw_probability": 0.14286,
-        "probability": 0.11751,
+        "probability": 0.11761,
         "market_rank": 2
       },
       "CHI": {
-        "american": "+950",
-        "raw_probability": 0.09524,
-        "probability": 0.07834,
+        "american": "+780",
+        "raw_probability": 0.11364,
+        "probability": 0.09355,
         "market_rank": 3
       },
       "JAX": {
         "american": "+950",
         "raw_probability": 0.09524,
-        "probability": 0.07834,
+        "probability": 0.0784,
         "market_rank": 4
       },
       "KC": {
         "american": "+1000",
         "raw_probability": 0.09091,
-        "probability": 0.07478,
+        "probability": 0.07484,
         "market_rank": 5
-      },
-      "SEA": {
-        "american": "+1050",
-        "raw_probability": 0.08696,
-        "probability": 0.07153,
-        "market_rank": 6
       },
       "LAR": {
         "american": "+1100",
         "raw_probability": 0.08333,
-        "probability": 0.06855,
+        "probability": 0.0686,
+        "market_rank": 6
+      },
+      "SEA": {
+        "american": "+1250",
+        "raw_probability": 0.07407,
+        "probability": 0.06098,
         "market_rank": 7
       },
       "CIN": {
         "american": "+1400",
         "raw_probability": 0.06667,
-        "probability": 0.05484,
+        "probability": 0.05488,
         "market_rank": 8
       },
       "DEN": {
         "american": "+1600",
         "raw_probability": 0.05882,
-        "probability": 0.04839,
+        "probability": 0.04843,
         "market_rank": 9
-      },
-      "DET": {
-        "american": "+1900",
-        "raw_probability": 0.05,
-        "probability": 0.04113,
-        "market_rank": 10
       },
       "NE": {
         "american": "+1900",
         "raw_probability": 0.05,
-        "probability": 0.04113,
+        "probability": 0.04116,
+        "market_rank": 10
+      },
+      "DET": {
+        "american": "+1900",
+        "raw_probability": 0.05,
+        "probability": 0.04116,
         "market_rank": 11
       },
       "MIN": {
-        "american": "+1900",
-        "raw_probability": 0.05,
-        "probability": 0.04113,
+        "american": "+2200",
+        "raw_probability": 0.04348,
+        "probability": 0.03579,
         "market_rank": 12
       },
       "GB": {
         "american": "+3000",
         "raw_probability": 0.03226,
-        "probability": 0.02653,
+        "probability": 0.02656,
         "market_rank": 13
       },
       "HOU": {
         "american": "+3500",
         "raw_probability": 0.02778,
-        "probability": 0.02285,
+        "probability": 0.02287,
         "market_rank": 14
       },
       "DAL": {
         "american": "+5000",
         "raw_probability": 0.01961,
-        "probability": 0.01613,
+        "probability": 0.01614,
         "market_rank": 15
       },
       "PIT": {
         "american": "+5000",
         "raw_probability": 0.01961,
-        "probability": 0.01613,
+        "probability": 0.01614,
         "market_rank": 16
       },
       "NYG": {
         "american": "+6500",
         "raw_probability": 0.01515,
-        "probability": 0.01246,
+        "probability": 0.01247,
         "market_rank": 17
       },
       "CAR": {
@@ -20532,19 +20440,19 @@
       "TB": {
         "american": "+7400",
         "raw_probability": 0.01333,
-        "probability": 0.01097,
+        "probability": 0.01098,
         "market_rank": 19
       },
       "ATL": {
         "american": "+8400",
         "raw_probability": 0.01176,
-        "probability": 0.00968,
+        "probability": 0.00969,
         "market_rank": 20
       },
       "BAL": {
         "american": "+10000",
         "raw_probability": 0.0099,
-        "probability": 0.00814,
+        "probability": 0.00815,
         "market_rank": 21
       },
       "WSH": {
@@ -20568,7 +20476,7 @@
       "NO": {
         "american": "+20000",
         "raw_probability": 0.00498,
-        "probability": 0.00409,
+        "probability": 0.0041,
         "market_rank": 25
       },
       "PHI": {
@@ -20816,40 +20724,6 @@
         "place": 4
       },
       {
-        "id": "yahoo",
-        "name": "Yahoo Sports",
-        "weeks": 3,
-        "mae": 5.813,
-        "spearman": 0.6443,
-        "early_mae": 7.344,
-        "best_week": {
-          "week": 9,
-          "mae": 2.75
-        },
-        "worst_week": {
-          "week": 1,
-          "mae": 8.5
-        },
-        "by_week": [
-          {
-            "week": 1,
-            "mae": 8.5,
-            "spearman": 0.3783
-          },
-          {
-            "week": 3,
-            "mae": 6.188,
-            "spearman": 0.6371
-          },
-          {
-            "week": 9,
-            "mae": 2.75,
-            "spearman": 0.9175
-          }
-        ],
-        "place": 5
-      },
-      {
         "id": "nfl",
         "name": "NFL.com",
         "weeks": 6,
@@ -20896,6 +20770,35 @@
             "spearman": 0.9234
           }
         ],
+        "place": 5
+      },
+      {
+        "id": "yahoo",
+        "name": "Yahoo Sports",
+        "weeks": 2,
+        "mae": 7.344,
+        "spearman": 0.5077,
+        "early_mae": 7.344,
+        "best_week": {
+          "week": 3,
+          "mae": 6.188
+        },
+        "worst_week": {
+          "week": 1,
+          "mae": 8.5
+        },
+        "by_week": [
+          {
+            "week": 1,
+            "mae": 8.5,
+            "spearman": 0.3783
+          },
+          {
+            "week": 3,
+            "mae": 6.188,
+            "spearman": 0.6371
+          }
+        ],
         "place": 6
       }
     ],
@@ -20904,7 +20807,7 @@
       "name": "Superpower consensus",
       "weeks": 6,
       "mae": 5.25,
-      "spearman": 0.6822,
+      "spearman": 0.6818,
       "early_mae": 6.688,
       "best_week": {
         "week": 9,
@@ -20943,7 +20846,7 @@
         {
           "week": 9,
           "mae": 2.062,
-          "spearman": 0.9556
+          "spearman": 0.9531
         }
       ]
     },

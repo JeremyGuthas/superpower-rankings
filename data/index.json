@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-03T21:21:54+00:00",
+  "generated": "2026-11-04T00:22:52+00:00",
   "default_season": 2026,
   "seasons": [
     {
@@ -34,7 +34,7 @@
         {
           "week": 9,
           "label": "Week 9",
-          "sources": 6
+          "sources": 5
         }
       ]
     },
