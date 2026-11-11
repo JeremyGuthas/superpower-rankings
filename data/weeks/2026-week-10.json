@@ -3,7 +3,7 @@
   "week": 10,
   "label": "Week 10",
   "games_through": 9,
-  "generated": "2026-11-10T21:34:07+00:00",
+  "generated": "2026-11-11T00:25:09+00:00",
   "sources": [
     {
       "id": "espn",
@@ -13,7 +13,7 @@
       "author": "NFL Nation",
       "published": "2026-11-10T15:35:36Z",
       "strategy": "headings",
-      "fetched": "2026-11-10T21:33:57Z"
+      "fetched": "2026-11-11T00:24:58Z"
     },
     {
       "id": "nfl",
@@ -23,7 +23,7 @@
       "author": "Nick Shook",
       "published": "2026-11-10T15:53:17.562Z",
       "strategy": "rank-label",
-      "fetched": "2026-11-10T21:34:00Z"
+      "fetched": "2026-11-11T00:25:01Z"
     },
     {
       "id": "cbs",
@@ -33,7 +33,7 @@
       "author": "Pete Prisco",
       "published": "2026-11-10T10:00:00+00:00",
       "strategy": "split-lines",
-      "fetched": "2026-11-10T21:34:00Z"
+      "fetched": "2026-11-11T00:25:01Z"
     },
     {
       "id": "sharpfootball",
@@ -43,7 +43,7 @@
       "author": "Raymond Summerlin",
       "published": "2026-11-10T09:00:01-05:00",
       "strategy": "headings",
-      "fetched": "2026-11-10T21:34:00Z"
+      "fetched": "2026-11-11T00:25:02Z"
     },
     {
       "id": "bleacherreport",
@@ -53,14 +53,14 @@
       "author": "B/R NFL Staff",
       "published": "2026-11-09T18:20:58.000Z",
       "strategy": "headings",
-      "fetched": "2026-11-10T21:34:07Z"
+      "fetched": "2026-11-11T00:25:09Z"
     }
   ],
   "failed_sources": [
     {
       "id": "yahoo",
       "name": "Yahoo Sports",
-      "error": "SourceFailure: no Yahoo Sports power rankings article found"
+      "error": "could not parse a full 1-32 ranking (headings: no candidates; rank-label: no candidates; numbered-lines: found 1 teams, expected 32; split-lines: no candidates)"
     },
     {
       "id": "sportingnews",
