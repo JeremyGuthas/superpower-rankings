@@ -21,23 +21,22 @@ https://superpowerrankings.com/2026/week-11/
 
 Top 10:
 
-1. Buffalo Bills — 1.33
+1. Buffalo Bills — 1.67
 2. San Francisco 49ers — 1.67
-3. Jacksonville Jaguars — 3.00
-4. Chicago Bears — 4.67
-5. Denver Broncos — 6.17
-6. Cincinnati Bengals — 6.17 (▲1)
-7. Minnesota Vikings — 7.33 (▲4)
-8. Kansas City Chiefs — 7.83 (▼2)
-9. Detroit Lions — 8.17 (▼1)
-10. Seattle Seahawks — 9.67 (▼1)
+3. Jacksonville Jaguars — 2.67
+4. Chicago Bears — 4.50
+5. Cincinnati Bengals — 6.00 (▲2)
+6. Denver Broncos — 6.17 (▼1)
+7. Kansas City Chiefs — 7.00 (▼1)
+8. Minnesota Vikings — 7.17 (▲3)
+9. Detroit Lions — 9.33 (▼1)
+10. Seattle Seahawks — 9.50 (▼1)
 
 What stood out:
 
-- **Tennessee Titans** — NFL.com has them at #24, 7 spots higher than the consensus #31.
-- **New England Patriots** — NFL.com has them at #23, 6 spots lower than the consensus #17.
+- **Tampa Bay Buccaneers** — Bleacher Report has them at #23, 6 spots lower than the consensus #17.
 - **Cleveland Browns** — #14 in the consensus but #22 at the book (+18000); the media is the believer.
-- **Houston Texans** — #19 in the consensus but #13 at the book (+5500); the market is the believer.
+- **Arizona Cardinals** — #26 in the consensus but #32 at the book (+100000); the media is the believer.
 
 The whole archive is free JSON if anyone wants to play with it: https://superpowerrankings.com/api/
 
@@ -47,7 +46,7 @@ The whole archive is free JSON if anyone wants to play with it: https://superpow
 
 2026 Week 11 NFL power rankings — 6 outlets averaged into one board.
 
-Tennessee Titans — NFL.com has them at #24, 7 spots higher than the consensus #31.
+Tampa Bay Buccaneers — Bleacher Report has them at #23, 6 spots lower than the consensus #17.
 
 Full 32: https://superpowerrankings.com/2026/week-11/
 
