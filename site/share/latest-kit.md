@@ -1,9 +1,9 @@
-# Weekly share kit — 2026 Week 11
+# Weekly share kit — 2026 Week 12
 
 Generated automatically. Paste as-is; nothing here needs rewriting.
 
-Image to attach: https://superpowerrankings.com/share/og/2026-week-11.png
-Page to link:    https://superpowerrankings.com/2026/week-11/
+Image to attach: https://superpowerrankings.com/share/og/2026-week-12.png
+Page to link:    https://superpowerrankings.com/2026/week-12/
 
 ---
 
@@ -11,32 +11,32 @@ Page to link:    https://superpowerrankings.com/2026/week-11/
 
 **Title**
 
-[OC] 2026 Week 11 NFL Power Rankings — every major outlet averaged into one board
+[OC] 2026 Week 12 NFL Power Rankings — every major outlet averaged into one board
 
 **Body**
 
 I average every major NFL power ranking into one consensus board —
-ESPN, NFL.com, CBS Sports, Sharp Football Analysis, Yahoo Sports, Bleacher Report this week. Full table with each outlet's rank for all 32:
-https://superpowerrankings.com/2026/week-11/
+ESPN, NFL.com, CBS Sports, Sharp Football Analysis, Bleacher Report this week. Full table with each outlet's rank for all 32:
+https://superpowerrankings.com/2026/week-12/
 
 Top 10:
 
-1. Buffalo Bills — 1.67
-2. San Francisco 49ers — 1.67
-3. Jacksonville Jaguars — 2.67
-4. Chicago Bears — 4.50
-5. Cincinnati Bengals — 6.00 (▲2)
-6. Denver Broncos — 6.17 (▼1)
-7. Kansas City Chiefs — 7.00 (▼1)
-8. Minnesota Vikings — 7.17 (▲3)
-9. Detroit Lions — 9.33 (▼1)
-10. Seattle Seahawks — 9.50 (▼1)
+1. San Francisco 49ers — 1.20 (▲1)
+2. Buffalo Bills — 1.80 (▼1)
+3. Chicago Bears — 4.20 (▲1)
+4. Kansas City Chiefs — 4.40 (▲3)
+5. Denver Broncos — 4.40 (▲1)
+6. Jacksonville Jaguars — 5.60 (▼3)
+7. Detroit Lions — 6.80 (▲2)
+8. Minnesota Vikings — 8.40
+9. Cincinnati Bengals — 8.80 (▼4)
+10. Seattle Seahawks — 10.20
 
 What stood out:
 
-- **Tampa Bay Buccaneers** — Bleacher Report has them at #23, 6 spots lower than the consensus #17.
-- **Cleveland Browns** — #14 in the consensus but #22 at the book (+18000); the media is the believer.
-- **Arizona Cardinals** — #26 in the consensus but #32 at the book (+100000); the media is the believer.
+- **Pittsburgh Steelers** — NFL.com has them at #21, 6 spots lower than the consensus #15.
+- **New England Patriots** — NFL.com has them at #27, 6 spots lower than the consensus #21.
+- **Cleveland Browns** — #14 in the consensus but #22 at the book (+15000); the media is the believer.
 
 The whole archive is free JSON if anyone wants to play with it: https://superpowerrankings.com/api/
 
@@ -44,17 +44,17 @@ The whole archive is free JSON if anyone wants to play with it: https://superpow
 
 ## X / Bluesky
 
-2026 Week 11 NFL power rankings — 6 outlets averaged into one board.
+2026 Week 12 NFL power rankings — 5 outlets averaged into one board.
 
-Tampa Bay Buccaneers — Bleacher Report has them at #23, 6 spots lower than the consensus #17.
+Pittsburgh Steelers — NFL.com has them at #21, 6 spots lower than the consensus #15.
 
-Full 32: https://superpowerrankings.com/2026/week-11/
+Full 32: https://superpowerrankings.com/2026/week-12/
 
 ---
 
 ## One-line version, for a group chat
 
-2026 Week 11 consensus rankings, 6 outlets averaged: https://superpowerrankings.com/2026/week-11/
+2026 Week 12 consensus rankings, 5 outlets averaged: https://superpowerrankings.com/2026/week-12/
 
 ---
 

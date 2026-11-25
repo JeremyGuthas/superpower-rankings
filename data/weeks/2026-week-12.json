@@ -1,0 +1,1396 @@
+{
+  "season": 2026,
+  "week": 12,
+  "label": "Week 12",
+  "games_through": 11,
+  "generated": "2026-11-25T00:14:00+00:00",
+  "sources": [
+    {
+      "id": "espn",
+      "name": "ESPN",
+      "url": "https://www.espn.com/nfl/story/_/id/50574413/nfl-power-rankings-week-12-offseason-contract-extension-candidates",
+      "title": "2026 NFL Power Rankings: How 32 teams stack up for Week 12",
+      "author": "NFL Nation",
+      "published": "2026-11-24T16:49:36Z",
+      "strategy": "headings",
+      "fetched": "2026-11-25T00:13:48Z"
+    },
+    {
+      "id": "nfl",
+      "name": "NFL.com",
+      "url": "https://www.nfl.com/news/nfl-power-rankings-week-12-2026-nfl-season",
+      "title": "NFL Power Rankings, Week 12: Broncos climb to No. 3; Giants crack top 10; Steelers in free fall",
+      "author": "Nick Shook",
+      "published": "2026-11-24T16:00:57.143Z",
+      "strategy": "rank-label",
+      "fetched": "2026-11-25T00:13:51Z"
+    },
+    {
+      "id": "cbs",
+      "name": "CBS Sports",
+      "url": "https://www.cbssports.com/nfl/powerrankings/",
+      "title": "Prisco's NFL Week 11 Power Rankings: Patrick Mahomes returns to MVP form, which makes Chiefs scary - CBS Sports",
+      "author": "Pete Prisco",
+      "published": "2026-11-17T10:00:00+00:00",
+      "strategy": "split-lines",
+      "fetched": "2026-11-25T00:13:51Z"
+    },
+    {
+      "id": "sharpfootball",
+      "name": "Sharp Football Analysis",
+      "url": "https://www.sharpfootballanalysis.com/analysis/nfl-power-rankings/",
+      "title": "NFL Power Rankings, Week 12 2026: All 32 Teams, Updated Weekly",
+      "author": "Raymond Summerlin",
+      "published": "2026-11-24T09:00:01-05:00",
+      "strategy": "headings",
+      "fetched": "2026-11-25T00:13:51Z"
+    },
+    {
+      "id": "bleacherreport",
+      "name": "Bleacher Report",
+      "url": "https://bleacherreport.com/articles/25536885-br-experts-week-12-nfl-power-rankings",
+      "title": "B/R Experts Week 12 NFL Power Rankings",
+      "author": "Gary Davenport",
+      "published": "2026-11-23T18:16:34.000Z",
+      "strategy": "headings",
+      "fetched": "2026-11-25T00:14:00Z"
+    }
+  ],
+  "failed_sources": [
+    {
+      "id": "yahoo",
+      "name": "Yahoo Sports",
+      "error": "could not parse a full 1-32 ranking (headings: no candidates; rank-label: no candidates; numbered-lines: no candidates; split-lines: no candidates)"
+    },
+    {
+      "id": "sportingnews",
+      "name": "Sporting News",
+      "error": "SourceFailure: no Sporting News power rankings article found"
+    },
+    {
+      "id": "foxsports",
+      "name": "FOX Sports",
+      "error": "SourceFailure: no FOX Sports power rankings article found"
+    }
+  ],
+  "notes": {
+    "biggest_riser": "PHI",
+    "biggest_faller": "CIN",
+    "most_divisive": "PIT",
+    "most_agreed": "SF"
+  },
+  "teams": {
+    "SF": {
+      "rank": 1,
+      "avg": 1.2,
+      "median": 1,
+      "high": 1,
+      "low": 2,
+      "spread": 1,
+      "stdev": 0.4,
+      "n": 5,
+      "ranks": {
+        "espn": 1,
+        "nfl": 1,
+        "cbs": 2,
+        "sharpfootball": 1,
+        "bleacherreport": 1
+      },
+      "prev": 2,
+      "delta": 1,
+      "source_delta": {
+        "espn": 0,
+        "nfl": 0,
+        "cbs": 0,
+        "sharpfootball": 1,
+        "bleacherreport": 1
+      },
+      "record": "9-1",
+      "differential": 110,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-23T01:20Z",
+        "opponent": "MIN",
+        "home": true,
+        "points_for": 35,
+        "points_against": 10,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "BUF": {
+      "rank": 2,
+      "avg": 1.8,
+      "median": 2,
+      "high": 1,
+      "low": 2,
+      "spread": 1,
+      "stdev": 0.4,
+      "n": 5,
+      "ranks": {
+        "espn": 2,
+        "nfl": 2,
+        "cbs": 1,
+        "sharpfootball": 2,
+        "bleacherreport": 2
+      },
+      "prev": 1,
+      "delta": -1,
+      "source_delta": {
+        "espn": 0,
+        "nfl": 0,
+        "cbs": 0,
+        "sharpfootball": -1,
+        "bleacherreport": -1
+      },
+      "record": "9-1",
+      "differential": 105,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T18:00Z",
+        "opponent": "MIA",
+        "home": true,
+        "points_for": 26,
+        "points_against": 9,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "CHI": {
+      "rank": 3,
+      "avg": 4.2,
+      "median": 4,
+      "high": 3,
+      "low": 7,
+      "spread": 4,
+      "stdev": 1.47,
+      "n": 5,
+      "ranks": {
+        "espn": 4,
+        "nfl": 7,
+        "cbs": 4,
+        "sharpfootball": 3,
+        "bleacherreport": 3
+      },
+      "prev": 4,
+      "delta": 1,
+      "source_delta": {
+        "espn": 0,
+        "nfl": -1,
+        "cbs": 0,
+        "sharpfootball": 1,
+        "bleacherreport": 1
+      },
+      "record": "8-2",
+      "differential": 65,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T18:00Z",
+        "opponent": "NO",
+        "home": true,
+        "points_for": 21,
+        "points_against": 13,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "KC": {
+      "rank": 4,
+      "avg": 4.4,
+      "median": 4,
+      "high": 3,
+      "low": 6,
+      "spread": 3,
+      "stdev": 1.02,
+      "n": 5,
+      "ranks": {
+        "espn": 3,
+        "nfl": 4,
+        "cbs": 6,
+        "sharpfootball": 4,
+        "bleacherreport": 5
+      },
+      "prev": 7,
+      "delta": 3,
+      "source_delta": {
+        "espn": 2,
+        "nfl": 5,
+        "cbs": 0,
+        "sharpfootball": 3,
+        "bleacherreport": 3
+      },
+      "record": "8-2",
+      "differential": 108,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T18:00Z",
+        "opponent": "ARI",
+        "home": true,
+        "points_for": 34,
+        "points_against": 7,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "DEN": {
+      "rank": 5,
+      "avg": 4.4,
+      "median": 5,
+      "high": 3,
+      "low": 5,
+      "spread": 2,
+      "stdev": 0.8,
+      "n": 5,
+      "ranks": {
+        "espn": 5,
+        "nfl": 3,
+        "cbs": 5,
+        "sharpfootball": 5,
+        "bleacherreport": 4
+      },
+      "prev": 6,
+      "delta": 1,
+      "source_delta": {
+        "espn": 2,
+        "nfl": 4,
+        "cbs": 0,
+        "sharpfootball": 0,
+        "bleacherreport": 1
+      },
+      "record": "8-2",
+      "differential": 26,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T21:25Z",
+        "opponent": "LV",
+        "home": true,
+        "points_for": 38,
+        "points_against": 24,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "JAX": {
+      "rank": 6,
+      "avg": 5.6,
+      "median": 6,
+      "high": 3,
+      "low": 7,
+      "spread": 4,
+      "stdev": 1.36,
+      "n": 5,
+      "ranks": {
+        "espn": 7,
+        "nfl": 6,
+        "cbs": 3,
+        "sharpfootball": 6,
+        "bleacherreport": 6
+      },
+      "prev": 3,
+      "delta": -3,
+      "source_delta": {
+        "espn": -4,
+        "nfl": -3,
+        "cbs": 0,
+        "sharpfootball": -3,
+        "bleacherreport": -3
+      },
+      "record": "7-3",
+      "differential": 120,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T21:25Z",
+        "opponent": "NYG",
+        "home": false,
+        "points_for": 18,
+        "points_against": 23,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "DET": {
+      "rank": 7,
+      "avg": 6.8,
+      "median": 7,
+      "high": 5,
+      "low": 8,
+      "spread": 3,
+      "stdev": 1.17,
+      "n": 5,
+      "ranks": {
+        "espn": 6,
+        "nfl": 5,
+        "cbs": 8,
+        "sharpfootball": 8,
+        "bleacherreport": 7
+      },
+      "prev": 9,
+      "delta": 2,
+      "source_delta": {
+        "espn": 4,
+        "nfl": 3,
+        "cbs": 0,
+        "sharpfootball": 2,
+        "bleacherreport": 2
+      },
+      "record": "8-2",
+      "differential": 68,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T18:00Z",
+        "opponent": "TB",
+        "home": true,
+        "points_for": 31,
+        "points_against": 21,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "MIN": {
+      "rank": 8,
+      "avg": 8.4,
+      "median": 8,
+      "high": 8,
+      "low": 9,
+      "spread": 1,
+      "stdev": 0.49,
+      "n": 5,
+      "ranks": {
+        "espn": 8,
+        "nfl": 8,
+        "cbs": 9,
+        "sharpfootball": 9,
+        "bleacherreport": 8
+      },
+      "prev": 8,
+      "delta": 0,
+      "source_delta": {
+        "espn": 0,
+        "nfl": -3,
+        "cbs": 0,
+        "sharpfootball": 0,
+        "bleacherreport": -2
+      },
+      "record": "7-3",
+      "differential": 25,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-23T01:20Z",
+        "opponent": "SF",
+        "home": false,
+        "points_for": 10,
+        "points_against": 35,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "CIN": {
+      "rank": 9,
+      "avg": 8.8,
+      "median": 9,
+      "high": 7,
+      "low": 10,
+      "spread": 3,
+      "stdev": 0.98,
+      "n": 5,
+      "ranks": {
+        "espn": 9,
+        "nfl": 9,
+        "cbs": 7,
+        "sharpfootball": 10,
+        "bleacherreport": 9
+      },
+      "prev": 5,
+      "delta": -4,
+      "source_delta": {
+        "espn": -3,
+        "nfl": -5,
+        "cbs": 0,
+        "sharpfootball": -2,
+        "bleacherreport": -2
+      },
+      "record": "7-3",
+      "differential": 83,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-24T01:15Z",
+        "opponent": "WSH",
+        "home": false,
+        "points_for": 20,
+        "points_against": 22,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "SEA": {
+      "rank": 10,
+      "avg": 10.2,
+      "median": 10,
+      "high": 7,
+      "low": 12,
+      "spread": 5,
+      "stdev": 1.83,
+      "n": 5,
+      "ranks": {
+        "espn": 10,
+        "nfl": 12,
+        "cbs": 12,
+        "sharpfootball": 7,
+        "bleacherreport": 10
+      },
+      "prev": 10,
+      "delta": 0,
+      "source_delta": {
+        "espn": -1,
+        "nfl": -1,
+        "cbs": 0,
+        "sharpfootball": -1,
+        "bleacherreport": 0
+      },
+      "record": "6-4",
+      "differential": 48,
+      "last_game": {
+        "week": 10,
+        "label": "Week 10",
+        "season_type": "regular",
+        "date": "2026-11-15T21:05Z",
+        "opponent": "LV",
+        "home": false,
+        "points_for": 21,
+        "points_against": 13,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "LAR": {
+      "rank": 11,
+      "avg": 11.8,
+      "median": 11,
+      "high": 11,
+      "low": 14,
+      "spread": 3,
+      "stdev": 1.17,
+      "n": 5,
+      "ranks": {
+        "espn": 11,
+        "nfl": 14,
+        "cbs": 11,
+        "sharpfootball": 12,
+        "bleacherreport": 11
+      },
+      "prev": 11,
+      "delta": 0,
+      "source_delta": {
+        "espn": 0,
+        "nfl": 1,
+        "cbs": 0,
+        "sharpfootball": -1,
+        "bleacherreport": 0
+      },
+      "record": "6-4",
+      "differential": 61,
+      "last_game": {
+        "week": 10,
+        "label": "Week 10",
+        "season_type": "regular",
+        "date": "2026-11-15T21:05Z",
+        "opponent": "ARI",
+        "home": false,
+        "points_for": 34,
+        "points_against": 6,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "GB": {
+      "rank": 12,
+      "avg": 11.8,
+      "median": 12,
+      "high": 11,
+      "low": 13,
+      "spread": 2,
+      "stdev": 0.75,
+      "n": 5,
+      "ranks": {
+        "espn": 12,
+        "nfl": 11,
+        "cbs": 13,
+        "sharpfootball": 11,
+        "bleacherreport": 12
+      },
+      "prev": 12,
+      "delta": 0,
+      "source_delta": {
+        "espn": 0,
+        "nfl": -1,
+        "cbs": 0,
+        "sharpfootball": 1,
+        "bleacherreport": 0
+      },
+      "record": "6-4",
+      "differential": 5,
+      "last_game": {
+        "week": 10,
+        "label": "Week 10",
+        "season_type": "regular",
+        "date": "2026-11-15T18:00Z",
+        "opponent": "MIN",
+        "home": true,
+        "points_for": 10,
+        "points_against": 30,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "NYG": {
+      "rank": 13,
+      "avg": 13.0,
+      "median": 13,
+      "high": 10,
+      "low": 15,
+      "spread": 5,
+      "stdev": 1.67,
+      "n": 5,
+      "ranks": {
+        "espn": 13,
+        "nfl": 10,
+        "cbs": 15,
+        "sharpfootball": 14,
+        "bleacherreport": 13
+      },
+      "prev": 15,
+      "delta": 2,
+      "source_delta": {
+        "espn": 2,
+        "nfl": 6,
+        "cbs": 0,
+        "sharpfootball": 5,
+        "bleacherreport": 2
+      },
+      "record": "6-3-1",
+      "differential": 12,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T21:25Z",
+        "opponent": "JAX",
+        "home": true,
+        "points_for": 23,
+        "points_against": 18,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "CLE": {
+      "rank": 14,
+      "avg": 13.6,
+      "median": 14,
+      "high": 13,
+      "low": 14,
+      "spread": 1,
+      "stdev": 0.49,
+      "n": 5,
+      "ranks": {
+        "espn": 14,
+        "nfl": 13,
+        "cbs": 14,
+        "sharpfootball": 13,
+        "bleacherreport": 14
+      },
+      "prev": 14,
+      "delta": 0,
+      "source_delta": {
+        "espn": 0,
+        "nfl": -1,
+        "cbs": 0,
+        "sharpfootball": 1,
+        "bleacherreport": 0
+      },
+      "record": "6-4",
+      "differential": -32,
+      "last_game": {
+        "week": 10,
+        "label": "Week 10",
+        "season_type": "regular",
+        "date": "2026-11-15T18:00Z",
+        "opponent": "HOU",
+        "home": true,
+        "points_for": 27,
+        "points_against": 24,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "PIT": {
+      "rank": 15,
+      "avg": 15.4,
+      "median": 15,
+      "high": 10,
+      "low": 21,
+      "spread": 11,
+      "stdev": 3.5,
+      "n": 5,
+      "ranks": {
+        "espn": 15,
+        "nfl": 21,
+        "cbs": 10,
+        "sharpfootball": 16,
+        "bleacherreport": 15
+      },
+      "prev": 13,
+      "delta": -2,
+      "source_delta": {
+        "espn": -2,
+        "nfl": -8,
+        "cbs": 0,
+        "sharpfootball": -3,
+        "bleacherreport": -2
+      },
+      "record": "6-4",
+      "differential": 13,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T18:00Z",
+        "opponent": "PHI",
+        "home": false,
+        "points_for": 16,
+        "points_against": 19,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "CAR": {
+      "rank": 16,
+      "avg": 16.4,
+      "median": 16,
+      "high": 15,
+      "low": 18,
+      "spread": 3,
+      "stdev": 1.02,
+      "n": 5,
+      "ranks": {
+        "espn": 17,
+        "nfl": 18,
+        "cbs": 16,
+        "sharpfootball": 15,
+        "bleacherreport": 16
+      },
+      "prev": 16,
+      "delta": 0,
+      "source_delta": {
+        "espn": 2,
+        "nfl": 1,
+        "cbs": 0,
+        "sharpfootball": 0,
+        "bleacherreport": 0
+      },
+      "record": "5-5",
+      "differential": -15,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T18:00Z",
+        "opponent": "BAL",
+        "home": true,
+        "points_for": 35,
+        "points_against": 33,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "DAL": {
+      "rank": 17,
+      "avg": 17.2,
+      "median": 17,
+      "high": 16,
+      "low": 18,
+      "spread": 2,
+      "stdev": 0.75,
+      "n": 5,
+      "ranks": {
+        "espn": 18,
+        "nfl": 16,
+        "cbs": 18,
+        "sharpfootball": 17,
+        "bleacherreport": 17
+      },
+      "prev": 20,
+      "delta": 3,
+      "source_delta": {
+        "espn": 2,
+        "nfl": 2,
+        "cbs": 0,
+        "sharpfootball": 0,
+        "bleacherreport": 2
+      },
+      "record": "5-6",
+      "differential": 25,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T18:00Z",
+        "opponent": "TEN",
+        "home": true,
+        "points_for": 51,
+        "points_against": 30,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "HOU": {
+      "rank": 18,
+      "avg": 17.6,
+      "median": 18,
+      "high": 15,
+      "low": 20,
+      "spread": 5,
+      "stdev": 1.85,
+      "n": 5,
+      "ranks": {
+        "espn": 16,
+        "nfl": 15,
+        "cbs": 19,
+        "sharpfootball": 18,
+        "bleacherreport": 20
+      },
+      "prev": 18,
+      "delta": 0,
+      "source_delta": {
+        "espn": 0,
+        "nfl": 2,
+        "cbs": 0,
+        "sharpfootball": 2,
+        "bleacherreport": 2
+      },
+      "record": "4-6",
+      "differential": 37,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-20T01:15Z",
+        "opponent": "IND",
+        "home": true,
+        "points_for": 26,
+        "points_against": 3,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "WSH": {
+      "rank": 19,
+      "avg": 19.4,
+      "median": 19,
+      "high": 17,
+      "low": 23,
+      "spread": 6,
+      "stdev": 1.96,
+      "n": 5,
+      "ranks": {
+        "espn": 19,
+        "nfl": 17,
+        "cbs": 23,
+        "sharpfootball": 19,
+        "bleacherreport": 19
+      },
+      "prev": 21,
+      "delta": 2,
+      "source_delta": {
+        "espn": 2,
+        "nfl": 3,
+        "cbs": 0,
+        "sharpfootball": 2,
+        "bleacherreport": 2
+      },
+      "record": "4-5-1",
+      "differential": -25,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-24T01:15Z",
+        "opponent": "CIN",
+        "home": true,
+        "points_for": 22,
+        "points_against": 20,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "TB": {
+      "rank": 20,
+      "avg": 20.2,
+      "median": 21,
+      "high": 17,
+      "low": 23,
+      "spread": 6,
+      "stdev": 2.04,
+      "n": 5,
+      "ranks": {
+        "espn": 21,
+        "nfl": 19,
+        "cbs": 17,
+        "sharpfootball": 21,
+        "bleacherreport": 23
+      },
+      "prev": 17,
+      "delta": -3,
+      "source_delta": {
+        "espn": -3,
+        "nfl": -5,
+        "cbs": 0,
+        "sharpfootball": -3,
+        "bleacherreport": 0
+      },
+      "record": "3-7",
+      "differential": 14,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T18:00Z",
+        "opponent": "DET",
+        "home": false,
+        "points_for": 21,
+        "points_against": 31,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "NE": {
+      "rank": 21,
+      "avg": 21.0,
+      "median": 20,
+      "high": 18,
+      "low": 27,
+      "spread": 9,
+      "stdev": 3.1,
+      "n": 5,
+      "ranks": {
+        "espn": 20,
+        "nfl": 27,
+        "cbs": 20,
+        "sharpfootball": 20,
+        "bleacherreport": 18
+      },
+      "prev": 19,
+      "delta": -2,
+      "source_delta": {
+        "espn": -3,
+        "nfl": -4,
+        "cbs": 0,
+        "sharpfootball": -4,
+        "bleacherreport": -1
+      },
+      "record": "5-5",
+      "differential": -21,
+      "last_game": {
+        "week": 10,
+        "label": "Week 10",
+        "season_type": "regular",
+        "date": "2026-11-15T14:30Z",
+        "opponent": "DET",
+        "home": false,
+        "points_for": 10,
+        "points_against": 35,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "LV": {
+      "rank": 22,
+      "avg": 22.4,
+      "median": 22,
+      "high": 20,
+      "low": 25,
+      "spread": 5,
+      "stdev": 1.85,
+      "n": 5,
+      "ranks": {
+        "espn": 22,
+        "nfl": 20,
+        "cbs": 25,
+        "sharpfootball": 24,
+        "bleacherreport": 21
+      },
+      "prev": 22,
+      "delta": 0,
+      "source_delta": {
+        "espn": 0,
+        "nfl": 1,
+        "cbs": 0,
+        "sharpfootball": 0,
+        "bleacherreport": -3
+      },
+      "record": "4-7",
+      "differential": -52,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T21:25Z",
+        "opponent": "DEN",
+        "home": false,
+        "points_for": 24,
+        "points_against": 38,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "BAL": {
+      "rank": 23,
+      "avg": 22.6,
+      "median": 22,
+      "high": 22,
+      "low": 24,
+      "spread": 2,
+      "stdev": 0.8,
+      "n": 5,
+      "ranks": {
+        "espn": 24,
+        "nfl": 23,
+        "cbs": 22,
+        "sharpfootball": 22,
+        "bleacherreport": 22
+      },
+      "prev": 24,
+      "delta": 1,
+      "source_delta": {
+        "espn": 1,
+        "nfl": 5,
+        "cbs": 0,
+        "sharpfootball": 1,
+        "bleacherreport": -2
+      },
+      "record": "4-7",
+      "differential": -52,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T18:00Z",
+        "opponent": "CAR",
+        "home": false,
+        "points_for": 33,
+        "points_against": 35,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "ATL": {
+      "rank": 24,
+      "avg": 23.8,
+      "median": 24,
+      "high": 21,
+      "low": 26,
+      "spread": 5,
+      "stdev": 1.72,
+      "n": 5,
+      "ranks": {
+        "espn": 23,
+        "nfl": 26,
+        "cbs": 21,
+        "sharpfootball": 25,
+        "bleacherreport": 24
+      },
+      "prev": 23,
+      "delta": -1,
+      "source_delta": {
+        "espn": 0,
+        "nfl": -4,
+        "cbs": 0,
+        "sharpfootball": 0,
+        "bleacherreport": 0
+      },
+      "record": "3-7",
+      "differential": -57,
+      "last_game": {
+        "week": 10,
+        "label": "Week 10",
+        "season_type": "regular",
+        "date": "2026-11-15T18:00Z",
+        "opponent": "KC",
+        "home": true,
+        "points_for": 13,
+        "points_against": 35,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "NO": {
+      "rank": 25,
+      "avg": 25.2,
+      "median": 25,
+      "high": 23,
+      "low": 27,
+      "spread": 4,
+      "stdev": 1.6,
+      "n": 5,
+      "ranks": {
+        "espn": 27,
+        "nfl": 25,
+        "cbs": 24,
+        "sharpfootball": 23,
+        "bleacherreport": 27
+      },
+      "prev": 25,
+      "delta": 0,
+      "source_delta": {
+        "espn": -3,
+        "nfl": 0,
+        "cbs": 0,
+        "sharpfootball": -1,
+        "bleacherreport": -2
+      },
+      "record": "3-7",
+      "differential": -42,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T18:00Z",
+        "opponent": "CHI",
+        "home": false,
+        "points_for": 13,
+        "points_against": 21,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "PHI": {
+      "rank": 26,
+      "avg": 25.6,
+      "median": 25,
+      "high": 24,
+      "low": 28,
+      "spread": 4,
+      "stdev": 1.36,
+      "n": 5,
+      "ranks": {
+        "espn": 25,
+        "nfl": 24,
+        "cbs": 28,
+        "sharpfootball": 26,
+        "bleacherreport": 25
+      },
+      "prev": 30,
+      "delta": 4,
+      "source_delta": {
+        "espn": 3,
+        "nfl": 8,
+        "cbs": 0,
+        "sharpfootball": 6,
+        "bleacherreport": 1
+      },
+      "record": "3-7",
+      "differential": -70,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T18:00Z",
+        "opponent": "PIT",
+        "home": true,
+        "points_for": 19,
+        "points_against": 16,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "NYJ": {
+      "rank": 27,
+      "avg": 25.6,
+      "median": 26,
+      "high": 22,
+      "low": 27,
+      "spread": 5,
+      "stdev": 1.85,
+      "n": 5,
+      "ranks": {
+        "espn": 26,
+        "nfl": 22,
+        "cbs": 27,
+        "sharpfootball": 27,
+        "bleacherreport": 26
+      },
+      "prev": 27,
+      "delta": 0,
+      "source_delta": {
+        "espn": 1,
+        "nfl": 4,
+        "cbs": 0,
+        "sharpfootball": 4,
+        "bleacherreport": 1
+      },
+      "record": "3-8",
+      "differential": -57,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T21:05Z",
+        "opponent": "LAC",
+        "home": false,
+        "points_for": 27,
+        "points_against": 24,
+        "result": "W",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "ARI": {
+      "rank": 28,
+      "avg": 28.8,
+      "median": 28,
+      "high": 26,
+      "low": 32,
+      "spread": 6,
+      "stdev": 2.04,
+      "n": 5,
+      "ranks": {
+        "espn": 28,
+        "nfl": 32,
+        "cbs": 26,
+        "sharpfootball": 30,
+        "bleacherreport": 28
+      },
+      "prev": 26,
+      "delta": -2,
+      "source_delta": {
+        "espn": -2,
+        "nfl": -1,
+        "cbs": 0,
+        "sharpfootball": -3,
+        "bleacherreport": 0
+      },
+      "record": "3-8",
+      "differential": -132,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T18:00Z",
+        "opponent": "KC",
+        "home": false,
+        "points_for": 7,
+        "points_against": 34,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "TEN": {
+      "rank": 29,
+      "avg": 29.8,
+      "median": 29,
+      "high": 28,
+      "low": 32,
+      "spread": 4,
+      "stdev": 1.83,
+      "n": 5,
+      "ranks": {
+        "espn": 32,
+        "nfl": 28,
+        "cbs": 32,
+        "sharpfootball": 28,
+        "bleacherreport": 29
+      },
+      "prev": 29,
+      "delta": 0,
+      "source_delta": {
+        "espn": 0,
+        "nfl": -4,
+        "cbs": 0,
+        "sharpfootball": -2,
+        "bleacherreport": 2
+      },
+      "record": "1-9",
+      "differential": -93,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T18:00Z",
+        "opponent": "DAL",
+        "home": false,
+        "points_for": 30,
+        "points_against": 51,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "IND": {
+      "rank": 30,
+      "avg": 29.8,
+      "median": 30,
+      "high": 29,
+      "low": 31,
+      "spread": 2,
+      "stdev": 0.75,
+      "n": 5,
+      "ranks": {
+        "espn": 29,
+        "nfl": 30,
+        "cbs": 29,
+        "sharpfootball": 31,
+        "bleacherreport": 30
+      },
+      "prev": 28,
+      "delta": -2,
+      "source_delta": {
+        "espn": 0,
+        "nfl": -1,
+        "cbs": 0,
+        "sharpfootball": -3,
+        "bleacherreport": -1
+      },
+      "record": "3-8",
+      "differential": -86,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-20T01:15Z",
+        "opponent": "HOU",
+        "home": false,
+        "points_for": 3,
+        "points_against": 26,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "LAC": {
+      "rank": 31,
+      "avg": 30.4,
+      "median": 31,
+      "high": 29,
+      "low": 32,
+      "spread": 3,
+      "stdev": 1.2,
+      "n": 5,
+      "ranks": {
+        "espn": 31,
+        "nfl": 29,
+        "cbs": 31,
+        "sharpfootball": 29,
+        "bleacherreport": 32
+      },
+      "prev": 32,
+      "delta": 1,
+      "source_delta": {
+        "espn": 0,
+        "nfl": -2,
+        "cbs": 0,
+        "sharpfootball": 1,
+        "bleacherreport": 0
+      },
+      "record": "1-9",
+      "differential": -98,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T21:05Z",
+        "opponent": "NYJ",
+        "home": true,
+        "points_for": 24,
+        "points_against": 27,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    },
+    "MIA": {
+      "rank": 32,
+      "avg": 30.8,
+      "median": 31,
+      "high": 30,
+      "low": 32,
+      "spread": 2,
+      "stdev": 0.75,
+      "n": 5,
+      "ranks": {
+        "espn": 30,
+        "nfl": 31,
+        "cbs": 30,
+        "sharpfootball": 32,
+        "bleacherreport": 31
+      },
+      "prev": 31,
+      "delta": -1,
+      "source_delta": {
+        "espn": 0,
+        "nfl": -1,
+        "cbs": 0,
+        "sharpfootball": -3,
+        "bleacherreport": -1
+      },
+      "record": "1-9",
+      "differential": -93,
+      "last_game": {
+        "week": 11,
+        "label": "Week 11",
+        "season_type": "regular",
+        "date": "2026-11-22T18:00Z",
+        "opponent": "BUF",
+        "home": false,
+        "points_for": 9,
+        "points_against": 26,
+        "result": "L",
+        "completed": true,
+        "detail": "Final"
+      }
+    }
+  }
+}
