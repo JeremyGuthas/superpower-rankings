@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "generated": "2026-11-25T00:14:00+00:00",
+  "generated": "2026-11-25T03:21:53+00:00",
   "teams": [
     {
       "abbr": "ARI",
@@ -17044,7 +17044,7 @@
       "week": 12,
       "label": "Week 12",
       "games_through": 11,
-      "generated": "2026-11-25T00:14:00+00:00",
+      "generated": "2026-11-25T03:21:53+00:00",
       "sources": [
         {
           "id": "espn",
@@ -17054,7 +17054,7 @@
           "author": "NFL Nation",
           "published": "2026-11-24T16:49:36Z",
           "strategy": "headings",
-          "fetched": "2026-11-25T00:13:48Z"
+          "fetched": "2026-11-25T03:21:38Z"
         },
         {
           "id": "nfl",
@@ -17064,7 +17064,7 @@
           "author": "Nick Shook",
           "published": "2026-11-24T16:00:57.143Z",
           "strategy": "rank-label",
-          "fetched": "2026-11-25T00:13:51Z"
+          "fetched": "2026-11-25T03:21:42Z"
         },
         {
           "id": "cbs",
@@ -17074,7 +17074,7 @@
           "author": "Pete Prisco",
           "published": "2026-11-17T10:00:00+00:00",
           "strategy": "split-lines",
-          "fetched": "2026-11-25T00:13:51Z"
+          "fetched": "2026-11-25T03:21:42Z"
         },
         {
           "id": "sharpfootball",
@@ -17084,7 +17084,7 @@
           "author": "Raymond Summerlin",
           "published": "2026-11-24T09:00:01-05:00",
           "strategy": "headings",
-          "fetched": "2026-11-25T00:13:51Z"
+          "fetched": "2026-11-25T03:21:42Z"
         },
         {
           "id": "bleacherreport",
@@ -17094,7 +17094,7 @@
           "author": "Gary Davenport",
           "published": "2026-11-23T18:16:34.000Z",
           "strategy": "headings",
-          "fetched": "2026-11-25T00:14:00Z"
+          "fetched": "2026-11-25T03:21:53Z"
         }
       ],
       "failed_sources": [
